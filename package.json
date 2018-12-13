@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/entry.mjs",
+  "main": "dist/entry.js",
   "module": "src/entry.mjs",
   "description": "eontententries for content conainers (aka files)",
   "keywords": [
