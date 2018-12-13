@@ -17,5 +17,4 @@ export class EmptyContentEntry extends ContentEntryMixin(BaseEntry) {
     async getBuffer() {
       return Buffer.alloc(0);
     }
-  };
 }
