@@ -4,51 +4,6 @@ import { Stream } from "stream";
 
 
 /**
- * brings Directory attributes to entries
- */
-export function CollectionEntryMixin(superclass) {
-  return class CollectionEntryMixin extends superclass {
-    get isCollection() {
-      return true;
-    }
-
-    async getTypes() {
-      return ["public.directory"];
-    }
-  };
-}
-
-/**
- * general content access entries
- */
-export function ContentEntryMixin(superclass) {
-  return class ContentEntryMixin extends superclass {
-    get isBlob() {
-      return true;
-    }
-
-    async getReadStream() {
-      return undefined;
-    }
-
-    async getString() {
-      return undefined;
-    }
-
-    async getBuffer() {
-      return undefined;
-    }
-  };
-}
-
-export function StreamContentEntryMixin(superclass) {
-  return class StreamContentEntryMixin extends superclass {
-  };
-}
-
-export const BaseCollectionEntry = CollectionEntryMixin(BaseEntry);
-
-/**
  * Representation of one file or directory entry
  * All names are asolute (no leading '/') and build with '/'
  * @property {string} name file name inside of the repository
