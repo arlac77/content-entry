@@ -2,6 +2,10 @@ import { BaseEntry } from './base-entry';
 import toReadableStream from "to-readable-stream";
 import { Stream } from "stream";
 
+import { BaseCollectionEntry } from './base-collection-entry';
+import { EmptyContentEntry } from './empty-content-entry';
+
+export { BaseEntry, BaseCollectionEntry, EmptyContentEntry };
 
 /**
  * Representation of one file or directory entry
@@ -141,13 +145,4 @@ export class Entry extends BaseEntry {
   async equals(other) {
     return (await this.equalsMeta(other)) && (await this.equalsContent(other));
   }
-}
-
-/**
- * Create empty content (file)
- * @param {string} name
- * @return {Entry}
- */
-export function emptyEntry(name, options) {
-  return new Entry(name, "");
 }
