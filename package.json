@@ -1,4 +1,6 @@
 {
   "name" : "content-entry",
-  "description" : "eontententries for content conainers (aka files)"
+  "description" : "eontententries for content conainers (aka files)",
+  "module" : "src/entry.mjs",
+  "main" : "dist/entry.mjs"
 }
