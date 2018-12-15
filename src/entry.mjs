@@ -4,6 +4,7 @@ import { Stream } from "stream";
 
 import { BaseCollectionEntry } from './base-collection-entry';
 import { EmptyContentEntry } from './empty-content-entry';
+import { BufferContentEntry } from './buffer-content-entry';
 
 export { BaseEntry, BaseCollectionEntry, EmptyContentEntry };
 
