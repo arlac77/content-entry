@@ -5,6 +5,7 @@ import { Stream } from "stream";
 import { BaseCollectionEntry } from './base-collection-entry';
 import { EmptyContentEntry } from './empty-content-entry';
 import { BufferContentEntryMixin } from './buffer-content-entry';
+import { FileSystemEntry } from './file-system-entry';
 
 export { BaseEntry, BaseCollectionEntry, EmptyContentEntry };
 
