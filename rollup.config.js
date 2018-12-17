@@ -13,7 +13,7 @@ export default
       format: "cjs",
       interop: false
     },
-    external: ["stream"],
+    external: ["stream","fs","path"],
     plugins: [resolve(), commonjs(), cleanup()]
   }
 ;

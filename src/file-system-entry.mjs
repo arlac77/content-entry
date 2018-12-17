@@ -1,8 +1,9 @@
-import { BaseConentEntry } from "";
+import { BaseEntry } from "./base-entry";
+import { ContentEntryMixin } from "./content-entry-mixin";
 import { join } from "path";
 import { createReadStream, createWriteStream } from "fs";
 
-export class FileSystemEntry extends BaseContentEntry {
+export class FileSystemEntry extends ContentEntryMixin(BaseEntry) {
   constructor(name, baseDir) {
     super(name);
     Object.defineProperties(this, { baseDir: { value: baseDir } });

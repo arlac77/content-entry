@@ -1,14 +1,10 @@
 import { BaseEntry } from './base-entry';
-import { ContentEntryMixin } from './base-content-entry';
+import { ContentEntryMixin } from './content-entry-mixin';
 
 /**
  * represents a entry without content (content length = 0)
  */
 export class EmptyContentEntry extends ContentEntryMixin(BaseEntry) {
-
-    async getReadStream() {
-      return undefined;
-    }
 
     async getString() {
       return "";

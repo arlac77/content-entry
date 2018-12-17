@@ -21,43 +21,26 @@
 
 ### Table of Contents
 
--   [CollectionEntryMixin](#collectionentrymixin)
-    -   [Parameters](#parameters)
--   [ContentEntryMixin](#contententrymixin)
-    -   [Parameters](#parameters-1)
 -   [Entry](#entry)
-    -   [Parameters](#parameters-2)
+    -   [Parameters](#parameters)
     -   [Properties](#properties)
     -   [getString](#getstring)
     -   [getReadStream](#getreadstream)
     -   [equalsMeta](#equalsmeta)
-        -   [Parameters](#parameters-3)
+        -   [Parameters](#parameters-1)
     -   [equalsContent](#equalscontent)
-        -   [Parameters](#parameters-4)
+        -   [Parameters](#parameters-2)
     -   [equals](#equals)
-        -   [Parameters](#parameters-5)
--   [emptyEntry](#emptyentry)
-    -   [Parameters](#parameters-6)
+        -   [Parameters](#parameters-3)
 -   [BaseEntry](#baseentry)
-    -   [Parameters](#parameters-7)
+    -   [Parameters](#parameters-4)
     -   [Properties](#properties-1)
     -   [getTypes](#gettypes)
-
-## CollectionEntryMixin
-
-brings Directory attributes to entries
-
-### Parameters
-
--   `superclass`  
-
-## ContentEntryMixin
-
-general content access entries
-
-### Parameters
-
--   `superclass`  
+-   [CollectionEntryMixin](#collectionentrymixin)
+    -   [Parameters](#parameters-5)
+-   [EmptyContentEntry](#emptycontententry)
+-   [ContentEntryMixin](#contententrymixin)
+    -   [Parameters](#parameters-6)
 
 ## Entry
 
@@ -124,17 +107,6 @@ compare against other entry
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if other describes the same content
 
-## emptyEntry
-
-Create empty content (file)
-
-### Parameters
-
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `options`  
-
-Returns **[Entry](#entry)** 
-
 ## BaseEntry
 
 Representation of one file or directory entry
@@ -151,3 +123,25 @@ All names are asolute (no leading '/') and build with '/'
 ### getTypes
 
 Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** UTI types
+
+## CollectionEntryMixin
+
+brings Directory attributes to entries
+
+### Parameters
+
+-   `superclass`  
+
+## EmptyContentEntry
+
+**Extends ContentEntryMixin(BaseEntry)**
+
+represents a entry without content (content length = 0)
+
+## ContentEntryMixin
+
+general content access entries
+
+### Parameters
+
+-   `superclass`  
