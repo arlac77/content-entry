@@ -1,4 +1,9 @@
 import { ContentEntry } from "./content-entry";
+import { Readable } from "stream";
+
+class EmptyStream extends Readable {
+  _read() {}
+}
 
 /**
  * represents a entry without content (content length = 0)
@@ -10,5 +15,9 @@ export class EmptyContentEntry extends ContentEntry {
 
   async getBuffer() {
     return Buffer.alloc(0);
+  }
+
+  async getReadStream() {
+    return new EmptyStream();
   }
 }
