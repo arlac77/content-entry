@@ -1,13 +1,20 @@
-import { BaseEntry } from './base-entry';
+import { BaseEntry } from "./base-entry";
 import toReadableStream from "to-readable-stream";
 import { Stream } from "stream";
 
-import { BaseCollectionEntry } from './base-collection-entry';
-import { EmptyContentEntry } from './empty-content-entry';
-import { BufferContentEntryMixin } from './buffer-content-entry';
-import { FileSystemEntry } from './file-system-entry';
+import { BaseCollectionEntry } from "./base-collection-entry";
+import { EmptyContentEntry } from "./empty-content-entry";
+import { BufferContentEntryMixin } from "./buffer-content-entry-mixin";
+import { StreamContentEntryMixin } from "./stream-content-entry-mixin";
+import { FileSystemEntry } from "./file-system-entry";
 
-export { BaseEntry, BaseCollectionEntry, EmptyContentEntry };
+export {
+  BufferContentEntryMixin,
+  StreamContentEntryMixin,
+  BaseEntry,
+  BaseCollectionEntry,
+  EmptyContentEntry
+};
 
 /**
  * Representation of one file or directory entry

@@ -1,16 +1,14 @@
-import { BaseEntry } from './base-entry';
-import { ContentEntryMixin } from './content-entry-mixin';
+import { ContentEntry } from "./content-entry";
 
 /**
  * represents a entry without content (content length = 0)
  */
-export class EmptyContentEntry extends ContentEntryMixin(BaseEntry) {
+export class EmptyContentEntry extends ContentEntry {
+  async getString() {
+    return "";
+  }
 
-    async getString() {
-      return "";
-    }
-
-    async getBuffer() {
-      return Buffer.alloc(0);
-    }
+  async getBuffer() {
+    return Buffer.alloc(0);
+  }
 }

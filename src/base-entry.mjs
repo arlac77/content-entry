@@ -1,9 +1,9 @@
 /**
  * Representation of one file or directory entry
  * All names are asolute (no leading '/') and build with '/'
- * @property {string} name file name inside of the repository
+ * @property {string} name name inside of the container
  *
- * @param {string} name file name inside of the repository
+ * @param {string} name name inside of the container
  */
 export class BaseEntry {
   constructor(name) {

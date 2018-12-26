@@ -39,8 +39,11 @@
 -   [CollectionEntryMixin](#collectionentrymixin)
     -   [Parameters](#parameters-5)
 -   [EmptyContentEntry](#emptycontententry)
--   [ContentEntryMixin](#contententrymixin)
+-   [ContentEntry](#contententry)
+-   [BufferContentEntryMixin](#buffercontententrymixin)
     -   [Parameters](#parameters-6)
+-   [StreamContentEntryMixin](#streamcontententrymixin)
+    -   [Parameters](#parameters-7)
 
 ## Entry
 
@@ -114,11 +117,11 @@ All names are asolute (no leading '/') and build with '/'
 
 ### Parameters
 
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** file name inside of the repository
+-   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** name inside of the container
 
 ### Properties
 
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** file name inside of the repository
+-   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** name inside of the container
 
 ### getTypes
 
@@ -134,13 +137,27 @@ brings Directory attributes to entries
 
 ## EmptyContentEntry
 
-**Extends ContentEntryMixin(BaseEntry)**
+**Extends ContentEntry**
 
 represents a entry without content (content length = 0)
 
-## ContentEntryMixin
+## ContentEntry
+
+**Extends BaseEntry**
 
 general content access entries
+
+## BufferContentEntryMixin
+
+Content entries where a buffer is the primary data representation
+
+### Parameters
+
+-   `superclass`  
+
+## StreamContentEntryMixin
+
+Content entries where a stream is the primary data representation
 
 ### Parameters
 
