@@ -39,4 +39,13 @@ export class BaseEntry {
       name: this.name
     };
   }
+
+  async equals(other) {
+    return (
+      other !== undefined &&
+      this.name === other.name &&
+      this.isCollection === other.isCollection &&
+      this.isBlob === other.isBlob
+    );
+  }
 }

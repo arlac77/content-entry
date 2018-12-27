@@ -4,6 +4,8 @@ import { fileURLToPath } from "url";
 
 import { FileSystemEntry } from "../src/file-system-entry";
 
+const here = dirname(fileURLToPath(import.meta.url));
+
 test("fs entry create", t => {
   const entry = new FileSystemEntry("somewhere", "/tmp");
   t.is(entry.name, "somewhere");
@@ -11,8 +13,6 @@ test("fs entry create", t => {
   t.is(entry.isCollection, false);
   t.is(entry.isBlob, true);
 });
-
-const here = dirname(fileURLToPath(import.meta.url));
 
 test("fs entry getExists true", async t => {
   const entry = new FileSystemEntry("file.txt", join(here, "fixtures"));
@@ -40,4 +40,10 @@ test("fs entry getReadStream", async t => {
   }
 
   t.is(chunk, "abc\n");
+});
+
+test("fs entry setString", async t => {
+  const entry = new FileSystemEntry("file.txt", "/tmp");
+  await entry.setString("abc");
+  t.is(await entry.getString(), "abc");
 });

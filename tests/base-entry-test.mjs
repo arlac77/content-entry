@@ -9,6 +9,15 @@ test("base entry create", t => {
   t.is(JSON.stringify(entry), '{"name":"somewhere"}');
 });
 
+test("base entry equals", async t => {
+  const a = new BaseEntry("a");
+  const a2 = new BaseEntry("a");
+  const b = new BaseEntry("b");
+  t.false(await a.equals(b));
+  t.true(await a.equals(a));
+  t.true(await a.equals(a2));
+});
+
 test("base entry create invalid name", t => {
   t.throws(() => new BaseEntry("/somewhere"), TypeError);
   t.throws(() => new BaseEntry("somewhere\\abc"), TypeError);
