@@ -20,5 +20,24 @@ export function StreamContentEntryMixin(superclass) {
         stream.end(value, () => resolve())
       );
     }
+
+    async getBuffer(options) {
+      const stream = await this.getReadStream(options);
+
+      let chunks = [];
+      for await (const chunk of stream) {
+        chunks.push(chunk);
+      }
+
+      return Buffer.concat(chunks);
+    }
+
+    async setBuffer(value, options) {
+      const stream = await this.getWriteStream(options);
+
+      return new Promise((resolve, reject) =>
+        stream.end(value, () => resolve())
+      );
+    }
   };
 }
