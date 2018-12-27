@@ -7,7 +7,7 @@ export function StreamContentEntryMixin(superclass) {
       const stream = await this.getReadStream(options);
 
       let value = "";
-      for await (chunk of stream) {
+      for await (const chunk of stream) {
         value += chunk;
       }
 
