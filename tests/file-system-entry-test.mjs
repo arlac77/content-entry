@@ -14,6 +14,19 @@ test("fs entry create", t => {
 
 const here = dirname(fileURLToPath(import.meta.url));
 
+test("fs entry getExists true", async t => {
+  const entry = new FileSystemEntry("file.txt", join(here, "fixtures"));
+  t.true(await entry.getExists());
+});
+
+test("fs entry getExists false", async t => {
+  const entry = new FileSystemEntry(
+    "none_existing.txt",
+    join(here, "fixtures")
+  );
+  t.false(await entry.getExists());
+});
+
 test("fs entry getString", async t => {
   const entry = new FileSystemEntry("file.txt", join(here, "fixtures"));
   t.is(await entry.getString(), "abc\n");
