@@ -43,7 +43,21 @@ test("fs entry getReadStream", async t => {
 });
 
 test("fs entry setString", async t => {
-  const entry = new FileSystemEntry("file.txt", "/tmp");
+  const entry = new FileSystemEntry("file1.txt", "/tmp");
   await entry.setString("abc");
   t.is(await entry.getString(), "abc");
+});
+
+test("fs entry equals content true", async t => {
+  const a = new FileSystemEntry("file.txt", join(here, "fixtures"));
+  const b = new FileSystemEntry("file2.txt", "/tmp");
+  await b.setString(await a.getString());
+  t.true(await a.equalsContent(b));
+});
+
+test("fs entry equals content false", async t => {
+  const a = new FileSystemEntry("file.txt", join(here, "fixtures"));
+  const b = new FileSystemEntry("file3.txt", "/tmp");
+  await b.setString("aaa");
+  t.false(await a.equalsContent(b));
 });

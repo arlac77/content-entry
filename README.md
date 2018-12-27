@@ -40,10 +40,12 @@
     -   [Parameters](#parameters-5)
 -   [EmptyContentEntry](#emptycontententry)
 -   [ContentEntry](#contententry)
+    -   [equalsContent](#equalscontent-1)
+        -   [Parameters](#parameters-6)
 -   [BufferContentEntryMixin](#buffercontententrymixin)
-    -   [Parameters](#parameters-6)
--   [StreamContentEntryMixin](#streamcontententrymixin)
     -   [Parameters](#parameters-7)
+-   [StreamContentEntryMixin](#streamcontententrymixin)
+    -   [Parameters](#parameters-8)
 
 ## Entry
 
@@ -146,6 +148,16 @@ represents a entry without content (content length = 0)
 **Extends BaseEntry**
 
 general content access entries
+
+### equalsContent
+
+compare content against other entry
+
+#### Parameters
+
+-   `other` **[Entry](#entry)** 
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if other has the same content (bitwise)
 
 ## BufferContentEntryMixin
 
