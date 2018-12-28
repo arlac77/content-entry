@@ -7,5 +7,6 @@ test("empty content entry create", async t => {
   t.is(entry.isCollection, false);
   t.is(entry.isBlob, true);
   t.is(await entry.getString(), "");
+  t.is((await entry.getBuffer()).length, 0);
   t.is((await entry.getReadStream()).read(), null);
 });
