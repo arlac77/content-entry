@@ -13,6 +13,7 @@ export function StreamContentEntryMixin(superclass) {
 
       return value;
     }
+
     async setString(value, options) {
       const stream = await this.getWriteStream(options);
 

@@ -44,6 +44,7 @@
         -   [Parameters](#parameters-6)
 -   [BufferContentEntryMixin](#buffercontententrymixin)
     -   [Parameters](#parameters-7)
+    -   [Properties](#properties-2)
 -   [StreamContentEntryMixin](#streamcontententrymixin)
     -   [Parameters](#parameters-8)
 
@@ -166,6 +167,10 @@ Content entries where a buffer is the primary data representation
 ### Parameters
 
 -   `superclass`  
+
+### Properties
+
+-   `buffer` **[Buffer](https://nodejs.org/api/buffer.html)** 
 
 ## StreamContentEntryMixin
 

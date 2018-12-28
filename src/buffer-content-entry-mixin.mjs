@@ -2,6 +2,8 @@ import toReadableStream from "to-readable-stream";
 
 /**
  * Content entries where a buffer is the primary data representation
+ * @property {Buffer} buffer
+ *
  */
 export function BufferContentEntryMixin(superclass) {
   return class BufferContentEntryMixin extends superclass {
