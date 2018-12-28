@@ -21,103 +21,27 @@
 
 ### Table of Contents
 
--   [Entry](#entry)
+-   [BaseEntry](#baseentry)
     -   [Parameters](#parameters)
     -   [Properties](#properties)
-    -   [getString](#getstring)
-    -   [getReadStream](#getreadstream)
-    -   [equalsMeta](#equalsmeta)
-        -   [Parameters](#parameters-1)
-    -   [equalsContent](#equalscontent)
-        -   [Parameters](#parameters-2)
-    -   [equals](#equals)
-        -   [Parameters](#parameters-3)
--   [BaseEntry](#baseentry)
-    -   [Parameters](#parameters-4)
-    -   [Properties](#properties-1)
     -   [getTypes](#gettypes)
 -   [CollectionEntryMixin](#collectionentrymixin)
-    -   [Parameters](#parameters-5)
+    -   [Parameters](#parameters-1)
 -   [EmptyContentEntry](#emptycontententry)
 -   [ContentEntry](#contententry)
-    -   [equalsContent](#equalscontent-1)
-        -   [Parameters](#parameters-6)
+    -   [equalsContent](#equalscontent)
+        -   [Parameters](#parameters-2)
 -   [BufferContentEntryMixin](#buffercontententrymixin)
-    -   [Parameters](#parameters-7)
-    -   [Properties](#properties-2)
+    -   [Parameters](#parameters-3)
+    -   [Properties](#properties-1)
 -   [StreamContentEntryMixin](#streamcontententrymixin)
-    -   [Parameters](#parameters-8)
+    -   [Parameters](#parameters-4)
 -   [StringContentEntryMixin](#stringcontententrymixin)
-    -   [Parameters](#parameters-9)
-    -   [Properties](#properties-3)
+    -   [Parameters](#parameters-5)
+    -   [Properties](#properties-2)
 -   [StringContentEntry](#stringcontententry)
-    -   [Parameters](#parameters-10)
-    -   [Properties](#properties-4)
-
-## Entry
-
-**Extends BaseEntry**
-
-Representation of one file or directory entry
-All names are asolute (no leading '/') and build with '/'
-
-### Parameters
-
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** file name inside of the repository
--   `content` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Buffer](https://nodejs.org/api/buffer.html) \| [Stream](https://nodejs.org/api/stream.html))**  (optional, default `undefined`)
--   `type` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** type of the content (optional, default `Entry.TYPE_BLOB`)
--   `mode` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** file permissions (optional, default `"100644"`)
--   `sha` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** sha of the content
-
-### Properties
-
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** file name inside of the repository
--   `content` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Buffer](https://nodejs.org/api/buffer.html) \| [Stream](https://nodejs.org/api/stream.html))** 
--   `type` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** type of the content
--   `mode` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** file permissions
--   `sha` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** sha of the content
-
-### getString
-
-Deliver content as string
-
-Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** content
-
-### getReadStream
-
-Deliver content as read stream
-
-Returns **ReadableStream** content
-
-### equalsMeta
-
-compare meta info against other entry
-
-#### Parameters
-
--   `other` **[Entry](#entry)** 
-
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if other has the same meta information (name...)
-
-### equalsContent
-
-compare content against other entry
-
-#### Parameters
-
--   `other` **[Entry](#entry)** 
-
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if other has the same content (bitwise)
-
-### equals
-
-compare against other entry
-
-#### Parameters
-
--   `other` **[Entry](#entry)** 
-
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if other describes the same content
+    -   [Parameters](#parameters-6)
+    -   [Properties](#properties-3)
 
 ## BaseEntry
 
@@ -162,7 +86,7 @@ compare content against other entry
 
 #### Parameters
 
--   `other` **[Entry](#entry)** 
+-   `other` **Entry** 
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if other has the same content (bitwise)
 
