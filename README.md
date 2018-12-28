@@ -47,6 +47,12 @@
     -   [Properties](#properties-2)
 -   [StreamContentEntryMixin](#streamcontententrymixin)
     -   [Parameters](#parameters-8)
+-   [StringContentEntryMixin](#stringcontententrymixin)
+    -   [Parameters](#parameters-9)
+    -   [Properties](#properties-3)
+-   [StringContentEntry](#stringcontententry)
+    -   [Parameters](#parameters-10)
+    -   [Properties](#properties-4)
 
 ## Entry
 
@@ -179,3 +185,31 @@ Content entries where a stream is the primary data representation
 ### Parameters
 
 -   `superclass`  
+
+## StringContentEntryMixin
+
+Content entries where a string is the primary data representation
+
+### Parameters
+
+-   `superclass`  
+
+### Properties
+
+-   `string` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+## StringContentEntry
+
+**Extends StringContentEntryMixin(ContentEntry)**
+
+Content entries where a string is the primary data representation
+
+### Parameters
+
+-   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+### Properties
+
+-   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `string` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 

@@ -2,7 +2,7 @@ import toReadableStream from "to-readable-stream";
 
 /**
  * Content entries where a string is the primary data representation
- * @property {String} string
+ * @property {string} string
  *
  */
 export function StringContentEntryMixin(superclass) {
