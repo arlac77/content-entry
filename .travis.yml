@@ -2,26 +2,25 @@ language: node_js
 node_js:
   - 10.15.0
   - 11.6.0
+
+script:
+  - npm run cover
+
 jobs:
   include:
-    # Define the release stage that runs semantic-release
+    - stage: docs
+      node_js: lts/*
+      script:
+        - npm install -g --production coveralls codecov
+        - npm run lint
+        - npm run docs
+        - codecov
+        - cat ./coverage/lcov.info | coveralls
     - stage: release
       node_js: lts/*
-      # Advanced: optionally overwrite your default `script` step to skip the tests
-      # script: skip
+      script: skip
       deploy:
         provider: script
         skip_cleanup: true
         script:
           - npx semantic-release
-
-cache: npm
-before_script:
-  - npm install -g --production coveralls codecov
-script:
-  - npm run cover
-  - npm run lint
-  - npm run docs
-after_script:
-  - codecov
-  - cat ./coverage/lcov.info | coveralls
