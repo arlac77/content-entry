@@ -1,4 +1,12 @@
-import toReadableStream from "to-readable-stream";
+import { Readable } from "stream";
+
+const toReadableStream = input =>
+  new Readable({
+    read() {
+      this.push(input);
+      this.push(null);
+    }
+  });
 
 /**
  * Content entries where a string is the primary data representation

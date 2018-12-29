@@ -12,6 +12,7 @@ test("fs entry create", t => {
   t.is(entry.filename, "/tmp/somewhere");
   t.is(entry.isCollection, false);
   t.is(entry.isBlob, true);
+  t.is(JSON.stringify(entry), '{"name":"somewhere"}');
 });
 
 test("fs entry getExists true", async t => {

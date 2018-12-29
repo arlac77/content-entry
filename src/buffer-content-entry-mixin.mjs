@@ -1,4 +1,4 @@
-import toReadableStream from "to-readable-stream";
+import { toReadableStream } from "./util";
 
 /**
  * Content entries where a buffer is the primary data representation
