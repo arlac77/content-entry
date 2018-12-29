@@ -8,14 +8,19 @@ script:
 
 jobs:
   include:
-    - stage: docs
+    - stage: coverage
       node_js: lts/*
+      skip_cleanup: true
       script:
         - npm install -g --production coveralls codecov
-        - npm run lint
-        - npm run docs
         - codecov
         - cat ./coverage/lcov.info | coveralls
+    - stage: docs
+      node_js: lts/*
+      skip_cleanup: true
+      script:
+        - npm run lint
+        - npm run docs
     - stage: release
       node_js: lts/*
       script: skip
