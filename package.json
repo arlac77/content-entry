@@ -20,9 +20,7 @@
     "test": "ava",
     "posttest": "markdown-doctest",
     "docs": "documentation readme src/entry.mjs --section=API",
-    "lint": "documentation lint src/entry.mjs",
-    "semantic-release": "semantic-release",
-    "travis-deploy-once": "travis-deploy-once"
+    "lint": "documentation lint src/entry.mjs"
   },
   "dependencies": {},
   "devDependencies": {

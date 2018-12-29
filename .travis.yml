@@ -1,13 +1,22 @@
 language: node_js
 node_js:
   - 10.15.0
-branches:
-  only:
-    - master
-    - /^greenkeeper/.*$/
+  - 11.6.0
+jobs:
+  include:
+    # Define the release stage that runs semantic-release
+    - stage: release
+      node_js: lts/*
+      # Advanced: optionally overwrite your default `script` step to skip the tests
+      # script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
+
 cache: npm
 before_script:
-  - npm prune
   - npm install -g --production coveralls codecov
 script:
   - npm run cover
@@ -16,5 +25,3 @@ script:
 after_script:
   - codecov
   - cat ./coverage/lcov.info | coveralls
-after_success:
-  - npm run semantic-release
