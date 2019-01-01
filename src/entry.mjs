@@ -16,5 +16,6 @@ export {
   StringContentEntry,
   BaseEntry,
   BaseCollectionEntry,
-  EmptyContentEntry
+  EmptyContentEntry,
+  FileSystemEntry
 };
