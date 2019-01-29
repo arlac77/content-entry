@@ -25,7 +25,7 @@ export function StreamContentEntryMixin(superclass) {
     async getBuffer(options) {
       const stream = await this.getReadStream(options);
 
-      let chunks = [];
+      const chunks = [];
       for await (const chunk of stream) {
         chunks.push(chunk);
       }

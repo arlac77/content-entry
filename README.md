@@ -39,9 +39,12 @@
 -   [StringContentEntryMixin](#stringcontententrymixin)
     -   [Parameters](#parameters-5)
     -   [Properties](#properties-2)
--   [StringContentEntry](#stringcontententry)
+-   [ReadableStreamContentEntry](#readablestreamcontententry)
     -   [Parameters](#parameters-6)
     -   [Properties](#properties-3)
+-   [StringContentEntry](#stringcontententry)
+    -   [Parameters](#parameters-7)
+    -   [Properties](#properties-4)
 
 ## BaseEntry
 
@@ -121,6 +124,22 @@ Content entries where a string is the primary data representation
 ### Properties
 
 -   `string` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+## ReadableStreamContentEntry
+
+**Extends StreamContentEntryMixin(ContentEntry)**
+
+Content entries where a readable stream is the primary data representation
+
+### Parameters
+
+-   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `readStream` **ReadableStream** 
+
+### Properties
+
+-   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `readStream` **ReadableStream** 
 
 ## StringContentEntry
 
