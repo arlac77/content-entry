@@ -2,6 +2,7 @@ import test from "ava";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { createReadStream } from "fs";
+import { BufferContentEntry } from "../src/buffer-content-entry";
 import { ReadableStreamContentEntry } from "../src/readable-stream-content-entry";
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -25,4 +26,28 @@ test("readable stream content entry getBuffer", async t => {
     createReadStream(join(here, "fixtures", "file.txt"))
   );
   t.is((await entry.getBuffer()).length, 4);
+});
+
+
+test("readable stream content entry equalsContent ReadableStreamContentEntry <> BufferContentEntry", async t => {
+  const be = new BufferContentEntry("somewhere", Buffer.from("abc\n"));
+
+  const entry = new ReadableStreamContentEntry(
+    "somewhere",
+    createReadStream(join(here, "fixtures", "file.txt"))
+  );
+
+  t.true(await entry.equalsContent(be));
+  //t.true(await be.equalsContent(entry));
+});
+
+test("readable stream content entry equalsContent BufferContentEntry <> ReadableStreamContentEntry", async t => {
+  const be = new BufferContentEntry("somewhere", Buffer.from("abc\n"));
+
+  const entry = new ReadableStreamContentEntry(
+    "somewhere",
+    createReadStream(join(here, "fixtures", "file.txt"))
+  );
+
+  t.true(await be.equalsContent(entry));
 });
