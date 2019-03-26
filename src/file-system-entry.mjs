@@ -3,12 +3,18 @@ import { StreamContentEntryMixin } from "./stream-content-entry-mixin";
 import { join } from "path";
 import { createReadStream, createWriteStream, access, constants } from "fs";
 
+/**
+ * A content entry backed by a file
+ */
 export class FileSystemEntry extends StreamContentEntryMixin(ContentEntry) {
   constructor(name, baseDir) {
     super(name);
     Object.defineProperties(this, { baseDir: { value: baseDir } });
   }
 
+  /**
+   * absolute file path
+   */
   get filename() {
     return join(this.baseDir, this.name);
   }

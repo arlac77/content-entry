@@ -6,8 +6,11 @@
   },
   "main": "src/entry.mjs",
   "module": "src/entry.mjs",
-  "description": "eontententries for content conainers (aka files)",
-  "keywords": [],
+  "description": "content entries for content containers (aka files)",
+  "keywords": [
+    "content",
+    "file"
+  ],
   "contributors": [
     {
       "name": "Markus Felten",

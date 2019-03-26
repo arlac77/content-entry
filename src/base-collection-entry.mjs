@@ -1,7 +1,7 @@
 import { BaseEntry } from "./base-entry";
 
 /**
- * brings Directory attributes to entries
+ * brings directory attributes to entries
  */
 export function CollectionEntryMixin(superclass) {
   return class CollectionEntryMixin extends superclass {
@@ -14,6 +14,5 @@ export function CollectionEntryMixin(superclass) {
     }
   };
 }
-
 
 export const BaseCollectionEntry = CollectionEntryMixin(BaseEntry);

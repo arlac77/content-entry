@@ -42,6 +42,9 @@
 -   [StringContentEntry](#stringcontententry)
     -   [Parameters](#parameters-7)
     -   [Properties](#properties-4)
+-   [FileSystemEntry](#filesystementry)
+    -   [Parameters](#parameters-8)
+    -   [filename](#filename)
 
 ## BaseEntry
 
@@ -62,7 +65,7 @@ Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Gl
 
 ## CollectionEntryMixin
 
-brings Directory attributes to entries
+brings directory attributes to entries
 
 ### Parameters
 
@@ -153,3 +156,18 @@ Content entries where a string is the primary data representation
 
 -   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `string` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+## FileSystemEntry
+
+**Extends StreamContentEntryMixin(ContentEntry)**
+
+A content entry backed by a file
+
+### Parameters
+
+-   `name`  
+-   `baseDir`  
+
+### filename
+
+absolute file path
