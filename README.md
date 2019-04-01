@@ -31,19 +31,18 @@
 -   [BufferContentEntryMixin](#buffercontententrymixin)
     -   [Parameters](#parameters-3)
     -   [Properties](#properties-1)
--   [StreamContentEntryMixin](#streamcontententrymixin)
-    -   [Parameters](#parameters-4)
+-   [defaultStringOptions](#defaultstringoptions)
 -   [StringContentEntryMixin](#stringcontententrymixin)
-    -   [Parameters](#parameters-5)
+    -   [Parameters](#parameters-4)
     -   [Properties](#properties-2)
 -   [ReadableStreamContentEntry](#readablestreamcontententry)
-    -   [Parameters](#parameters-6)
+    -   [Parameters](#parameters-5)
     -   [Properties](#properties-3)
 -   [StringContentEntry](#stringcontententry)
-    -   [Parameters](#parameters-7)
+    -   [Parameters](#parameters-6)
     -   [Properties](#properties-4)
 -   [FileSystemEntry](#filesystementry)
-    -   [Parameters](#parameters-8)
+    -   [Parameters](#parameters-7)
     -   [filename](#filename)
 
 ## BaseEntry
@@ -105,13 +104,9 @@ Content entries where a buffer is the primary data representation
 
 -   `buffer` **[Buffer](https://nodejs.org/api/buffer.html)** 
 
-## StreamContentEntryMixin
+## defaultStringOptions
 
 Content entries where a stream is the primary data representation
-
-### Parameters
-
--   `superclass`  
 
 ## StringContentEntryMixin
 

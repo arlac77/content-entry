@@ -1,9 +1,12 @@
 /**
  * Content entries where a stream is the primary data representation
  */
+
+const defaultStringOptions = { encoding: "utf8" };
+
 export function StreamContentEntryMixin(superclass) {
   return class StreamContentEntryMixin extends superclass {
-    async getString(options) {
+    async getString(options = defaultStringOptions) {
       const stream = await this.getReadStream(options);
 
       let value = "";
@@ -14,7 +17,7 @@ export function StreamContentEntryMixin(superclass) {
       return value;
     }
 
-    async setString(value, options) {
+    async setString(value, options = defaultStringOptions) {
       const stream = await this.getWriteStream(options);
 
       return new Promise((resolve, reject) =>
