@@ -1,5 +1,5 @@
 import test from "ava";
-import { BaseEntry } from "../src/base-entry";
+import { BaseEntry } from "../src/base-entry.mjs";
 
 test("base entry create", t => {
   const entry = new BaseEntry("somewhere");

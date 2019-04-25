@@ -1,13 +1,13 @@
-import { BaseEntry } from "./base-entry";
-import { BaseCollectionEntry } from "./base-collection-entry";
-import { EmptyContentEntry } from "./empty-content-entry";
-import { BufferContentEntryMixin } from "./buffer-content-entry-mixin";
-import { StreamContentEntryMixin } from "./stream-content-entry-mixin";
-import { StringContentEntryMixin } from "./string-content-entry-mixin";
-import { ReadableStreamContentEntry } from "./readable-stream-content-entry";
-import { BufferContentEntry } from "./buffer-content-entry";
-import { StringContentEntry } from "./string-content-entry";
-import { FileSystemEntry } from "./file-system-entry";
+import { BaseEntry } from "./base-entry.mjs";
+import { BaseCollectionEntry } from "./base-collection-entry.mjs";
+import { EmptyContentEntry } from "./empty-content-entry.mjs";
+import { BufferContentEntryMixin } from "./buffer-content-entry-mixin.mjs";
+import { StreamContentEntryMixin } from "./stream-content-entry-mixin.mjs";
+import { StringContentEntryMixin } from "./string-content-entry-mixin.mjs";
+import { ReadableStreamContentEntry } from "./readable-stream-content-entry.mjs";
+import { BufferContentEntry } from "./buffer-content-entry.mjs";
+import { StringContentEntry } from "./string-content-entry.mjs";
+import { FileSystemEntry } from "./file-system-entry.mjs";
 
 export {
   BufferContentEntryMixin,

@@ -1,5 +1,5 @@
-import { StringContentEntryMixin } from "./string-content-entry-mixin";
-import { ContentEntry } from "./content-entry";
+import { StringContentEntryMixin } from "./string-content-entry-mixin.mjs";
+import { ContentEntry } from "./content-entry.mjs";
 
 /**
  * Content entries where a string is the primary data representation

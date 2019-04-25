@@ -1,4 +1,4 @@
-import { BaseEntry } from "./base-entry";
+import { BaseEntry } from "./base-entry.mjs";
 
 /**
  * brings directory attributes to entries

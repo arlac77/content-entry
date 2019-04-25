@@ -1,4 +1,4 @@
-import { ContentEntry } from "./content-entry";
+import { ContentEntry } from "./content-entry.mjs";
 import { Readable } from "stream";
 
 class EmptyStream extends Readable {

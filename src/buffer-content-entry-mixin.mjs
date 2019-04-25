@@ -1,4 +1,4 @@
-import { toReadableStream } from "./util";
+import { toReadableStream } from "./util.mjs";
 
 /**
  * Content entries where a buffer is the primary data representation

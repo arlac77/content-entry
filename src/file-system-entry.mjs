@@ -1,5 +1,5 @@
-import { ContentEntry } from "./content-entry";
-import { StreamContentEntryMixin } from "./stream-content-entry-mixin";
+import { ContentEntry } from "./content-entry.mjs";
+import { StreamContentEntryMixin } from "./stream-content-entry-mixin.mjs";
 import { join } from "path";
 import { createReadStream, createWriteStream, access, constants } from "fs";
 
