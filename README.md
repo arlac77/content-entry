@@ -52,7 +52,7 @@ content entries for content containers (aka files)
 ## BaseEntry
 
 Representation of one file or directory entry
-All names are asolute (no leading '/') and build with '/'
+All names are asolute (no leading '/') the group seperator is '/'
 
 ### Parameters
 

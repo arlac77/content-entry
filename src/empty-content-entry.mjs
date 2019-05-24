@@ -5,6 +5,8 @@ class EmptyStream extends Readable {
   _read() {}
 }
 
+let _empty;
+
 /**
  * represents a entry without content (content length = 0)
  */
@@ -18,6 +20,10 @@ export class EmptyContentEntry extends ContentEntry {
   }
 
   async getReadStream() {
-    return new EmptyStream();
+    if(!_empty) {
+      _empty = new EmptyStream();
+    }
+
+    return _empty;
   }
 }

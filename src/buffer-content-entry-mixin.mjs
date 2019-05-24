@@ -7,6 +7,11 @@ import { toReadableStream } from "./util.mjs";
  */
 export function BufferContentEntryMixin(superclass) {
   return class BufferContentEntryMixin extends superclass {
+
+    /**
+     * the default encoding used to convert conent to strings
+     * @return {string}
+     */
     get encoding() {
       return "utf8";
     }
