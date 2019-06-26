@@ -7,29 +7,26 @@ const defaultStringOptions = { encoding: "utf8" };
 export function StreamContentEntryMixin(superclass) {
   return class StreamContentEntryMixin extends superclass {
     async getString(options = defaultStringOptions) {
-      const stream = await this.getReadStream(options);
-
-      let value = "";
-      for await (const chunk of stream) {
-        value += chunk;
+      const chunks = [];
+      for await (const chunk of await this.getReadStream(options)) {
+        chunks.push(chunk);
       }
 
-      return value;
+      return chunks.join();
     }
 
     async setString(value, options = defaultStringOptions) {
-      const stream = await this.getWriteStream(options);
-
-      return new Promise((resolve, reject) =>
-        stream.end(value, () => resolve())
+      return new Promise(async (resolve, reject) => {
+        const stream = await this.getWriteStream(options);
+        stream.once('error', (error) => reject(error));
+        stream.end(value, () => resolve());
+      }
       );
     }
 
     async getBuffer(options) {
-      const stream = await this.getReadStream(options);
-
       const chunks = [];
-      for await (const chunk of stream) {
+      for await (const chunk of await this.getReadStream(options)) {
         chunks.push(chunk);
       }
 
@@ -37,10 +34,11 @@ export function StreamContentEntryMixin(superclass) {
     }
 
     async setBuffer(value, options) {
-      const stream = await this.getWriteStream(options);
-
-      return new Promise((resolve, reject) =>
-        stream.end(value, () => resolve())
+      return new Promise(async (resolve, reject) => {
+        const stream = await this.getWriteStream(options);
+        stream.once('error', (error) => reject(error));
+        stream.end(value, () => resolve());
+      }
       );
     }
   };
