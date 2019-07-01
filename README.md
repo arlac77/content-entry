@@ -98,7 +98,7 @@ Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 ## BufferContentEntryMixin
 
-Content entries where a buffer is the primary data representation
+Content entries where a Buffer is the primary data representation
 
 ### Parameters
 
