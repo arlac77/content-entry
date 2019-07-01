@@ -1,7 +1,7 @@
 import { toReadableStream } from "./util.mjs";
 
 /**
- * Content entries where a buffer is the primary data representation
+ * Content entries where a Buffer is the primary data representation
  * @property {Buffer} buffer
  *
  */
@@ -21,7 +21,7 @@ export function BufferContentEntryMixin(superclass) {
      * @return {string} content
      */
     async getString() {
-      return this.buffer.toString(this.encoding);
+      return (await this.getBuffer()).toString(this.encoding);
     }
 
     async getBuffer() {
@@ -33,7 +33,7 @@ export function BufferContentEntryMixin(superclass) {
      * @return {ReadableStream} content
      */
     async getReadStream() {
-      return toReadableStream(this.buffer);
+      return toReadableStream(await this.getBuffer());
     }
   };
 }
