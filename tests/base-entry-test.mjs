@@ -6,7 +6,11 @@ test("base entry create", t => {
   t.is(entry.name, "somewhere");
   t.is(entry.isCollection, false);
   t.is(entry.isBlob, false);
-  t.is(JSON.stringify(entry), '{"name":"somewhere"}');
+  t.deepEqual(JSON.parse(JSON.stringify(entry)), {
+    name: "somewhere",
+    isBlob: false,
+    isCollection: false
+  });
 });
 
 test("base entry equals", async t => {

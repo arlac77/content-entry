@@ -12,7 +12,12 @@ test("fs entry create", t => {
   t.is(entry.filename, "/tmp/somewhere");
   t.is(entry.isCollection, false);
   t.is(entry.isBlob, true);
-  t.is(JSON.stringify(entry), '{"name":"somewhere"}');
+  t.deepEqual(JSON.parse(JSON.stringify(entry)), {
+    name: "somewhere",
+    baseDir: "/tmp",
+    isBlob: true,
+    isCollection: false
+  });
 });
 
 test("fs entry getExists true", async t => {

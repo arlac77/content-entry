@@ -15,7 +15,11 @@ test("readable stream content entry create", async t => {
   t.is(entry.name, "somewhere");
   t.is(entry.isCollection, false);
   t.is(entry.isBlob, true);
-  t.is(JSON.stringify(entry), '{"name":"somewhere"}');
+  t.deepEqual(JSON.parse(JSON.stringify(entry)), {
+    name: "somewhere",
+    isBlob: true,
+    isCollection: false
+  });
   t.is(await entry.getString(), "abc\n");
 });
 

@@ -36,7 +36,9 @@ export class BaseEntry {
 
   toJSON() {
     return {
-      name: this.name
+      name: this.name,
+      isBlob: this.isBlob,
+      isCollection: this.isCollection
     };
   }
 

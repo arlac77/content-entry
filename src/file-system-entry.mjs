@@ -34,4 +34,11 @@ export class FileSystemEntry extends StreamContentEntryMixin(ContentEntry) {
   async getWriteStream(options) {
     return createWriteStream(this.filename, options);
   }
+
+  toJSON() {
+    const json = super.toJSON();
+    json.baseDir = this.baseDir;
+    return json;
+  }
+
 }
