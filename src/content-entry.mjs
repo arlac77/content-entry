@@ -8,6 +8,10 @@ export class ContentEntry extends BaseEntry {
     return true;
   }
 
+  async getTypes() {
+    return ["public.content"];
+  }
+
   async getReadStream() {
     return undefined;
   }
@@ -27,6 +31,11 @@ export class ContentEntry extends BaseEntry {
    */
   async equalsContent(other) {
     const [a, b] = await Promise.all([this.getBuffer(), other.getBuffer()]);
+  
+    if( a === undefined) {
+      return a === b;
+    }
+
     return a.equals(b);
   }
 }
