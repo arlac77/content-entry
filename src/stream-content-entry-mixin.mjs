@@ -12,7 +12,7 @@ export function StreamContentEntryMixin(superclass) {
         chunks.push(chunk);
       }
 
-      return chunks.join();
+      return chunks.join("");
     }
 
     async setString(value, options = defaultStringOptions) {
