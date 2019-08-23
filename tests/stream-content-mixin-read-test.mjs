@@ -1,29 +1,33 @@
 import test from "ava";
-import { Readable } from 'stream';
+import { Readable } from "stream";
 
 import { ContentEntry } from "../src/content-entry.mjs";
 import { StreamContentEntryMixin } from "../src/stream-content-entry-mixin.mjs";
 
-
-const chunks = ["a","b","c"];
-
 class TestReadable extends Readable {
-    _read(size)
-    {
-      for(const c of chunks) {
-        this.push(c);
-      }
+  constructor(chunks) {
+    super();
+    Object.defineProperties(this, { chunks: { value: chunks } });
+  }
+
+  _read(size) {
+    const c = this.chunks.shift();
+    if (c === undefined) {
+      this.push(null);
+      return;
     }
+
+    this.push(c);
+  }
 }
 
 class TestEntry extends StreamContentEntryMixin(ContentEntry) {
-    async getReadStream(options) {
-        return new TestReadable();
-    }
+  async getReadStream(options) {
+    return new TestReadable(["a", "b", "c"]);
+  }
 }
 
-
 test("string read (chunks)", async t => {
-    const entry = new TestEntry("reading");
-    t.is(await entry.getString(), "abc");
+  const entry = new TestEntry("reading");
+  t.is(await entry.getString(), "abc");
 });
