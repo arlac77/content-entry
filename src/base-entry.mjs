@@ -6,6 +6,9 @@
  * @param {string} name name inside of the container
  */
 export class BaseEntry {
+
+  name;
+
   constructor(name) {
     if (name[0] === "/" || name.indexOf("\\") >= 0) {
       throw new TypeError(
@@ -13,9 +16,7 @@ export class BaseEntry {
       );
     }
 
-    Object.defineProperties(this, {
-      name: { value: name }
-    });
+    this.name = name;
   }
 
   /**
