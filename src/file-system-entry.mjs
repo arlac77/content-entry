@@ -7,12 +7,9 @@ import { createReadStream, createWriteStream, access, constants } from "fs";
  * A content entry backed by a file
  */
 export class FileSystemEntry extends StreamContentEntryMixin(ContentEntry) {
-
-  baseDir;
-
   constructor(name, baseDir) {
     super(name);
-    this.baseDir = baseDir;
+    Object.defineProperties(this, { baseDir: { value: baseDir } });
   }
 
   /**

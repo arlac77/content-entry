@@ -11,12 +11,9 @@ import { ContentEntry } from "./content-entry.mjs";
  * @property {ReadableStream} readStream
  */
 export class ReadableStreamContentEntry extends StreamContentEntryMixin(ContentEntry) {
-
-  readStream;
-
   constructor(name, readStream) {
     super(name);
-    this.readStream = readStream;
+    Object.defineProperties(this, { readStream: { value:readStream } });
   }
 
   getReadStream() {
