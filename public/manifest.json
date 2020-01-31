@@ -1,0 +1,10 @@
+{
+  "name": "content-entry",
+  "description": "content entries for content containers (aka files)",
+  "icons": [
+    {
+      "src": "facicon.ico",
+      "sizes": "16x16"
+    }
+  ]
+}
