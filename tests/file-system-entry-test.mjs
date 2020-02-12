@@ -6,12 +6,14 @@ import { FileSystemEntry } from "../src/file-system-entry.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 
-test("fs entry create", t => {
+test("fs entry create", async t => {
   const entry = new FileSystemEntry("somewhere", "/tmp");
   t.is(entry.name, "somewhere");
   t.is(entry.filename, "/tmp/somewhere");
   t.is(entry.isCollection, false);
   t.is(entry.isBlob, true);
+  t.is(await entry.isEmpty(), true);
+
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
     baseDir: "/tmp",

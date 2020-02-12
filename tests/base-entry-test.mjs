@@ -1,11 +1,12 @@
 import test from "ava";
 import { BaseEntry } from "../src/base-entry.mjs";
 
-test("base entry create", t => {
+test("base entry create", async t => {
   const entry = new BaseEntry("somewhere");
   t.is(entry.name, "somewhere");
   t.is(entry.isCollection, false);
   t.is(entry.isBlob, false);
+  t.is(await entry.isEmpty(), true);
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
     isBlob: false,

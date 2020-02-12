@@ -5,6 +5,7 @@ test("content entry create", async t => {
   const entry = new ContentEntry("somewhere");
   t.is(entry.name, "somewhere");
   t.true(entry.isBlob);
+  t.is(await entry.isEmpty(), true);
   t.true((await entry.getTypes()).indexOf("public.content") === 0);
 });
 

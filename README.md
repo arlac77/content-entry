@@ -26,6 +26,7 @@ content entries for content containers (aka files)
     -   [Parameters](#parameters)
     -   [Properties](#properties)
     -   [getTypes](#gettypes)
+    -   [isEmpty](#isempty)
 -   [CollectionEntryMixin](#collectionentrymixin)
     -   [Parameters](#parameters-1)
 -   [EmptyContentEntry](#emptycontententry)
@@ -65,6 +66,10 @@ All names are asolute (no leading '/') the group seperator is '/'
 ### getTypes
 
 Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** UTI types
+
+### isEmpty
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if there is no content
 
 ## CollectionEntryMixin
 

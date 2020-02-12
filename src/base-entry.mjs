@@ -34,6 +34,13 @@ export class BaseEntry {
     return false;
   }
 
+  /**
+   * @return {boolean} true if there is no content
+   */
+  async isEmpty() {
+    return true;
+  }
+
   toJSON() {
     return {
       name: this.name,

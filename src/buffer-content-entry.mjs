@@ -6,4 +6,9 @@ export class BufferContentEntry extends BufferContentEntryMixin(ContentEntry) {
     super(name);
     Object.defineProperties(this, { buffer: { value: buffer } });
   }
+
+  async isEmpty() {
+    return this.buffer.length === 0;
+  }
+
 }

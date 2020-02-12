@@ -28,6 +28,11 @@ export function BufferContentEntryMixin(superclass) {
       return this.buffer;
     }
 
+    async isEmpty() {
+      const buffer = await this.getBuffer();
+      return buffer.length === 0;
+    }
+  
     /**
      * Deliver content as read stream
      * @return {ReadableStream} content
