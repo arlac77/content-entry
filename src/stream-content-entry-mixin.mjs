@@ -1,9 +1,8 @@
+const defaultStringOptions = { encoding: "utf8" };
+
 /**
  * Content entries where a stream is the primary data representation
  */
-
-const defaultStringOptions = { encoding: "utf8" };
-
 export function StreamContentEntryMixin(superclass) {
   return class StreamContentEntryMixin extends superclass {
     async getString(options = defaultStringOptions) {
@@ -16,11 +15,7 @@ export function StreamContentEntryMixin(superclass) {
     }
 
     async setString(value, options = defaultStringOptions) {
-      return new Promise(async (resolve, reject) => {
-        const stream = await this.getWriteStream(options);
-        stream.once("error", error => reject(error));
-        stream.end(value, () => resolve());
-      });
+      return this.setBufferOrString(value, options);
     }
 
     async getBuffer(options) {
@@ -33,10 +28,15 @@ export function StreamContentEntryMixin(superclass) {
     }
 
     async setBuffer(value, options) {
+      return this.setBufferOrString(value, options);
+    }
+
+    async setBufferOrString(value, options) {
       return new Promise(async (resolve, reject) => {
         const stream = await this.getWriteStream(options);
-        stream.once("error", error => reject(error));
-        stream.end(value, () => resolve());
+        stream.once("error", reject);
+        stream.once("finish", resolve);
+        stream.end(value);
       });
     }
   };
