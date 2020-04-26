@@ -4,6 +4,10 @@ import { ContentEntry } from "../src/content-entry.mjs";
 test("content entry create", async t => {
   const entry = new ContentEntry("somewhere");
   t.is(entry.name, "somewhere");
+  t.is(await entry.getString(), undefined);
+  t.is(await entry.getBuffer(), undefined);
+  t.is(await entry.getReadStream(), undefined);
+  t.is(entry.name, "somewhere");
   t.true(entry.isBlob);
   t.is(await entry.isEmpty(), true);
   t.true((await entry.getTypes()).indexOf("public.content") === 0);
