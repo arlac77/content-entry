@@ -11,10 +11,10 @@ export function StringContentEntryMixin(superclass) {
       return "utf8";
     }
 
-    async isEmpty() {
+    /*async isEmpty() {
       const string = await this.getString();
       return string.length === 0;
-    }
+    }*/
 
     /**
      * Deliver content as string
