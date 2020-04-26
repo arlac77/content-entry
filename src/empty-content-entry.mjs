@@ -20,7 +20,7 @@ export class EmptyContentEntry extends ContentEntry {
   }
 
   async getReadStream() {
-    if(!_empty) {
+    if (!_empty) {
       _empty = new EmptyStream();
     }
 

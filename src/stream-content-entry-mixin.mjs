@@ -18,10 +18,9 @@ export function StreamContentEntryMixin(superclass) {
     async setString(value, options = defaultStringOptions) {
       return new Promise(async (resolve, reject) => {
         const stream = await this.getWriteStream(options);
-        stream.once('error', (error) => reject(error));
+        stream.once("error", error => reject(error));
         stream.end(value, () => resolve());
-      }
-      );
+      });
     }
 
     async getBuffer(options) {
@@ -36,10 +35,9 @@ export function StreamContentEntryMixin(superclass) {
     async setBuffer(value, options) {
       return new Promise(async (resolve, reject) => {
         const stream = await this.getWriteStream(options);
-        stream.once('error', (error) => reject(error));
+        stream.once("error", error => reject(error));
         stream.end(value, () => resolve());
-      }
-      );
+      });
     }
   };
 }

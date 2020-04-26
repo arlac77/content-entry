@@ -24,6 +24,6 @@ test("base entry equals", async t => {
 });
 
 test("base entry create invalid name", t => {
-  t.throws(() => new BaseEntry("/somewhere") );
+  t.throws(() => new BaseEntry("/somewhere"));
   t.throws(() => new BaseEntry("somewhere\\abc"));
 });

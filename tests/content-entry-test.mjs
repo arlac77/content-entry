@@ -19,10 +19,9 @@ test("content entry equals", async t => {
 });
 
 test("content entry equalsContent", async t => {
-    const a = new ContentEntry("a");
-    const b = new ContentEntry("b");
-    t.true(await a.equalsContent(b));
-    t.true(await a.equalsContent(a));
-    t.true(await b.equalsContent(a));
-  });
-  
+  const a = new ContentEntry("a");
+  const b = new ContentEntry("b");
+  t.true(await a.equalsContent(b));
+  t.true(await a.equalsContent(a));
+  t.true(await b.equalsContent(a));
+});

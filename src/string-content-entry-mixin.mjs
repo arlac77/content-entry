@@ -15,7 +15,7 @@ export function StringContentEntryMixin(superclass) {
       const string = await this.getString();
       return string.length === 0;
     }
-  
+
     /**
      * Deliver content as string
      * @return {string} content
