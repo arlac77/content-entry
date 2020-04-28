@@ -40,5 +40,4 @@ export class FileSystemEntry extends StreamContentEntryMixin(ContentEntry) {
     json.baseDir = this.baseDir;
     return json;
   }
-
 }

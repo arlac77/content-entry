@@ -31,8 +31,8 @@ export class ContentEntry extends BaseEntry {
    */
   async equalsContent(other) {
     const [a, b] = await Promise.all([this.getBuffer(), other.getBuffer()]);
-  
-    if( a === undefined) {
+
+    if (a === undefined) {
       return a === b;
     }
 

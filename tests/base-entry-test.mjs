@@ -6,6 +6,7 @@ test("base entry create", async t => {
   t.is(entry.name, "somewhere");
   t.is(entry.isCollection, false);
   t.is(entry.isBlob, false);
+  t.deepEqual(await entry.getTypes(), []);
   t.is(await entry.isEmpty(), true);
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
@@ -24,6 +25,6 @@ test("base entry equals", async t => {
 });
 
 test("base entry create invalid name", t => {
-  t.throws(() => new BaseEntry("/somewhere") );
+  t.throws(() => new BaseEntry("/somewhere"));
   t.throws(() => new BaseEntry("somewhere\\abc"));
 });

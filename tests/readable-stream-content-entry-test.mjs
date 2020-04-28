@@ -10,7 +10,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 test("readable stream content entry create", async t => {
   const entry = new ReadableStreamContentEntry(
     "somewhere",
-    createReadStream(join(here, "fixtures", "file.txt"), { encoding: 'utf8'})
+    createReadStream(join(here, "fixtures", "file.txt"), { encoding: "utf8" })
   );
   t.is(entry.name, "somewhere");
   t.is(entry.isCollection, false);
@@ -23,7 +23,6 @@ test("readable stream content entry create", async t => {
   t.is(await entry.getString(), "abc\n");
 });
 
-
 test("readable stream content entry getBuffer", async t => {
   const entry = new ReadableStreamContentEntry(
     "somewhere",
@@ -31,7 +30,6 @@ test("readable stream content entry getBuffer", async t => {
   );
   t.is((await entry.getBuffer()).length, 4);
 });
-
 
 test("readable stream content entry equalsContent ReadableStreamContentEntry <> BufferContentEntry", async t => {
   const be = new BufferContentEntry("somewhere", Buffer.from("abc\n"));

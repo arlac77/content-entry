@@ -10,5 +10,4 @@ export class BufferContentEntry extends BufferContentEntryMixin(ContentEntry) {
   async isEmpty() {
     return this.buffer.length === 0;
   }
-
 }

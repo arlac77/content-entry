@@ -15,4 +15,12 @@ test("string content entry create", async t => {
   });
   t.is(await entry.getString(), "abc");
   t.is((await entry.getBuffer()).length, 3);
+
+  const stream = await entry.getReadStream();
+  const chunks = [];
+  for await( const chunk of stream) {
+    chunks.push(chunk);
+  }
+
+  t.is(chunks[0].length, 3);
 });
