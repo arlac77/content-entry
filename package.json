@@ -7,7 +7,6 @@
   "sideEffects": false,
   "type": "module",
   "main": "src/entry.mjs",
-  "module": "src/entry.mjs",
   "description": "content entries for content containers (aka files)",
   "keywords": [
     "content",
