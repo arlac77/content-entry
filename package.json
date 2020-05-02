@@ -8,7 +8,8 @@
   "type": "module",
   "main": "src/entry.mjs",
   "exports": {
-    ".": "./src/entry.mjs"
+    ".": "./src/entry.mjs",
+    "./": "./"
   },
   "description": "content entries for content containers (aka files)",
   "keywords": [
