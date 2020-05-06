@@ -4,6 +4,7 @@ import { BaseCollectionEntry } from "../src/base-collection-entry.mjs";
 test("collection entry create", async t => {
   const entry = new BaseCollectionEntry("somewhere");
   t.is(entry.name, "somewhere");
+  t.is(entry.unixMode, 0755);
   t.true(entry.isCollection);
   t.true((await entry.getTypes()).indexOf("public.directory") === 0);
 });
