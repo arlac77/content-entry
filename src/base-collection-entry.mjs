@@ -18,7 +18,7 @@ export function CollectionEntryMixin(superclass) {
      */
     get unixMode()
     {
-      return 0755;
+      return 493; // 0755;
     }
   };
 }

@@ -39,7 +39,7 @@ export class BaseEntry {
    */
   get unixMode()
   {
-    return 0644;
+    return 420; //0644;
   }
   
   /**
