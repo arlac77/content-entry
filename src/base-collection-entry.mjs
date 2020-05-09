@@ -12,6 +12,14 @@ export function CollectionEntryMixin(superclass) {
     async getTypes() {
       return ["public.directory"];
     }
+
+    /**
+     * Default unix mode for directories
+     */
+    get unixMode()
+    {
+      return 493; // 0755;
+    }
   };
 }
 

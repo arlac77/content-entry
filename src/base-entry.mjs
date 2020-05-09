@@ -35,6 +35,14 @@ export class BaseEntry {
   }
 
   /**
+   * Default unix mode for files
+   */
+  get unixMode()
+  {
+    return 420; //0644;
+  }
+  
+  /**
    * @return {boolean} true if there is no content
    */
   async isEmpty() {

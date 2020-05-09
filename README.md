@@ -24,6 +24,7 @@ content entries for content containers (aka files)
     -   [Parameters](#parameters)
     -   [Properties](#properties)
     -   [getTypes](#gettypes)
+    -   [unixMode](#unixmode)
     -   [isEmpty](#isempty)
 -   [CollectionEntryMixin](#collectionentrymixin)
     -   [Parameters](#parameters-1)
@@ -34,18 +35,19 @@ content entries for content containers (aka files)
 -   [BufferContentEntryMixin](#buffercontententrymixin)
     -   [Parameters](#parameters-3)
     -   [Properties](#properties-1)
--   [defaultStringOptions](#defaultstringoptions)
--   [StringContentEntryMixin](#stringcontententrymixin)
+-   [StreamContentEntryMixin](#streamcontententrymixin)
     -   [Parameters](#parameters-4)
+-   [StringContentEntryMixin](#stringcontententrymixin)
+    -   [Parameters](#parameters-5)
     -   [Properties](#properties-2)
 -   [ReadableStreamContentEntry](#readablestreamcontententry)
-    -   [Parameters](#parameters-5)
+    -   [Parameters](#parameters-6)
     -   [Properties](#properties-3)
 -   [StringContentEntry](#stringcontententry)
-    -   [Parameters](#parameters-6)
+    -   [Parameters](#parameters-7)
     -   [Properties](#properties-4)
 -   [FileSystemEntry](#filesystementry)
-    -   [Parameters](#parameters-7)
+    -   [Parameters](#parameters-8)
     -   [filename](#filename)
 
 ## BaseEntry
@@ -64,6 +66,10 @@ All names are asolute (no leading '/') the group seperator is '/'
 ### getTypes
 
 Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** UTI types
+
+### unixMode
+
+Default unix mode for files
 
 ### isEmpty
 
@@ -111,9 +117,13 @@ Content entries where a Buffer is the primary data representation
 
 -   `buffer` **[Buffer](https://nodejs.org/api/buffer.html)** 
 
-## defaultStringOptions
+## StreamContentEntryMixin
 
 Content entries where a stream is the primary data representation
+
+### Parameters
+
+-   `superclass`  
 
 ## StringContentEntryMixin
 
