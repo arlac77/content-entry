@@ -1,5 +1,5 @@
 import test from "ava";
-import { BaseEntry } from "../src/base-entry.mjs";
+import { BaseEntry } from "content-entry";
 
 test("base entry create", async t => {
   const entry = new BaseEntry("somewhere");

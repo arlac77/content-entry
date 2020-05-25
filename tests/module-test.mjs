@@ -1,5 +1,5 @@
 import test from "ava";
-import { BaseEntry, BaseCollectionEntry } from "../src/entry.mjs";
+import { BaseEntry, BaseCollectionEntry } from "content-entry";
 
 test("exports present", t => {
   const e1 = new BaseEntry("somewhere");

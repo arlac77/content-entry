@@ -1,5 +1,5 @@
 import test from "ava";
-import { StringContentEntry } from "../src/string-content-entry.mjs";
+import { StringContentEntry } from "content-entry";
 
 test("string content entry create", async t => {
   const entry = new StringContentEntry("somewhere", "abc");

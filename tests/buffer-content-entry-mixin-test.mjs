@@ -1,6 +1,5 @@
 import test from "ava";
-import { ContentEntry } from "../src/content-entry.mjs";
-import { BufferContentEntryMixin } from "../src/buffer-content-entry-mixin.mjs";
+import { BufferContentEntryMixin, ContentEntry } from "content-entry";
 
 export class TestBufferContentEntry extends BufferContentEntryMixin(
   ContentEntry

@@ -1,8 +1,6 @@
 import test from "ava";
 import { Writable } from "stream";
-
-import { ContentEntry } from "../src/content-entry.mjs";
-import { StreamContentEntryMixin } from "../src/stream-content-entry-mixin.mjs";
+import { ContentEntry, StreamContentEntryMixin } from "content-entry";
 
 class AlwaysFailingTestWritable extends Writable {
   _write(chunk, encoding, callback) {

@@ -1,8 +1,7 @@
 import test from "ava";
 import { Readable } from "stream";
 
-import { ContentEntry } from "../src/content-entry.mjs";
-import { StreamContentEntryMixin } from "../src/stream-content-entry-mixin.mjs";
+import { ContentEntry, StreamContentEntryMixin } from "content-entry";
 
 class TestReadable extends Readable {
   constructor(chunks) {

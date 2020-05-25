@@ -2,7 +2,7 @@ import test from "ava";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
-import { FileSystemEntry } from "../src/file-system-entry.mjs";
+import { FileSystemEntry } from "content-entry";
 
 const here = dirname(fileURLToPath(import.meta.url));
 

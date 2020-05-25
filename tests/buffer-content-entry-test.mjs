@@ -1,5 +1,5 @@
 import test from "ava";
-import { BufferContentEntry } from "../src/buffer-content-entry.mjs";
+import { BufferContentEntry } from "content-entry";
 
 test("buffer content entry create", async t => {
   const entry = new BufferContentEntry("somewhere", Buffer.from("abc"));

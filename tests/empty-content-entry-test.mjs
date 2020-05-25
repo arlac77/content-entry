@@ -1,5 +1,5 @@
 import test from "ava";
-import { EmptyContentEntry } from "../src/empty-content-entry.mjs";
+import { EmptyContentEntry } from "content-entry";
 
 test("empty content entry create", async t => {
   const entry = new EmptyContentEntry("somewhere");

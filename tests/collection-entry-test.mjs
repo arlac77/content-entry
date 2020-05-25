@@ -1,5 +1,5 @@
 import test from "ava";
-import { BaseCollectionEntry } from "../src/base-collection-entry.mjs";
+import { BaseCollectionEntry } from "content-entry";
 
 test("collection entry create", async t => {
   const entry = new BaseCollectionEntry("somewhere");

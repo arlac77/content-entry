@@ -2,8 +2,7 @@ import test from "ava";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { createReadStream } from "fs";
-import { BufferContentEntry } from "../src/buffer-content-entry.mjs";
-import { ReadableStreamContentEntry } from "../src/readable-stream-content-entry.mjs";
+import { BufferContentEntry, ReadableStreamContentEntry } from "content-entry";
 
 const here = dirname(fileURLToPath(import.meta.url));
 
