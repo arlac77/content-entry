@@ -1,6 +1,6 @@
 /**
  * Representation of one file or directory entry
- * All names are asolute (no leading '/') the group seperator is '/'
+ * All names are absolute (no leading '/') the group seperator is '/'
  * @property {string} name name inside of the container
  *
  * @param {string} name name inside of the container
