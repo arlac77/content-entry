@@ -8,4 +8,3 @@ export * from "./string-content-entry-mixin.mjs";
 export * from "./readable-stream-content-entry.mjs";
 export * from "./buffer-content-entry.mjs";
 export * from "./string-content-entry.mjs";
-export * from "./file-system-entry.mjs";
