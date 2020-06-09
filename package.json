@@ -13,10 +13,10 @@
   "description": "content entries for content containers (aka files)",
   "keywords": [
     "content",
-    "file",
-    "stat",
     "directory",
-    "filesystem"
+    "file",
+    "filesystem",
+    "stat"
   ],
   "contributors": [
     {
