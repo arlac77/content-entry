@@ -20,18 +20,18 @@ content entries for content containers (aka files)
 
 ### Table of Contents
 
+-   [ContentEntry](#contententry)
+    -   [equalsContent](#equalscontent)
+        -   [Parameters](#parameters)
 -   [BaseEntry](#baseentry)
-    -   [Parameters](#parameters)
+    -   [Parameters](#parameters-1)
     -   [Properties](#properties)
     -   [getTypes](#gettypes)
     -   [unixMode](#unixmode)
     -   [isEmpty](#isempty)
 -   [CollectionEntryMixin](#collectionentrymixin)
-    -   [Parameters](#parameters-1)
+    -   [Parameters](#parameters-2)
 -   [EmptyContentEntry](#emptycontententry)
--   [ContentEntry](#contententry)
-    -   [equalsContent](#equalscontent)
-        -   [Parameters](#parameters-2)
 -   [BufferContentEntryMixin](#buffercontententrymixin)
     -   [Parameters](#parameters-3)
     -   [Properties](#properties-1)
@@ -46,14 +46,27 @@ content entries for content containers (aka files)
 -   [StringContentEntry](#stringcontententry)
     -   [Parameters](#parameters-7)
     -   [Properties](#properties-4)
--   [FileSystemEntry](#filesystementry)
-    -   [Parameters](#parameters-8)
-    -   [filename](#filename)
+
+## ContentEntry
+
+**Extends BaseEntry**
+
+general content access entries
+
+### equalsContent
+
+compare content against other entry
+
+#### Parameters
+
+-   `other` **Entry** 
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if other has the same content (bitwise)
 
 ## BaseEntry
 
 Representation of one file or directory entry
-All names are asolute (no leading '/') the group seperator is '/'
+All names are absolute (no leading '/') the group seperator is '/'
 
 ### Parameters
 
@@ -88,22 +101,6 @@ brings directory attributes to entries
 **Extends ContentEntry**
 
 represents a entry without content (content length = 0)
-
-## ContentEntry
-
-**Extends BaseEntry**
-
-general content access entries
-
-### equalsContent
-
-compare content against other entry
-
-#### Parameters
-
--   `other` **Entry** 
-
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if other has the same content (bitwise)
 
 ## BufferContentEntryMixin
 
@@ -168,21 +165,6 @@ Content entries where a string is the primary data representation
 
 -   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `string` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
-
-## FileSystemEntry
-
-**Extends StreamContentEntryMixin(ContentEntry)**
-
-A content entry backed by a file
-
-### Parameters
-
--   `name`  
--   `baseDir`  
-
-### filename
-
-absolute file path
 
 # install
 
