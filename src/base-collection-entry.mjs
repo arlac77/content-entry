@@ -1,7 +1,7 @@
 import { BaseEntry } from "./base-entry.mjs";
 
 /**
- * brings directory attributes to entries
+ * Brings directory attributes to entries
  */
 export function CollectionEntryMixin(superclass) {
   return class CollectionEntryMixin extends superclass {
@@ -15,6 +15,7 @@ export function CollectionEntryMixin(superclass) {
 
     /**
      * Default unix mode for directories
+     * @return {number} 0755
      */
     get unixMode()
     {

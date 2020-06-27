@@ -36,6 +36,7 @@ export class BaseEntry {
 
   /**
    * Default unix mode for files
+   * @return {number} 0644
    */
   get unixMode()
   {
