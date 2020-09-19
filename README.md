@@ -84,13 +84,15 @@ Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Gl
 
 Default unix mode for files
 
+Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 0644
+
 ### isEmpty
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if there is no content
 
 ## CollectionEntryMixin
 
-brings directory attributes to entries
+Brings directory attributes to entries
 
 ### Parameters
 
