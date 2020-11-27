@@ -50,6 +50,13 @@ export class BaseEntry {
     return true;
   }
 
+  /**
+   * @return true if we represent a deleted entry
+   */
+  async isDeleted() {
+    return false;
+  }
+
   toJSON() {
     return {
       name: this.name,

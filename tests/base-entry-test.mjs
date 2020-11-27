@@ -6,6 +6,7 @@ test("base entry create", async t => {
   t.is(entry.name, "somewhere");
   t.is(entry.isCollection, false);
   t.is(entry.isBlob, false);
+  t.is(entry.isDeleted, false);
   t.is(entry.unixMode, parseInt("644",8));
   t.deepEqual(await entry.getTypes(), []);
   t.is(await entry.isEmpty(), true);
