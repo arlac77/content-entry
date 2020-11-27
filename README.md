@@ -24,9 +24,12 @@ content entries for content containers (aka files)
     -   [getTypes](#gettypes)
     -   [unixMode](#unixmode)
     -   [isEmpty](#isempty)
+    -   [isDeleted](#isdeleted)
 -   [CollectionEntryMixin](#collectionentrymixin)
     -   [Parameters](#parameters-2)
 -   [EmptyContentEntry](#emptycontententry)
+-   [DeletedContentEntry](#deletedcontententry)
+    -   [isDeleted](#isdeleted-1)
 -   [BufferContentEntryMixin](#buffercontententrymixin)
     -   [Parameters](#parameters-3)
     -   [Properties](#properties-1)
@@ -38,15 +41,17 @@ content entries for content containers (aka files)
 -   [ReadableStreamContentEntry](#readablestreamcontententry)
     -   [Parameters](#parameters-6)
     -   [Properties](#properties-3)
--   [StringContentEntry](#stringcontententry)
+-   [BufferContentEntry](#buffercontententry)
     -   [Parameters](#parameters-7)
+-   [StringContentEntry](#stringcontententry)
+    -   [Parameters](#parameters-8)
     -   [Properties](#properties-4)
 
 ## ContentEntry
 
 **Extends BaseEntry**
 
-general content access entries
+General content access entries
 
 ### equalsContent
 
@@ -85,9 +90,13 @@ Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if there is no content
 
+### isDeleted
+
+Returns **any** true if we represent a deleted entry
+
 ## CollectionEntryMixin
 
-Brings directory attributes to entries
+Brings directory attributes to entries.
 
 ### Parameters
 
@@ -97,11 +106,23 @@ Brings directory attributes to entries
 
 **Extends ContentEntry**
 
-represents a entry without content (content length = 0)
+Represents a entry without content (content length = 0).
+
+## DeletedContentEntry
+
+**Extends EmptyContentEntry**
+
+Represents a deleted entry.
+
+### isDeleted
+
+We are always deleted
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true
 
 ## BufferContentEntryMixin
 
-Content entries where a Buffer is the primary data representation
+Content entries where a Buffer is the primary data representation.
 
 ### Parameters
 
@@ -113,7 +134,7 @@ Content entries where a Buffer is the primary data representation
 
 ## StreamContentEntryMixin
 
-Content entries where a stream is the primary data representation
+Content entries where a stream is the primary data representation.
 
 ### Parameters
 
@@ -121,7 +142,7 @@ Content entries where a stream is the primary data representation
 
 ## StringContentEntryMixin
 
-Content entries where a string is the primary data representation
+Content entries where a string is the primary data representation.
 
 ### Parameters
 
@@ -135,7 +156,7 @@ Content entries where a string is the primary data representation
 
 **Extends StreamContentEntryMixin(ContentEntry)**
 
-Content entries where a readable stream is the primary data representation
+Content entries where a readable stream is the primary data representation.
 
 ### Parameters
 
@@ -147,11 +168,20 @@ Content entries where a readable stream is the primary data representation
 -   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `readStream` **ReadableStream** 
 
+## BufferContentEntry
+
+**Extends BufferContentEntryMixin(ContentEntry)**
+
+### Parameters
+
+-   `name`  
+-   `buffer`  
+
 ## StringContentEntry
 
 **Extends StringContentEntryMixin(ContentEntry)**
 
-Content entries where a string is the primary data representation
+Content entries where a string is the primary data representation.
 
 ### Parameters
 
