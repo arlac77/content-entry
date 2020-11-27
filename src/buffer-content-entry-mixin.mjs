@@ -1,14 +1,14 @@
 import { toReadableStream } from "./util.mjs";
 
 /**
- * Content entries where a Buffer is the primary data representation
+ * Content entries where a Buffer is the primary data representation.
  * @property {Buffer} buffer
  *
  */
 export function BufferContentEntryMixin(superclass) {
   return class BufferContentEntryMixin extends superclass {
     /**
-     * the default encoding used to convert conent to strings
+     * The default encoding used to convert conent to strings.
      * @return {string}
      */
     get encoding() {
@@ -33,7 +33,7 @@ export function BufferContentEntryMixin(superclass) {
     }
 
     /**
-     * Deliver content as read stream
+     * Deliver content as read stream.
      * @return {ReadableStream} content
      */
     async getReadStream() {

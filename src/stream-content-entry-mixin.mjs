@@ -1,7 +1,7 @@
 const defaultStringOptions = { encoding: "utf8" };
 
 /**
- * Content entries where a stream is the primary data representation
+ * Content entries where a stream is the primary data representation.
  */
 export function StreamContentEntryMixin(superclass) {
   return class StreamContentEntryMixin extends superclass {

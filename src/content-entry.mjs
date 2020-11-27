@@ -1,7 +1,7 @@
 import { BaseEntry } from "./base-entry.mjs";
 
 /**
- * general content access entries
+ * General content access entries
  */
 export class ContentEntry extends BaseEntry {
   get isBlob() {

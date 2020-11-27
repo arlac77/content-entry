@@ -8,7 +8,7 @@ class EmptyStream extends Readable {
 let _empty;
 
 /**
- * represents a entry without content (content length = 0)
+ * Represents a entry without content (content length = 0).
  */
 export class EmptyContentEntry extends ContentEntry {
   async getString() {

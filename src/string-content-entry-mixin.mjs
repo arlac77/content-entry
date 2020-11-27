@@ -1,7 +1,7 @@
 import { toReadableStream } from "./util.mjs";
 
 /**
- * Content entries where a string is the primary data representation
+ * Content entries where a string is the primary data representation.
  * @property {string} string
  *
  */
