@@ -38,11 +38,10 @@ export class BaseEntry {
    * Default unix mode for files
    * @return {number} 0644
    */
-  get unixMode()
-  {
+  get unixMode() {
     return 420; //0644;
   }
-  
+
   /**
    * @return {boolean} true if there is no content
    */
@@ -53,7 +52,7 @@ export class BaseEntry {
   /**
    * @return true if we represent a deleted entry
    */
-  async isDeleted() {
+  get isDeleted() {
     return false;
   }
 

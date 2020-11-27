@@ -1,12 +1,12 @@
 import test from "ava";
-import { EmptyContentEntry } from "content-entry";
+import { DeletedContentEntry } from "content-entry";
 
-test("empty content entry create", async t => {
-  const entry = new EmptyContentEntry("somewhere");
+test("deleted content entry create", async t => {
+  const entry = new DeletedContentEntry("somewhere");
   t.is(entry.name, "somewhere");
   t.is(entry.isCollection, false);
   t.is(entry.isBlob, true);
-  t.is(entry.isDeleted, false);
+  t.is(entry.isDeleted, true);
   t.is(await entry.isEmpty(), true);
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
