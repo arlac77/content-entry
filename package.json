@@ -6,7 +6,7 @@
   },
   "sideEffects": false,
   "exports": {
-    ".": "./src/entry.mjs"
+    ".": "./src/index.mjs"
   },
   "description": "content entries for content containers (aka files)",
   "keywords": [
