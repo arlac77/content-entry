@@ -1,7 +1,7 @@
 import { BaseEntry } from "./base-entry.mjs";
 
 /**
- * General content access entries
+ * General content access entries.
  */
 export class ContentEntry extends BaseEntry {
   get isBlob() {
@@ -25,7 +25,7 @@ export class ContentEntry extends BaseEntry {
   }
 
   /**
-   * compare content against other entry
+   * Compare content against other entry.
    * @param {Entry} other
    * @return {boolean} true if other has the same content (bitwise)
    */
