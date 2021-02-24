@@ -6,7 +6,7 @@ import { EmptyContentEntry } from "./empty-content-entry.mjs";
 export class DeletedContentEntry extends EmptyContentEntry {
 
   /**
-   * We are always deleted
+   * We are always deleted.
    *
    * @return {boolean} true
    */
