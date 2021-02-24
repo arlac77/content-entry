@@ -5,6 +5,10 @@ import { BaseEntry } from "./base-entry.mjs";
  */
 export function CollectionEntryMixin(superclass) {
   return class CollectionEntryMixin extends superclass {
+
+    /**
+     * @return {boolean} always true
+     */
     get isCollection() {
       return true;
     }
