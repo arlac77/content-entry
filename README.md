@@ -108,8 +108,8 @@ Content entries where a Buffer is the primary data representation.
 
 ### Parameters
 
--   `name`  
--   `buffer`  
+-   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `buffer` **[Buffer](https://nodejs.org/api/buffer.html)** 
 
 ## ContentEntry
 
@@ -135,7 +135,7 @@ Represents a deleted entry.
 
 ### isDeleted
 
-We are always deleted
+We are always deleted.
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true
 
