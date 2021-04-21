@@ -3,7 +3,7 @@
 [![minified size](https://badgen.net/bundlephobia/min/content-entry)](https://bundlephobia.com/result?p=content-entry)
 [![downloads](http://img.shields.io/npm/dm/content-entry.svg?style=flat-square)](https://npmjs.org/package/content-entry)
 [![GitHub Issues](https://img.shields.io/github/issues/arlac77/content-entry.svg?style=flat-square)](https://github.com/arlac77/content-entry/issues)
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Farlac77%2Fcontent-entry%2Fbadge&style=flat)](https://actions-badge.atrox.dev/arlac77/content-entry/goto)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Farlac77%2Fcontent-entry%2Fbadge\&style=flat)](https://actions-badge.atrox.dev/arlac77/content-entry/goto)
 [![Styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Known Vulnerabilities](https://snyk.io/test/github/arlac77/content-entry/badge.svg)](https://snyk.io/test/github/arlac77/content-entry)
@@ -19,37 +19,37 @@ content entries for content containers (aka files)
 
 ### Table of Contents
 
--   [CollectionEntryMixin](#collectionentrymixin)
-    -   [Parameters](#parameters)
--   [BaseEntry](#baseentry)
-    -   [Parameters](#parameters-1)
-    -   [Properties](#properties)
-    -   [getTypes](#gettypes)
-    -   [unixMode](#unixmode)
-    -   [isEmpty](#isempty)
-    -   [isDeleted](#isdeleted)
--   [BufferContentEntryMixin](#buffercontententrymixin)
-    -   [Parameters](#parameters-2)
-    -   [Properties](#properties-1)
--   [BufferContentEntry](#buffercontententry)
-    -   [Parameters](#parameters-3)
--   [ContentEntry](#contententry)
-    -   [equalsContent](#equalscontent)
-        -   [Parameters](#parameters-4)
--   [DeletedContentEntry](#deletedcontententry)
-    -   [isDeleted](#isdeleted-1)
--   [EmptyContentEntry](#emptycontententry)
--   [ReadableStreamContentEntry](#readablestreamcontententry)
-    -   [Parameters](#parameters-5)
-    -   [Properties](#properties-2)
--   [StreamContentEntryMixin](#streamcontententrymixin)
-    -   [Parameters](#parameters-6)
--   [StringContentEntryMixin](#stringcontententrymixin)
-    -   [Parameters](#parameters-7)
-    -   [Properties](#properties-3)
--   [StringContentEntry](#stringcontententry)
-    -   [Parameters](#parameters-8)
-    -   [Properties](#properties-4)
+*   [CollectionEntryMixin](#collectionentrymixin)
+    *   [Parameters](#parameters)
+*   [BaseEntry](#baseentry)
+    *   [Parameters](#parameters-1)
+    *   [Properties](#properties)
+    *   [getTypes](#gettypes)
+    *   [unixMode](#unixmode)
+    *   [isEmpty](#isempty)
+    *   [isDeleted](#isdeleted)
+*   [BufferContentEntryMixin](#buffercontententrymixin)
+    *   [Parameters](#parameters-2)
+    *   [Properties](#properties-1)
+*   [BufferContentEntry](#buffercontententry)
+    *   [Parameters](#parameters-3)
+*   [ContentEntry](#contententry)
+    *   [equalsContent](#equalscontent)
+        *   [Parameters](#parameters-4)
+*   [DeletedContentEntry](#deletedcontententry)
+    *   [isDeleted](#isdeleted-1)
+*   [EmptyContentEntry](#emptycontententry)
+*   [ReadableStreamContentEntry](#readablestreamcontententry)
+    *   [Parameters](#parameters-5)
+    *   [Properties](#properties-2)
+*   [StreamContentEntryMixin](#streamcontententrymixin)
+    *   [Parameters](#parameters-6)
+*   [StringContentEntryMixin](#stringcontententrymixin)
+    *   [Parameters](#parameters-7)
+    *   [Properties](#properties-3)
+*   [StringContentEntry](#stringcontententry)
+    *   [Parameters](#parameters-8)
+    *   [Properties](#properties-4)
 
 ## CollectionEntryMixin
 
@@ -57,7 +57,7 @@ Brings directory attributes to entries.
 
 ### Parameters
 
--   `superclass`  
+*   `superclass`  
 
 ## BaseEntry
 
@@ -66,15 +66,15 @@ All names are absolute (no leading '/') the group seperator is '/'.
 
 ### Parameters
 
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** name inside of the container
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** name inside of the container
 
 ### Properties
 
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** name inside of the container
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** name inside of the container
 
 ### getTypes
 
-Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** UTI types
+Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** UTI types
 
 ### unixMode
 
@@ -96,11 +96,11 @@ Content entries where a Buffer is the primary data representation.
 
 ### Parameters
 
--   `superclass`  
+*   `superclass`  
 
 ### Properties
 
--   `buffer` **[Buffer](https://nodejs.org/api/buffer.html)** 
+*   `buffer` **[Buffer](https://nodejs.org/api/buffer.html)** 
 
 ## BufferContentEntry
 
@@ -108,8 +108,8 @@ Content entries where a Buffer is the primary data representation.
 
 ### Parameters
 
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `buffer` **[Buffer](https://nodejs.org/api/buffer.html)** 
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `buffer` **[Buffer](https://nodejs.org/api/buffer.html)** 
 
 ## ContentEntry
 
@@ -123,7 +123,7 @@ Compare content against other entry.
 
 #### Parameters
 
--   `other` **Entry** 
+*   `other` **Entry** 
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if other has the same content (bitwise)
 
@@ -153,13 +153,13 @@ Content entries where a readable stream is the primary data representation.
 
 ### Parameters
 
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `readStream` **ReadableStream** 
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `readStream` **ReadableStream** 
 
 ### Properties
 
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `readStream` **ReadableStream** 
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `readStream` **ReadableStream** 
 
 ## StreamContentEntryMixin
 
@@ -167,7 +167,7 @@ Content entries where a stream is the primary data representation.
 
 ### Parameters
 
--   `superclass`  
+*   `superclass`  
 
 ## StringContentEntryMixin
 
@@ -175,11 +175,11 @@ Content entries where a string is the primary data representation.
 
 ### Parameters
 
--   `superclass`  
+*   `superclass`  
 
 ### Properties
 
--   `string` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `string` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 ## StringContentEntry
 
@@ -189,13 +189,13 @@ Content entries where a string is the primary data representation.
 
 ### Parameters
 
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 ### Properties
 
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `string` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `string` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 # install
 
