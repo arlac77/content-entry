@@ -39,6 +39,8 @@ content entries for content containers (aka files)
 *   [DeletedContentEntry](#deletedcontententry)
     *   [isDeleted](#isdeleted-1)
 *   [EmptyContentEntry](#emptycontententry)
+    *   [getBuffer](#getbuffer)
+    *   [getReadStream](#getreadstream)
 *   [ReadableStreamContentEntry](#readablestreamcontententry)
     *   [Parameters](#parameters-5)
     *   [Properties](#properties-2)
@@ -144,6 +146,14 @@ Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 **Extends ContentEntry**
 
 Represents a entry without content (content length = 0).
+
+### getBuffer
+
+Returns **[Buffer](https://nodejs.org/api/buffer.html)** zero length buffer
+
+### getReadStream
+
+Returns **Readable** zero length stream.
 
 ## ReadableStreamContentEntry
 
