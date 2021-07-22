@@ -1,11 +1,5 @@
 import { ContentEntry } from "./content-entry.mjs";
-import { Readable } from "stream";
-
-class EmptyStream extends Readable {
-  _read() {}
-}
-
-let _empty;
+import { emptyReadable } from "./util.mjs";
 
 /**
  * Represents a entry without content (content length = 0).
@@ -15,15 +9,17 @@ export class EmptyContentEntry extends ContentEntry {
     return "";
   }
 
+  /**
+   * @return {Buffer} zero length buffer
+   */
   async getBuffer() {
     return Buffer.alloc(0);
   }
 
+  /**
+   * @returns {Readable} zero length stream.
+   */
   async getReadStream() {
-    if (!_empty) {
-      _empty = new EmptyStream();
-    }
-
-    return _empty;
+    return emptyReadable();
   }
 }

@@ -1,5 +1,20 @@
 import { Readable } from "stream";
 
+class EmptyReadable extends Readable {
+  _read() {}
+}
+
+let _emptyReadable;
+
+export function emptyReadable()
+{
+  if (!_emptyReadable) {
+    _emptyReadable = new EmptyReadable();
+  }
+
+  return _emptyReadable;
+}
+
 export const toReadableStream = input =>
   new Readable({
     read() {
