@@ -6,7 +6,12 @@
   },
   "sideEffects": false,
   "exports": {
-    ".": "./src/index.mjs"
+    "node" : {
+      "import" : "./src/node/index.mjs"
+    },
+    "browser" : {
+      "import" : "./src/node/index.mjs"
+    }
   },
   "description": "content entries for content containers (aka files)",
   "keywords": [

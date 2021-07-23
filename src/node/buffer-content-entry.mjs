@@ -1,5 +1,5 @@
 import { BufferContentEntryMixin } from "./buffer-content-entry-mixin.mjs";
-import { ContentEntry } from "./content-entry.mjs";
+import { ContentEntry } from "../content-entry.mjs";
 
 /**
  * @param {string} name
