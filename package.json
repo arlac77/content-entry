@@ -6,11 +6,12 @@
   },
   "sideEffects": false,
   "exports": {
-    "node" : {
-      "import" : "./src/node/index.mjs"
+    ".": "{{main}}",
+    "browser": {
+      "import": "./src/node/index.mjs"
     },
-    "browser" : {
-      "import" : "./src/node/index.mjs"
+    "node": {
+      "import": "./src/node/index.mjs"
     }
   },
   "description": "content entries for content containers (aka files)",
