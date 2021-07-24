@@ -7,7 +7,7 @@
   "sideEffects": false,
   "exports": {
     "browser": {
-      "import": "./src/node/index.mjs"
+      "import": "./src/browser/index.mjs"
     },
     "node": {
       "import": "./src/node/index.mjs"
