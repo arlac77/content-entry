@@ -6,7 +6,6 @@
   },
   "sideEffects": false,
   "exports": {
-    ".": "{{main}}",
     "browser": {
       "import": "./src/node/index.mjs"
     },
