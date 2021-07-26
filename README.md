@@ -19,86 +19,70 @@ content entries for content containers (aka files)
 
 ### Table of Contents
 
-*   [CollectionEntryMixin](#collectionentrymixin)
+*   [BaseEntry](#baseentry)
     *   [Parameters](#parameters)
-*   [DeletedContentEntry](#deletedcontententry)
-    *   [isDeleted](#isdeleted)
-*   [StreamContentEntryMixin](#streamcontententrymixin)
-    *   [Parameters](#parameters-1)
-*   [ReadableStreamContentEntry](#readablestreamcontententry)
-    *   [Parameters](#parameters-2)
     *   [Properties](#properties)
-*   [BufferContentEntryMixin](#buffercontententrymixin)
+    *   [getTypes](#gettypes)
+    *   [unixMode](#unixmode)
+    *   [isEmpty](#isempty)
+    *   [isDeleted](#isdeleted)
+*   [CollectionEntryMixin](#collectionentrymixin)
+    *   [Parameters](#parameters-1)
+*   [DeletedContentEntry](#deletedcontententry)
+    *   [isDeleted](#isdeleted-1)
+*   [StreamContentEntryMixin](#streamcontententrymixin)
+    *   [Parameters](#parameters-2)
+*   [ReadableStreamContentEntry](#readablestreamcontententry)
     *   [Parameters](#parameters-3)
     *   [Properties](#properties-1)
 *   [BufferContentEntryMixin](#buffercontententrymixin)
     *   [Parameters](#parameters-4)
     *   [Properties](#properties-2)
 *   [BufferContentEntry](#buffercontententry)
-    *   [Parameters](#parameters-4)
+    *   [Parameters](#parameters-5)
+*   [ContentEntry](#contententry)
+    *   [equalsContent](#equalscontent)
+        *   [Parameters](#parameters-6)
 *   [EmptyContentEntry](#emptycontententry)
     *   [getBuffer](#getbuffer)
     *   [getReadStream](#getreadstream)
 *   [StringContentEntryMixin](#stringcontententrymixin)
-    *   [Parameters](#parameters-5)
-    *   [Properties](#properties-2)
-*   [StringContentEntry](#stringcontententry)
-    *   [Parameters](#parameters-6)
+    *   [Parameters](#parameters-7)
     *   [Properties](#properties-3)
-*   [ContentEntry](#contententry)
-    *   [equalsContent](#equalscontent)
-        *   [Parameters](#parameters-7)
-*   [BaseEntry](#baseentry)
+*   [StringContentEntry](#stringcontententry)
     *   [Parameters](#parameters-8)
     *   [Properties](#properties-4)
-    *   [getTypes](#gettypes)
-    *   [unixMode](#unixmode)
-    *   [isEmpty](#isempty)
-    *   [isDeleted](#isdeleted-1)
 
-## CollectionEntryMixin
+## BaseEntry
 
-Brings directory attributes to entries.
+Representation of one file or directory entry.
+All names are absolute (no leading '/') the group seperator is '/'.
 
 ### Parameters
 
-*   `superclass`  
-
-## DeletedContentEntry
-
-**Extends EmptyContentEntry**
-
-Represents a deleted entry.
-
-### isDeleted
-
-We are always deleted.
-
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true
-
-## StreamContentEntryMixin
-
-Content entries where a stream is the primary data representation.
-
-### Parameters
-
-*   `superclass`  
-
-## ReadableStreamContentEntry
-
-**Extends StreamContentEntryMixin(ContentEntry)**
-
-Content entries where a readable stream is the primary data representation.
-
-### Parameters
-
-*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
-*   `readStream` **ReadableStream** 
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** name inside of the container
 
 ### Properties
 
-*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
-*   `readStream` **ReadableStream** 
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** name inside of the container
+
+### getTypes
+
+Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** UTI types
+
+### unixMode
+
+Default unix mode for files
+
+Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 0644
+
+### isEmpty
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if there is no content
+
+### isDeleted
+
+Returns **any** true if we represent a deleted entry
 
 ## CollectionEntryMixin
 
@@ -165,6 +149,22 @@ Content entries where a Buffer is the primary data representation.
 *   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 *   `buffer` **[Buffer](https://nodejs.org/api/buffer.html)** 
 
+## ContentEntry
+
+**Extends BaseEntry**
+
+General content access entries.
+
+### equalsContent
+
+Compare content against other entry.
+
+#### Parameters
+
+*   `other` **Entry** 
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if other has the same content (bitwise)
+
 ## EmptyContentEntry
 
 **Extends ContentEntry**
@@ -206,53 +206,6 @@ Content entries where a string is the primary data representation.
 
 *   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 *   `string` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
-
-## ContentEntry
-
-**Extends BaseEntry**
-
-General content access entries.
-
-### equalsContent
-
-Compare content against other entry.
-
-#### Parameters
-
-*   `other` **Entry** 
-
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if other has the same content (bitwise)
-
-## BaseEntry
-
-Representation of one file or directory entry.
-All names are absolute (no leading '/') the group seperator is '/'.
-
-### Parameters
-
-*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** name inside of the container
-
-### Properties
-
-*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** name inside of the container
-
-### getTypes
-
-Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** UTI types
-
-### unixMode
-
-Default unix mode for files
-
-Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 0644
-
-### isEmpty
-
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if there is no content
-
-### isDeleted
-
-Returns **any** true if we represent a deleted entry
 
 # install
 
