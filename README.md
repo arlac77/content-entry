@@ -19,39 +19,47 @@ content entries for content containers (aka files)
 
 ### Table of Contents
 
-*   [BaseEntry](#baseentry)
+*   [CollectionEntryMixin](#collectionentrymixin)
     *   [Parameters](#parameters)
+*   [BaseEntry](#baseentry)
+    *   [Parameters](#parameters-1)
     *   [Properties](#properties)
     *   [getTypes](#gettypes)
     *   [unixMode](#unixmode)
     *   [isEmpty](#isempty)
     *   [isDeleted](#isdeleted)
-*   [CollectionEntryMixin](#collectionentrymixin)
-    *   [Parameters](#parameters-1)
-*   [DeletedContentEntry](#deletedcontententry)
-    *   [isDeleted](#isdeleted-1)
-*   [StreamContentEntryMixin](#streamcontententrymixin)
-    *   [Parameters](#parameters-2)
-*   [ReadableStreamContentEntry](#readablestreamcontententry)
-    *   [Parameters](#parameters-3)
-    *   [Properties](#properties-1)
 *   [BufferContentEntryMixin](#buffercontententrymixin)
-    *   [Parameters](#parameters-4)
-    *   [Properties](#properties-2)
+    *   [Parameters](#parameters-2)
+    *   [Properties](#properties-1)
 *   [BufferContentEntry](#buffercontententry)
-    *   [Parameters](#parameters-5)
+    *   [Parameters](#parameters-3)
 *   [ContentEntry](#contententry)
     *   [equalsContent](#equalscontent)
-        *   [Parameters](#parameters-6)
+        *   [Parameters](#parameters-4)
+*   [DeletedContentEntry](#deletedcontententry)
+    *   [isDeleted](#isdeleted-1)
 *   [EmptyContentEntry](#emptycontententry)
     *   [getBuffer](#getbuffer)
     *   [getReadStream](#getreadstream)
+*   [ReadableStreamContentEntry](#readablestreamcontententry)
+    *   [Parameters](#parameters-5)
+    *   [Properties](#properties-2)
+*   [StreamContentEntryMixin](#streamcontententrymixin)
+    *   [Parameters](#parameters-6)
 *   [StringContentEntryMixin](#stringcontententrymixin)
     *   [Parameters](#parameters-7)
     *   [Properties](#properties-3)
 *   [StringContentEntry](#stringcontententry)
     *   [Parameters](#parameters-8)
     *   [Properties](#properties-4)
+
+## CollectionEntryMixin
+
+Brings directory attributes to entries.
+
+### Parameters
+
+*   `superclass`  
 
 ## BaseEntry
 
@@ -83,50 +91,6 @@ Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 ### isDeleted
 
 Returns **any** true if we represent a deleted entry
-
-## CollectionEntryMixin
-
-Brings directory attributes to entries.
-
-### Parameters
-
-*   `superclass`  
-
-## DeletedContentEntry
-
-**Extends EmptyContentEntry**
-
-Represents a deleted entry.
-
-### isDeleted
-
-We are always deleted.
-
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true
-
-## StreamContentEntryMixin
-
-Content entries where a stream is the primary data representation.
-
-### Parameters
-
-*   `superclass`  
-
-## ReadableStreamContentEntry
-
-**Extends StreamContentEntryMixin(ContentEntry)**
-
-Content entries where a readable stream is the primary data representation.
-
-### Parameters
-
-*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
-*   `readStream` **ReadableStream** 
-
-### Properties
-
-*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
-*   `readStream` **ReadableStream** 
 
 ## BufferContentEntryMixin
 
@@ -165,6 +129,18 @@ Compare content against other entry.
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if other has the same content (bitwise)
 
+## DeletedContentEntry
+
+**Extends EmptyContentEntry**
+
+Represents a deleted entry.
+
+### isDeleted
+
+We are always deleted.
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true
+
 ## EmptyContentEntry
 
 **Extends ContentEntry**
@@ -178,6 +154,30 @@ Returns **[Buffer](https://nodejs.org/api/buffer.html)** zero length buffer
 ### getReadStream
 
 Returns **Readable** zero length stream.
+
+## ReadableStreamContentEntry
+
+**Extends StreamContentEntryMixin(ContentEntry)**
+
+Content entries where a readable stream is the primary data representation.
+
+### Parameters
+
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `readStream` **ReadableStream** 
+
+### Properties
+
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `readStream` **ReadableStream** 
+
+## StreamContentEntryMixin
+
+Content entries where a stream is the primary data representation.
+
+### Parameters
+
+*   `superclass`  
 
 ## StringContentEntryMixin
 
