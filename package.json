@@ -6,8 +6,8 @@
   },
   "sideEffects": false,
   "exports": {
-    "browser": "./src/browser/index.mjs",
-    "node": "./src/node/index.mjs"
+    "browser": "./src/index-browser.mjs",
+    "node": "./src/index-node.mjs"
   },
   "description": "content entries for content containers (aka files)",
   "keywords": [

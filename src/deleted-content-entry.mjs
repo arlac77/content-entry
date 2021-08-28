@@ -1,4 +1,4 @@
-import { EmptyContentEntry } from "./node/empty-content-entry.mjs";
+import { EmptyContentEntry } from "./empty-content-entry.mjs";
 
 /**
  * Represents a deleted entry.

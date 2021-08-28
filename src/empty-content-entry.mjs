@@ -1,4 +1,4 @@
-import { ContentEntry } from "../content-entry.mjs";
+import { ContentEntry } from "./content-entry.mjs";
 import { emptyReadable } from "./util.mjs";
 
 /**
