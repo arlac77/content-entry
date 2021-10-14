@@ -13,4 +13,13 @@ export class DeletedContentEntry extends EmptyContentEntry {
   get isDeleted() {
     return true;
   }
+
+  /**
+   * Nothing there any more.
+   * @return {boolean} false
+   */
+  get isExistent()
+  {
+    return false;
+  }
 }

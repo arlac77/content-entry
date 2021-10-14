@@ -56,6 +56,14 @@ export class BaseEntry {
     return false;
   }
 
+  /**
+   * @return true if we exist
+   */
+  get isExistent()
+  {
+    return true;
+  }
+
   toJSON() {
     return {
       name: this.name,
