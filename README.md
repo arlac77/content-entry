@@ -28,6 +28,7 @@ content entries for content containers (aka files)
     *   [unixMode](#unixmode)
     *   [isEmpty](#isempty)
     *   [isDeleted](#isdeleted)
+    *   [isExistent](#isexistent)
 *   [BufferContentEntryMixin](#buffercontententrymixin)
     *   [Parameters](#parameters-2)
     *   [Properties](#properties-1)
@@ -38,6 +39,7 @@ content entries for content containers (aka files)
         *   [Parameters](#parameters-4)
 *   [DeletedContentEntry](#deletedcontententry)
     *   [isDeleted](#isdeleted-1)
+    *   [isExistent](#isexistent-1)
 *   [EmptyContentEntry](#emptycontententry)
     *   [getBuffer](#getbuffer)
     *   [getReadStream](#getreadstream)
@@ -92,6 +94,10 @@ Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 Returns **any** true if we represent a deleted entry
 
+### isExistent
+
+Returns **any** true if we exist
+
 ## BufferContentEntryMixin
 
 Content entries where a Buffer is the primary data representation.
@@ -140,6 +146,12 @@ Represents a deleted entry.
 We are always deleted.
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true
+
+### isExistent
+
+Nothing there any more.
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** false
 
 ## EmptyContentEntry
 
