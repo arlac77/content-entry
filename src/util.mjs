@@ -1,13 +1,14 @@
 import { Readable } from "stream";
 
 class EmptyReadable extends Readable {
-  _read() {}
+  _read() {
+    this.push(null);
+  }
 }
 
 let _emptyReadable;
 
-export function emptyReadable()
-{
+export function emptyReadable() {
   if (!_emptyReadable) {
     _emptyReadable = new EmptyReadable();
   }
