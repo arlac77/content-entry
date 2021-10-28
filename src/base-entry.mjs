@@ -14,7 +14,7 @@ export class BaseEntry {
     }
 
     Object.defineProperties(this, {
-      name: { value: name }
+      name: { get: () => name, set: value => (name = value) }
     });
   }
 
@@ -80,7 +80,7 @@ export class BaseEntry {
     );
   }
 
-  /** 
+  /**
    * DEPRECATED
    * user type property instead
    */

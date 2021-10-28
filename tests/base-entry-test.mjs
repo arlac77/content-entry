@@ -27,6 +27,13 @@ test("base entry equals", async t => {
   t.true(await a.equals(a2));
 });
 
+test("base change name", async t => {
+  const entry = new BaseEntry("a");
+  t.is(entry.name, "a");
+  entry.name = 'b';
+  t.is(entry.name, "b");
+});
+
 test("base entry create invalid name", t => {
   t.throws(() => new BaseEntry("/somewhere"));
   t.throws(() => new BaseEntry("somewhere\\abc"));
