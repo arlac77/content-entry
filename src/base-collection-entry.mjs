@@ -13,7 +13,7 @@ export function CollectionEntryMixin(superclass) {
       return true;
     }
 
-    async getTypes() {
+    get types() {
       return ["public.directory"];
     }
 

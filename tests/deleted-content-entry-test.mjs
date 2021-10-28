@@ -14,7 +14,7 @@ test("deleted content entry create", async t => {
     isBlob: true,
     isCollection: false
   });
-  t.is(await entry.getString(), "");
-  t.is((await entry.getBuffer()).length, 0);
-  t.is((await entry.getReadStream()).read(), null);
+  t.is(await entry.string, "");
+  t.is((await entry.buffer).length, 0);
+  t.is((await entry.readStream).read(), null);
 });

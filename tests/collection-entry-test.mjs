@@ -6,7 +6,7 @@ test("collection entry create", async t => {
   t.is(entry.name, "somewhere");
   t.is(entry.unixMode, parseInt("755",8));
   t.true(entry.isCollection);
-  t.true((await entry.getTypes()).indexOf("public.directory") === 0);
+  t.true((await entry.types).indexOf("public.directory") === 0);
 });
 
 test("collection entry equals", async t => {

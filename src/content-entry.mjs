@@ -8,19 +8,19 @@ export class ContentEntry extends BaseEntry {
     return true;
   }
 
-  async getTypes() {
+  get types() {
     return ["public.content"];
   }
 
-  async getReadStream() {
+  get readStream() {
     return undefined;
   }
 
-  async getString() {
+  get string() {
     return undefined;
   }
 
-  async getBuffer() {
+  get buffer() {
     return undefined;
   }
 
@@ -37,5 +37,26 @@ export class ContentEntry extends BaseEntry {
     }
 
     return a.equals(b);
+  }
+
+  /**
+   * DEPRECATED
+   */
+  async getReadStream() {
+    return this.readStream;
+  }
+
+  /**
+   * DEPRECATED
+   */
+  async getString() {
+    return this.string;
+  }
+
+  /**
+   * DEPRECATED
+   */
+  async getBuffer() {
+    return this.buffer;
   }
 }

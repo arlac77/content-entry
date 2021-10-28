@@ -22,7 +22,7 @@ export class BaseEntry {
    *
    * @return {string[]} UTI types
    */
-  async getTypes() {
+  get types() {
     return [];
   }
 
@@ -35,7 +35,7 @@ export class BaseEntry {
   }
 
   /**
-   * Default unix mode for files
+   * Default unix mode for files.
    * @return {number} 0644
    */
   get unixMode() {
@@ -43,7 +43,7 @@ export class BaseEntry {
   }
 
   /**
-   * @return {boolean} true if there is no content
+   * @return {boolean} true if there is no content (length := 0).
    */
   async isEmpty() {
     return true;
@@ -59,8 +59,7 @@ export class BaseEntry {
   /**
    * @return true if we exist
    */
-  get isExistent()
-  {
+  get isExistent() {
     return true;
   }
 
@@ -79,5 +78,13 @@ export class BaseEntry {
       this.isCollection === other.isCollection &&
       this.isBlob === other.isBlob
     );
+  }
+
+  /** 
+   * DEPRECATED
+   * user type property instead
+   */
+  async getTypes() {
+    return this.types;
   }
 }

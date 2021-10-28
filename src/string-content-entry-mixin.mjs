@@ -11,15 +11,7 @@ export function StringContentEntryMixin(superclass) {
       return "utf8";
     }
 
-    /**
-     * Deliver content as string
-     * @return {string} content
-     */
-    async getString() {
-      return this.string;
-    }
-
-    async getBuffer() {
+    get buffer() {
       return new Buffer.from(this.string, this.encoding);
     }
 
@@ -27,8 +19,29 @@ export function StringContentEntryMixin(superclass) {
      * Deliver content as read stream
      * @return {ReadableStream} content
      */
-    async getReadStream() {
+    get readStream() {
       return toReadableStream(this.string);
+    }
+
+    /**
+     * DEPRECATED
+     */
+    async getString() {
+      return this.string;
+    }
+
+    /**
+     * DEPRECATED
+     */
+     async getReadStream() {
+      return toReadableStream(this.string);
+    }
+
+    /**
+     * DEPRECATED
+     */
+    async getBuffer() {
+      return new Buffer.from(this.string, this.encoding);
     }
   };
 }

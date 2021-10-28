@@ -14,6 +14,6 @@ test("buffer content entry create", async t => {
     isBlob: true,
     isCollection: false
   });
-  t.is(await entry.getString(), "abc");
-  t.is((await entry.getBuffer()).length, 3);
+  t.is(await entry.string, "abc");
+  t.is((await entry.buffer).length, 3);
 });

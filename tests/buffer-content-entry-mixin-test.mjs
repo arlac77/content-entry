@@ -4,7 +4,7 @@ import { BufferContentEntryMixin, ContentEntry } from "content-entry";
 export class TestBufferContentEntry extends BufferContentEntryMixin(
   ContentEntry
 ) {
-  async getBuffer() {
+  get buffer() {
     return new Buffer.from("abc");
   }
 }
@@ -20,10 +20,10 @@ test("buffer content entry create", async t => {
     isBlob: true,
     isCollection: false
   });
-  t.is(await entry.getString(), "abc");
-  t.is((await entry.getBuffer()).length, 3);
+  t.is(await entry.string, "abc");
+  t.is((await entry.buffer).length, 3);
 
-  const stream = await entry.getReadStream();
+  const stream = await entry.readStream;
   const chunks = [];
   for await( const chunk of stream) {
     chunks.push(chunk);
