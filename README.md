@@ -24,11 +24,12 @@ content entries for content containers (aka files)
 *   [BaseEntry](#baseentry)
     *   [Parameters](#parameters-1)
     *   [Properties](#properties)
-    *   [getTypes](#gettypes)
+    *   [types](#types)
     *   [unixMode](#unixmode)
     *   [isEmpty](#isempty)
     *   [isDeleted](#isdeleted)
     *   [isExistent](#isexistent)
+    *   [getTypes](#gettypes)
 *   [BufferContentEntryMixin](#buffercontententrymixin)
     *   [Parameters](#parameters-2)
     *   [Properties](#properties-1)
@@ -37,12 +38,18 @@ content entries for content containers (aka files)
 *   [ContentEntry](#contententry)
     *   [equalsContent](#equalscontent)
         *   [Parameters](#parameters-4)
+    *   [getReadStream](#getreadstream)
+    *   [getString](#getstring)
+    *   [getBuffer](#getbuffer)
 *   [DeletedContentEntry](#deletedcontententry)
     *   [isDeleted](#isdeleted-1)
     *   [isExistent](#isexistent-1)
 *   [EmptyContentEntry](#emptycontententry)
-    *   [getBuffer](#getbuffer)
-    *   [getReadStream](#getreadstream)
+    *   [buffer](#buffer)
+    *   [readStream](#readstream)
+    *   [getString](#getstring-1)
+    *   [getBuffer](#getbuffer-1)
+    *   [getReadStream](#getreadstream-1)
 *   [ReadableStreamContentEntry](#readablestreamcontententry)
     *   [Parameters](#parameters-5)
     *   [Properties](#properties-2)
@@ -76,19 +83,19 @@ All names are absolute (no leading '/') the group seperator is '/'.
 
 *   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** name inside of the container
 
-### getTypes
+### types
 
 Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** UTI types
 
 ### unixMode
 
-Default unix mode for files
+Default unix mode for files.
 
 Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 0644
 
 ### isEmpty
 
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if there is no content
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if there is no content (length := 0).
 
 ### isDeleted
 
@@ -97,6 +104,11 @@ Returns **any** true if we represent a deleted entry
 ### isExistent
 
 Returns **any** true if we exist
+
+### getTypes
+
+DEPRECATED
+user type property instead
 
 ## BufferContentEntryMixin
 
@@ -135,6 +147,18 @@ Compare content against other entry.
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if other has the same content (bitwise)
 
+### getReadStream
+
+DEPRECATED
+
+### getString
+
+DEPRECATED
+
+### getBuffer
+
+DEPRECATED
+
 ## DeletedContentEntry
 
 **Extends EmptyContentEntry**
@@ -159,13 +183,25 @@ Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 Represents a entry without content (content length = 0).
 
-### getBuffer
+### buffer
 
 Returns **[Buffer](https://nodejs.org/api/buffer.html)** zero length buffer
 
-### getReadStream
+### readStream
 
 Returns **Readable** zero length stream.
+
+### getString
+
+DEPRECATED
+
+### getBuffer
+
+DEPRECATED
+
+### getReadStream
+
+DEPRECATED
 
 ## ReadableStreamContentEntry
 
