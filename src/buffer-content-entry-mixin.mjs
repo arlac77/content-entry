@@ -48,7 +48,7 @@ export function BufferContentEntryMixin(superclass) {
      * DEPRECATED
      */
     async getString() {
-      return (await this.buffer).toString(this.encoding);
+      return (await this.getBuffer()).toString(this.encoding);
     }
 
     /**
