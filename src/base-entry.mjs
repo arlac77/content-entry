@@ -1,9 +1,9 @@
 /**
  * Representation of one file or directory entry.
  * All names are absolute (no leading '/') the group seperator is '/'.
- * @property {string} name name inside of the container
- *
  * @param {string} name name inside of the container
+ *
+ * @property {string} name name inside of the container
  */
 export class BaseEntry {
   constructor(name) {
@@ -43,7 +43,7 @@ export class BaseEntry {
   }
 
   /**
-   * @return {boolean} true if there is no content (length := 0).
+   * @return {Promise<boolean>} true if there is no content (length := 0).
    */
   async isEmpty() {
     return true;

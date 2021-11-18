@@ -26,7 +26,7 @@ export class ContentEntry extends BaseEntry {
 
   /**
    * Compare content against other entry.
-   * @param {Entry} other
+   * @param {ContentEntry} other
    * @return {boolean} true if other has the same content (bitwise)
    */
   async equalsContent(other) {
