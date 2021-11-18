@@ -18,7 +18,7 @@ export class EmptyContentEntry extends ContentEntry {
   }
 
   /**
-   * @returns {Readable} zero length stream.
+   * @returns {ReadableStream} zero length stream.
    */
   get readStream() {
     return emptyReadable();
