@@ -29,14 +29,16 @@
     "test:ava": "ava --timeout 2m tests/*.mjs",
     "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava --timeout 2m tests/*.mjs && c8 report -r lcov -o build/coverage --temp-directory build/tmp",
     "docs": "documentation readme --section=API ./src/**/*.mjs",
-    "lint": "npm run lint:docs",
-    "lint:docs": "documentation lint ./src/**/*.mjs"
+    "lint": "npm run lint:docs && npm run lint:tsc",
+    "lint:docs": "documentation lint ./src/**/*.mjs",
+    "lint:tsc": "tsc --allowJs --checkJs --noEmit -t es2022 ./src/*.mjs"
   },
   "devDependencies": {
     "ava": "^3.15.0",
     "c8": "^7.10.0",
     "documentation": "^13.2.5",
-    "semantic-release": "^18.0.0"
+    "semantic-release": "^18.0.0",
+    "typescript": "next"
   },
   "engines": {
     "node": ">=14.17.6"
