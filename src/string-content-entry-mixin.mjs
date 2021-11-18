@@ -12,7 +12,7 @@ export function StringContentEntryMixin(superclass) {
     }
 
     get buffer() {
-      return new Buffer.from(this.string, this.encoding);
+      return Buffer.from(this.string, this.encoding);
     }
 
     /**
@@ -41,7 +41,7 @@ export function StringContentEntryMixin(superclass) {
      * DEPRECATED
      */
     async getBuffer() {
-      return new Buffer.from(this.string, this.encoding);
+      return Buffer.from(this.string, this.encoding);
     }
   };
 }
