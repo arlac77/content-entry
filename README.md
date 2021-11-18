@@ -95,7 +95,7 @@ Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 ### isEmpty
 
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if there is no content (length := 0).
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)>** true if there is no content (length := 0).
 
 ### isDeleted
 
@@ -143,9 +143,9 @@ Compare content against other entry.
 
 #### Parameters
 
-*   `other` **Entry** 
+*   `other` **[ContentEntry](#contententry)** 
 
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if other has the same content (bitwise)
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)>** true if other has the same content (bitwise)
 
 ### getReadStream
 
@@ -189,7 +189,7 @@ Returns **[Buffer](https://nodejs.org/api/buffer.html)** zero length buffer
 
 ### readStream
 
-Returns **Readable** zero length stream.
+Returns **ReadableStream** zero length stream.
 
 ### getString
 
