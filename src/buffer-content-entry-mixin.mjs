@@ -20,11 +20,11 @@ export function BufferContentEntryMixin(superclass) {
      * @return {string} content
      */
     get string() {
-      const then = this.buffer.then;
+      const buffer = this.buffer;
 
-      return then
-        ? then(buffer => buffer.toString(this.encoding))
-        : this.buffer.toString(this.encoding);
+      return buffer.then
+        ? buffer.then(buffer => buffer.toString(this.encoding))
+        : buffer.toString(this.encoding);
     }
 
     /**
@@ -32,11 +32,11 @@ export function BufferContentEntryMixin(superclass) {
      * @return {ReadableStream} content
      */
     get readStream() {
-      const then = this.buffer.then;
+      const buffer = this.buffer;
 
-      return then
-        ? then(buffer => toReadableStream(buffer))
-        : toReadableStream(this.buffer);
+      return buffer.then
+        ? buffer.then(buffer => toReadableStream(buffer))
+        : toReadableStream(buffer);
     }
 
     async isEmpty() {
