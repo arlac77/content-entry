@@ -1,3 +1,5 @@
+// @ts-check
+import { Readable } from "stream";
 import { toReadableStream } from "./util.mjs";
 
 /**
@@ -7,6 +9,10 @@ import { toReadableStream } from "./util.mjs";
  */
 export function StringContentEntryMixin(superclass) {
   return class StringContentEntryMixin extends superclass {
+
+    /**
+     * @return {BufferEncoding} encoding
+     */
     get encoding() {
       return "utf8";
     }
@@ -17,7 +23,7 @@ export function StringContentEntryMixin(superclass) {
 
     /**
      * Deliver content as read stream
-     * @return {ReadableStream} content
+     * @return {Readable} content
      */
     get readStream() {
       return toReadableStream(this.string);

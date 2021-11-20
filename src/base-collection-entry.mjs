@@ -1,3 +1,4 @@
+// @ts-check
 import { BaseEntry } from "./base-entry.mjs";
 
 /**

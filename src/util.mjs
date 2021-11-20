@@ -1,3 +1,4 @@
+// @ts-check
 import { Readable } from "stream";
 
 class EmptyReadable extends Readable {
@@ -16,6 +17,11 @@ export function emptyReadable() {
   return _emptyReadable;
 }
 
+/**
+ * 
+ * @param {string} input 
+ * @returns {Readable}
+ */
 export const toReadableStream = input =>
   new Readable({
     read() {

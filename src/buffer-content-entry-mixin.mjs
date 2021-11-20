@@ -9,7 +9,7 @@ export function BufferContentEntryMixin(superclass) {
   return class BufferContentEntryMixin extends superclass {
     /**
      * The default encoding used to convert conent to strings.
-     * @return {string}
+     * @return {BufferEncoding}
      */
     get encoding() {
       return "utf8";

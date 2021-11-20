@@ -1,3 +1,4 @@
+// @ts-check
 /**
  * Representation of one file or directory entry.
  * All names are absolute (no leading '/') the group seperator is '/'.
@@ -13,9 +14,12 @@ export class BaseEntry {
       );
     }
 
+    this.name = name;
+    /*
     Object.defineProperties(this, {
       name: { get: () => name, set: value => (name = value) }
     });
+    */
   }
 
   /**
@@ -26,10 +30,16 @@ export class BaseEntry {
     return [];
   }
 
+  /**
+   * @return {boolean}
+   */
   get isCollection() {
     return false;
   }
 
+  /**
+   * @return {boolean}
+   */
   get isBlob() {
     return false;
   }

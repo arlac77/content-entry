@@ -1,3 +1,4 @@
+// @ts-check
 import { ContentEntry } from "./content-entry.mjs";
 import { emptyReadable } from "./util.mjs";
 
@@ -5,6 +6,10 @@ import { emptyReadable } from "./util.mjs";
  * Represents a entry without content (content length = 0).
  */
 export class EmptyContentEntry extends ContentEntry {
+
+  /**
+   * @return {string}
+   */
   get string() {
     return "";
   }

@@ -1,3 +1,4 @@
+// @ts-check
 import { StringContentEntryMixin } from "./string-content-entry-mixin.mjs";
 import { ContentEntry } from "./content-entry.mjs";
 
@@ -12,6 +13,7 @@ import { ContentEntry } from "./content-entry.mjs";
  */
 export class StringContentEntry extends StringContentEntryMixin(ContentEntry) {
   constructor(name, value) {
+    // @ts-ignore
     super(name);
     Object.defineProperties(this, { string: { value } });
   }

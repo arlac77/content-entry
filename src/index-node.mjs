@@ -1,4 +1,5 @@
 
+// @ts-check
 export * from "./buffer-content-entry-mixin.mjs";
 export * from "./string-content-entry-mixin.mjs";
 export * from "./empty-content-entry.mjs";

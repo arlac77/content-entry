@@ -1,9 +1,13 @@
+// @ts-check
 import { BaseEntry } from "./base-entry.mjs";
 
 /**
  * General content access entries.
  */
 export class ContentEntry extends BaseEntry {
+  /**
+   * @return {boolean}
+   */
   get isBlob() {
     return true;
   }
@@ -16,6 +20,9 @@ export class ContentEntry extends BaseEntry {
     return undefined;
   }
 
+  /**
+   * @return {string}
+   */
   get string() {
     return undefined;
   }
