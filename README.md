@@ -25,6 +25,8 @@ content entries for content containers (aka files)
     *   [Parameters](#parameters-1)
     *   [Properties](#properties)
     *   [types](#types)
+    *   [isCollection](#iscollection)
+    *   [isBlob](#isblob)
     *   [unixMode](#unixmode)
     *   [isEmpty](#isempty)
     *   [isDeleted](#isdeleted)
@@ -36,6 +38,8 @@ content entries for content containers (aka files)
 *   [BufferContentEntry](#buffercontententry)
     *   [Parameters](#parameters-3)
 *   [ContentEntry](#contententry)
+    *   [isBlob](#isblob-1)
+    *   [string](#string)
     *   [equalsContent](#equalscontent)
         *   [Parameters](#parameters-4)
     *   [getReadStream](#getreadstream)
@@ -45,6 +49,7 @@ content entries for content containers (aka files)
     *   [isDeleted](#isdeleted-1)
     *   [isExistent](#isexistent-1)
 *   [EmptyContentEntry](#emptycontententry)
+    *   [string](#string-1)
     *   [buffer](#buffer)
     *   [readStream](#readstream)
     *   [getString](#getstring-1)
@@ -61,6 +66,8 @@ content entries for content containers (aka files)
 *   [StringContentEntry](#stringcontententry)
     *   [Parameters](#parameters-8)
     *   [Properties](#properties-4)
+*   [toReadableStream](#toreadablestream)
+    *   [Parameters](#parameters-9)
 
 ## CollectionEntryMixin
 
@@ -87,6 +94,14 @@ All names are absolute (no leading '/') the group seperator is '/'.
 
 Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** UTI types
 
+### isCollection
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+
+### isBlob
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+
 ### unixMode
 
 Default unix mode for files.
@@ -107,8 +122,9 @@ Returns **any** true if we exist
 
 ### getTypes
 
-DEPRECATED
-user type property instead
+**Meta**
+
+*   **deprecated**: user type property instead
 
 ## BufferContentEntryMixin
 
@@ -137,6 +153,14 @@ Content entries where a Buffer is the primary data representation.
 
 General content access entries.
 
+### isBlob
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+
+### string
+
+Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
 ### equalsContent
 
 Compare content against other entry.
@@ -149,15 +173,21 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 ### getReadStream
 
-DEPRECATED
+**Meta**
+
+*   **deprecated**: This is deprecated.
 
 ### getString
 
-DEPRECATED
+**Meta**
+
+*   **deprecated**: This is deprecated.
 
 ### getBuffer
 
-DEPRECATED
+**Meta**
+
+*   **deprecated**: This is deprecated.
 
 ## DeletedContentEntry
 
@@ -183,6 +213,10 @@ Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 Represents a entry without content (content length = 0).
 
+### string
+
+Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
 ### buffer
 
 Returns **[Buffer](https://nodejs.org/api/buffer.html)** zero length buffer
@@ -193,15 +227,21 @@ Returns **ReadableStream** zero length stream.
 
 ### getString
 
-DEPRECATED
+**Meta**
+
+*   **deprecated**: This is deprecated.
 
 ### getBuffer
 
-DEPRECATED
+**Meta**
+
+*   **deprecated**: This is deprecated.
 
 ### getReadStream
 
-DEPRECATED
+**Meta**
+
+*   **deprecated**: This is deprecated.
 
 ## ReadableStreamContentEntry
 
@@ -254,6 +294,14 @@ Content entries where a string is the primary data representation.
 
 *   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 *   `string` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+## toReadableStream
+
+### Parameters
+
+*   `input` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+Returns **Readable** 
 
 # install
 
