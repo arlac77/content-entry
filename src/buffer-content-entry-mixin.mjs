@@ -45,22 +45,21 @@ export function BufferContentEntryMixin(superclass) {
     }
 
     /**
-     * DEPRECATED
+     * @deprecated
      */
     async getString() {
       return (await this.getBuffer()).toString(this.encoding);
     }
 
     /**
-     * DEPRECATED
+     * @deprecated
      */
     async getBuffer() {
       return this.buffer;
     }
 
     /**
-     *
-     * DEPRECATED
+     * @deprecated
      */
     async getReadStream() {
       return toReadableStream(await this.buffer);

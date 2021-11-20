@@ -15,11 +15,6 @@ export class BaseEntry {
     }
 
     this.name = name;
-    /*
-    Object.defineProperties(this, {
-      name: { get: () => name, set: value => (name = value) }
-    });
-    */
   }
 
   /**
@@ -91,7 +86,7 @@ export class BaseEntry {
   }
 
   /**
-   * DEPRECATED
+   * @deprecated
    * user type property instead
    */
   async getTypes() {

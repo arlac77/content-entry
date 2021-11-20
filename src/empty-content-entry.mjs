@@ -30,21 +30,21 @@ export class EmptyContentEntry extends ContentEntry {
   }
 
   /**
-   * DEPRECATED
+   * @deprecated
    */
   async getString() {
     return "";
   }
 
   /**
-   * DEPRECATED
+   * @deprecated
    */
   async getBuffer() {
     return Buffer.alloc(0);
   }
 
   /**
-   * DEPRECATED
+   * @deprecated
    */
   async getReadStream() {
     return emptyReadable();

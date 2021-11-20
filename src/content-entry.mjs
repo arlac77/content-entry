@@ -47,21 +47,21 @@ export class ContentEntry extends BaseEntry {
   }
 
   /**
-   * DEPRECATED
+   * @deprecated
    */
   async getReadStream() {
     return this.readStream;
   }
 
   /**
-   * DEPRECATED
+   * @deprecated
    */
   async getString() {
     return this.string;
   }
 
   /**
-   * DEPRECATED
+   * @deprecated
    */
   async getBuffer() {
     return this.buffer;

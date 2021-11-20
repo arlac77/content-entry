@@ -30,21 +30,21 @@ export function StringContentEntryMixin(superclass) {
     }
 
     /**
-     * DEPRECATED
+     * @deprecated
      */
     async getString() {
       return this.string;
     }
 
     /**
-     * DEPRECATED
+     * @deprecated
      */
      async getReadStream() {
       return toReadableStream(this.string);
     }
 
     /**
-     * DEPRECATED
+     * @deprecated
      */
     async getBuffer() {
       return Buffer.from(this.string, this.encoding);
