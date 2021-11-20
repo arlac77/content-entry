@@ -34,12 +34,12 @@
     "lint:tsc": "tsc --allowJs --checkJs --noEmit -t es2022 ./src/*.mjs"
   },
   "devDependencies": {
-    "@types/node": "^16.11.7",
+    "@types/node": "^16.11.9",
     "ava": "^3.15.0",
     "c8": "^7.10.0",
     "documentation": "^13.2.5",
     "semantic-release": "^18.0.0",
-    "typescript": "next"
+    "typescript": "^4.6.0-dev.20211120"
   },
   "engines": {
     "node": ">=14.18.1"
