@@ -18,7 +18,7 @@ export class StringContentEntry extends StringContentEntryMixin(ContentEntry) {
     Object.defineProperties(this, { string: { value } });
   }
 
-  async isEmpty() {
+  isEmpty() {
     return this.string.length === 0;
   }
 }

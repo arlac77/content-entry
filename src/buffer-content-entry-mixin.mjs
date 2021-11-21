@@ -39,9 +39,14 @@ export function BufferContentEntryMixin(superclass) {
         : toReadableStream(buffer);
     }
 
-    async isEmpty() {
-      const buffer = await this.buffer;
-      return buffer.length === 0;
+    /**
+     * @return {boolean}
+     */
+    isEmpty() {
+      const buffer = this.buffer;
+      return buffer.then
+        ? buffer.then(buffer => buffer.length === 0)
+        : buffer.length === 0;
     }
 
     /**
