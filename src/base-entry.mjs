@@ -26,14 +26,14 @@ export class BaseEntry {
   }
 
   /**
-   * @return {boolean}
+   * @return {boolean} false
    */
   get isCollection() {
     return false;
   }
 
   /**
-   * @return {boolean}
+   * @return {boolean} false
    */
   get isBlob() {
     return false;
@@ -76,6 +76,9 @@ export class BaseEntry {
     };
   }
 
+  /**
+   * @return {boolean} true if name, isBlob and isCollection are the same
+   */
   async equals(other) {
     return (
       other !== undefined &&

@@ -6,7 +6,7 @@ import { BaseEntry } from "./base-entry.mjs";
  */
 export class ContentEntry extends BaseEntry {
   /**
-   * @return {boolean}
+   * @return {boolean} true
    */
   get isBlob() {
     return true;
