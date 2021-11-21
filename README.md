@@ -31,17 +31,19 @@ content entries for content containers (aka files)
     *   [isEmpty](#isempty)
     *   [isDeleted](#isdeleted)
     *   [isExistent](#isexistent)
+    *   [equals](#equals)
+        *   [Parameters](#parameters-2)
     *   [getTypes](#gettypes)
 *   [BufferContentEntryMixin](#buffercontententrymixin)
-    *   [Parameters](#parameters-2)
+    *   [Parameters](#parameters-3)
     *   [Properties](#properties-1)
 *   [BufferContentEntry](#buffercontententry)
-    *   [Parameters](#parameters-3)
+    *   [Parameters](#parameters-4)
 *   [ContentEntry](#contententry)
     *   [isBlob](#isblob-1)
     *   [string](#string)
     *   [equalsContent](#equalscontent)
-        *   [Parameters](#parameters-4)
+        *   [Parameters](#parameters-5)
     *   [getReadStream](#getreadstream)
     *   [getString](#getstring)
     *   [getBuffer](#getbuffer)
@@ -56,18 +58,18 @@ content entries for content containers (aka files)
     *   [getBuffer](#getbuffer-1)
     *   [getReadStream](#getreadstream-1)
 *   [ReadableStreamContentEntry](#readablestreamcontententry)
-    *   [Parameters](#parameters-5)
+    *   [Parameters](#parameters-6)
     *   [Properties](#properties-2)
 *   [StreamContentEntryMixin](#streamcontententrymixin)
-    *   [Parameters](#parameters-6)
-*   [StringContentEntryMixin](#stringcontententrymixin)
     *   [Parameters](#parameters-7)
+*   [StringContentEntryMixin](#stringcontententrymixin)
+    *   [Parameters](#parameters-8)
     *   [Properties](#properties-3)
 *   [StringContentEntry](#stringcontententry)
-    *   [Parameters](#parameters-8)
+    *   [Parameters](#parameters-9)
     *   [Properties](#properties-4)
 *   [toReadableStream](#toreadablestream)
-    *   [Parameters](#parameters-9)
+    *   [Parameters](#parameters-10)
 
 ## CollectionEntryMixin
 
@@ -96,11 +98,11 @@ Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Gl
 
 ### isCollection
 
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** false
 
 ### isBlob
 
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** false
 
 ### unixMode
 
@@ -119,6 +121,14 @@ Returns **any** true if we represent a deleted entry
 ### isExistent
 
 Returns **any** true if we exist
+
+### equals
+
+#### Parameters
+
+*   `other`  
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if name, isBlob and isCollection are the same
 
 ### getTypes
 
@@ -155,7 +165,7 @@ General content access entries.
 
 ### isBlob
 
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true
 
 ### string
 
