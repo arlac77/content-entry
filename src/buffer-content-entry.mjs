@@ -3,6 +3,7 @@ import { BufferContentEntryMixin } from "./buffer-content-entry-mixin.mjs";
 import { ContentEntry } from "./content-entry.mjs";
 
 /**
+ * ConentEntry with a Buffer as content store.
  * @param {string} name
  * @param {Buffer} buffer
  */
