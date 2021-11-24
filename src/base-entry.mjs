@@ -55,14 +55,14 @@ export class BaseEntry {
   }
 
   /**
-   * @return true if we represent a deleted entry
+   * @return {boolean} true if we represent a deleted entry
    */
   get isDeleted() {
     return false;
   }
 
   /**
-   * @return true if we exist
+   * @return {boolean} true if we exist
    */
   get isExistent() {
     return true;
