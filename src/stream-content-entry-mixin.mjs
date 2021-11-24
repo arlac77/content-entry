@@ -6,6 +6,20 @@ const defaultStringOptions = { encoding: "utf8" };
  */
 export function StreamContentEntryMixin(superclass) {
   return class StreamContentEntryMixin extends superclass {
+    /**
+     * @return {Promise<Buffer>}
+     */
+    get buffer() {
+      return this.getBuffer();
+    }
+
+    /**
+     * @return {Promise<string>}
+     */
+    get string() {
+      return this.getString();
+    }
+
     async getString(options = defaultStringOptions) {
       const chunks = [];
       for await (const chunk of await this.getReadStream(options)) {

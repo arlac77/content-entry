@@ -37,13 +37,13 @@ export class ContentEntry extends BaseEntry {
    * @return {Promise<boolean>} true if other has the same content (bitwise)
    */
   async equalsContent(other) {
-    const [a, b] = await Promise.all([this.getBuffer(), other.getBuffer()]);
+    const [a, b] = await Promise.all([this.buffer, other.buffer]);
 
     if (a === undefined) {
       return b === undefined;
     }
-
-    return a.equals(b);
+    
+    return b === undefined ? false : a.equals(b);
   }
 
   /**

@@ -77,7 +77,7 @@ export class BaseEntry {
   }
 
   /**
-   * @return {boolean} true if name, isBlob and isCollection are the same
+   * @return {Promise<boolean>} true if name, isBlob and isCollection are the same
    */
   async equals(other) {
     return (
