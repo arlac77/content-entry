@@ -14,6 +14,10 @@ export class BufferContentEntry extends BufferContentEntryMixin(ContentEntry) {
     Object.defineProperties(this, { buffer: { value: buffer } });
   }
 
+  /**
+   * 
+   * @returns {boolean} true if buffer length is zero
+   */
   isEmpty() {
     return this.buffer.length === 0;
   }

@@ -18,6 +18,10 @@ export class StringContentEntry extends StringContentEntryMixin(ContentEntry) {
     Object.defineProperties(this, { string: { value } });
   }
 
+  /**
+   *
+   * @returns {boolean} true if string length is zero
+   */
   isEmpty() {
     return this.string.length === 0;
   }
