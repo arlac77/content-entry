@@ -5,7 +5,6 @@ import { toReadableStream } from "./util.mjs";
 /**
  * Content entries where a string is the primary data representation.
  * @property {string} string
- *
  */
 export function StringContentEntryMixin(superclass) {
   return class StringContentEntryMixin extends superclass {
@@ -17,6 +16,9 @@ export function StringContentEntryMixin(superclass) {
       return "utf8";
     }
 
+    /**
+     * @return {Buffer}
+     */
     get buffer() {
       return Buffer.from(this.string, this.encoding);
     }
