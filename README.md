@@ -39,6 +39,7 @@ content entries for content containers (aka files)
     *   [Properties](#properties-1)
 *   [BufferContentEntry](#buffercontententry)
     *   [Parameters](#parameters-4)
+    *   [isEmpty](#isempty-1)
 *   [ContentEntry](#contententry)
     *   [isBlob](#isblob-1)
     *   [string](#string)
@@ -68,6 +69,7 @@ content entries for content containers (aka files)
 *   [StringContentEntry](#stringcontententry)
     *   [Parameters](#parameters-9)
     *   [Properties](#properties-4)
+    *   [isEmpty](#isempty-2)
 *   [toReadableStream](#toreadablestream)
     *   [Parameters](#parameters-10)
 
@@ -116,11 +118,11 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 ### isDeleted
 
-Returns **any** true if we represent a deleted entry
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if we represent a deleted entry
 
 ### isExistent
 
-Returns **any** true if we exist
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if we exist
 
 ### equals
 
@@ -128,7 +130,7 @@ Returns **any** true if we exist
 
 *   `other`  
 
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if name, isBlob and isCollection are the same
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)>** true if name, isBlob and isCollection are the same
 
 ### getTypes
 
@@ -152,10 +154,16 @@ Content entries where a Buffer is the primary data representation.
 
 **Extends BufferContentEntryMixin(ContentEntry)**
 
+ConentEntry with a Buffer as content store.
+
 ### Parameters
 
 *   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 *   `buffer` **[Buffer](https://nodejs.org/api/buffer.html)** 
+
+### isEmpty
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if buffer length is zero
 
 ## ContentEntry
 
@@ -304,6 +312,10 @@ Content entries where a string is the primary data representation.
 
 *   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 *   `string` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+### isEmpty
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if string length is zero
 
 ## toReadableStream
 
