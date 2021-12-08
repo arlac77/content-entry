@@ -42,6 +42,8 @@ content entries for content containers (aka files)
     *   [isEmpty](#isempty-1)
 *   [ContentEntry](#contententry)
     *   [isBlob](#isblob-1)
+    *   [types](#types-1)
+    *   [readStream](#readstream)
     *   [string](#string)
     *   [equalsContent](#equalscontent)
         *   [Parameters](#parameters-5)
@@ -54,7 +56,7 @@ content entries for content containers (aka files)
 *   [EmptyContentEntry](#emptycontententry)
     *   [string](#string-1)
     *   [buffer](#buffer)
-    *   [readStream](#readstream)
+    *   [readStream](#readstream-1)
     *   [getString](#getstring-1)
     *   [getBuffer](#getbuffer-1)
     *   [getReadStream](#getreadstream-1)
@@ -174,6 +176,16 @@ General content access entries.
 ### isBlob
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true
+
+### types
+
+UTI types for this entry
+
+Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** 
+
+### readStream
+
+Returns **any** undefined
 
 ### string
 
