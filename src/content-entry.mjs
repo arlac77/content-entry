@@ -12,10 +12,17 @@ export class ContentEntry extends BaseEntry {
     return true;
   }
 
+  /**
+   * UTI types for this entry
+   * @return {string[]}
+   */
   get types() {
     return ["public.content"];
   }
 
+  /**
+   * @return {any} undefined
+   */
   get readStream() {
     return undefined;
   }
