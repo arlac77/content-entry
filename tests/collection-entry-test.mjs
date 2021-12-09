@@ -4,7 +4,7 @@ import { BaseCollectionEntry } from "content-entry";
 test("collection entry create", async t => {
   const entry = new BaseCollectionEntry("somewhere");
   t.is(entry.name, "somewhere");
-  t.is(entry.unixMode, parseInt("755",8));
+  t.is(entry.unixMode, 0o755);
   t.true(entry.isCollection);
   t.true((await entry.types).indexOf("public.directory") === 0);
 });

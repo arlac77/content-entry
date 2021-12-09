@@ -44,7 +44,7 @@ export class BaseEntry {
    * @return {number} 0644
    */
   get unixMode() {
-    return 420; //0644;
+    return 0o644;
   }
 
   /**
