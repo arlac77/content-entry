@@ -14,6 +14,10 @@ test("readable stream content entry create", async t => {
   t.is(entry.name, "somewhere");
   t.is(entry.isCollection, false);
   t.is(entry.isBlob, true);
+  t.is(entry.isDeleted, false);
+  t.is(entry.isExistent, true);
+  t.is(entry.mode, 0o644);
+
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
     isBlob: true,
