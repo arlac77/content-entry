@@ -11,7 +11,7 @@ test("content entry create", async t => {
   t.true(entry.isBlob);
   t.is(entry.mode,420);
   t.is(await entry.isEmpty(), true);
-  t.true((await entry.types).indexOf("public.content") === 0);
+  t.true((entry.types).indexOf("public.content") === 0);
 });
 
 test("content entry equals", async t => {

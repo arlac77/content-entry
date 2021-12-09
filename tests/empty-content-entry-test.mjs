@@ -7,6 +7,8 @@ test("empty content entry create", async t => {
   t.is(entry.isCollection, false);
   t.is(entry.isBlob, true);
   t.is(entry.isDeleted, false);
+  t.is(entry.isExistent, true);
+  t.is(entry.mode, 0o644);
   t.is(await entry.isEmpty(), true);
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
