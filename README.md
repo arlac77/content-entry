@@ -27,13 +27,14 @@ content entries for content containers (aka files)
     *   [types](#types)
     *   [isCollection](#iscollection)
     *   [isBlob](#isblob)
-    *   [unixMode](#unixmode)
+    *   [mode](#mode)
     *   [isEmpty](#isempty)
     *   [isDeleted](#isdeleted)
     *   [isExistent](#isexistent)
     *   [equals](#equals)
         *   [Parameters](#parameters-2)
     *   [getTypes](#gettypes)
+    *   [unixMode](#unixmode)
 *   [BufferContentEntryMixin](#buffercontententrymixin)
     *   [Parameters](#parameters-3)
     *   [Properties](#properties-1)
@@ -108,7 +109,7 @@ Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** false
 
-### unixMode
+### mode
 
 Default unix mode for files.
 
@@ -139,6 +140,14 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 **Meta**
 
 *   **deprecated**: user type property instead
+
+### unixMode
+
+Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 0644
+
+**Meta**
+
+*   **deprecated**: Default unix mode for files.
 
 ## BufferContentEntryMixin
 
