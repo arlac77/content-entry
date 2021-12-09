@@ -9,7 +9,7 @@ test("content entry create", async t => {
   t.is(await entry.readStream, undefined);
   t.is(entry.name, "somewhere");
   t.true(entry.isBlob);
-  t.is(entry.unixMode,420);
+  t.is(entry.mode,420);
   t.is(await entry.isEmpty(), true);
   t.true((await entry.types).indexOf("public.content") === 0);
 });

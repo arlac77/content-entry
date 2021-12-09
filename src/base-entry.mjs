@@ -43,7 +43,7 @@ export class BaseEntry {
    * Default unix mode for files.
    * @return {number} 0644
    */
-  get unixMode() {
+  get mode() {
     return 0o644;
   }
 
@@ -94,5 +94,14 @@ export class BaseEntry {
    */
   async getTypes() {
     return this.types;
+  }
+
+  /**
+   * @deprecated
+   * Default unix mode for files.
+   * @return {number} 0644
+   */
+  get unixMode() {
+    return 0o644;
   }
 }
