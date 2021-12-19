@@ -8,7 +8,7 @@ test("deleted content entry create", async t => {
   t.is(entry.isBlob, true);
   t.is(entry.isDeleted, true);
   t.is(entry.isExistent, false);
-  t.is(await entry.isEmpty(), true);
+  t.is(entry.isEmpty, true);
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
     isBlob: true,

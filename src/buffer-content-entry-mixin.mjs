@@ -42,7 +42,7 @@ export function BufferContentEntryMixin(superclass) {
     /**
      * @return {boolean}
      */
-    isEmpty() {
+    get isEmpty() {
       const buffer = this.buffer;
       return buffer.then
         ? buffer.then(buffer => buffer.length === 0)

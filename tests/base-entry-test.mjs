@@ -10,7 +10,7 @@ test("base entry create", async t => {
   t.is(entry.isExistent, true);
   t.is(entry.mode, 0o644);
   t.deepEqual(entry.types, []);
-  t.is(await entry.isEmpty(), true);
+  t.is(entry.isEmpty, true);
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
     isBlob: false,

@@ -8,7 +8,7 @@ test("string content entry create", async t => {
   t.is(entry.isBlob, true);
   t.is(entry.mode, 420);
   t.is(entry.encoding, "utf8");
-  t.is(await entry.isEmpty(), false);
+  t.is(entry.isEmpty, false);
 
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",

@@ -4,10 +4,11 @@ import { BufferContentEntry } from "content-entry";
 test("buffer content entry create", async t => {
   const entry = new BufferContentEntry("somewhere", Buffer.from("abc"));
   t.is(entry.name, "somewhere");
+  t.is(entry.isEmpty, false);
   t.is(entry.isCollection, false);
   t.is(entry.isBlob, true);
   t.is(entry.mode, 420);
-  t.is(await entry.isEmpty(), false);
+  t.is(entry.isEmpty, false);
 
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",

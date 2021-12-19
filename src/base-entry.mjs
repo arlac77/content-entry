@@ -48,9 +48,9 @@ export class BaseEntry {
   }
 
   /**
-   * @return {Promise<boolean>} true if there is no content (length := 0).
+   * @return {boolean} true if there is no content (length := 0).
    */
-  async isEmpty() {
+  get isEmpty() {
     return true;
   }
 

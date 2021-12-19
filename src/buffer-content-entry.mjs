@@ -18,7 +18,7 @@ export class BufferContentEntry extends BufferContentEntryMixin(ContentEntry) {
    * 
    * @returns {boolean} true if buffer length is zero
    */
-  isEmpty() {
+  get isEmpty() {
     return this.buffer.length === 0;
   }
 }

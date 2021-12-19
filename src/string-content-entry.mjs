@@ -22,7 +22,7 @@ export class StringContentEntry extends StringContentEntryMixin(ContentEntry) {
    *
    * @returns {boolean} true if string length is zero
    */
-  isEmpty() {
+  get isEmpty() {
     return this.string.length === 0;
   }
 }

@@ -10,7 +10,7 @@ test("content entry create", async t => {
   t.is(entry.name, "somewhere");
   t.true(entry.isBlob);
   t.is(entry.mode,420);
-  t.is(await entry.isEmpty(), true);
+  t.true(entry.isEmpty);
   t.true((entry.types).indexOf("public.content") === 0);
 });
 
