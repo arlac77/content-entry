@@ -4,13 +4,13 @@ import { BaseEntry } from "content-entry";
 test("base entry create", async t => {
   const entry = new BaseEntry("somewhere");
   t.is(entry.name, "somewhere");
-  t.is(entry.isCollection, false);
-  t.is(entry.isBlob, false);
-  t.is(entry.isDeleted, false);
-  t.is(entry.isExistent, true);
+  t.true(entry.isEmpty);
+  t.false(entry.isCollection);
+  t.false(entry.isBlob);
+  t.false(entry.isDeleted);
+  t.true(entry.isExistent);
   t.is(entry.mode, 0o644);
   t.deepEqual(entry.types, []);
-  t.is(entry.isEmpty, true);
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
     isBlob: false,

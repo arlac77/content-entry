@@ -4,12 +4,12 @@ import { EmptyContentEntry } from "content-entry";
 test("empty content entry create", async t => {
   const entry = new EmptyContentEntry("somewhere");
   t.is(entry.name, "somewhere");
-  t.is(entry.isCollection, false);
-  t.is(entry.isBlob, true);
-  t.is(entry.isDeleted, false);
-  t.is(entry.isExistent, true);
+  t.true(entry.isEmpty);
+  t.false(entry.isCollection);
+  t.true(entry.isBlob);
+  t.false(entry.isDeleted);
+  t.true(entry.isExistent);
   t.is(entry.mode, 0o644);
-  t.is(entry.isEmpty, true);
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
     isBlob: true,

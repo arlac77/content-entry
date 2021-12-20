@@ -12,9 +12,9 @@ export class TestBufferContentEntry extends BufferContentEntryMixin(
 test("buffer content entry create", async t => {
   const entry = new TestBufferContentEntry("somewhere");
   t.is(entry.name, "somewhere");
-  t.is(entry.isCollection, false);
-  t.is(entry.isBlob, true);
-  t.is(entry.isEmpty, false);
+  t.false(entry.isEmpty);
+  t.false(entry.isCollection);
+  t.true(entry.isBlob);
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
     isBlob: true,

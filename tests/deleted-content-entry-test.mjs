@@ -4,11 +4,11 @@ import { DeletedContentEntry } from "content-entry";
 test("deleted content entry create", async t => {
   const entry = new DeletedContentEntry("somewhere");
   t.is(entry.name, "somewhere");
-  t.is(entry.isCollection, false);
-  t.is(entry.isBlob, true);
-  t.is(entry.isDeleted, true);
-  t.is(entry.isExistent, false);
-  t.is(entry.isEmpty, true);
+  t.false(entry.isCollection);
+  t.true(entry.isBlob);
+  t.true(entry.isDeleted);
+  t.false(entry.isExistent);
+  t.true(entry.isEmpty);
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
     isBlob: true,
