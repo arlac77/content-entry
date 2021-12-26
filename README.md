@@ -33,8 +33,6 @@ content entries for content containers (aka files)
     *   [isExistent](#isexistent)
     *   [equals](#equals)
         *   [Parameters](#parameters-2)
-    *   [getTypes](#gettypes)
-    *   [unixMode](#unixmode)
 *   [BufferContentEntryMixin](#buffercontententrymixin)
     *   [Parameters](#parameters-3)
     *   [Properties](#properties-1)
@@ -134,20 +132,6 @@ Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 *   `other`  
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)>** true if name, isBlob and isCollection are the same
-
-### getTypes
-
-**Meta**
-
-*   **deprecated**: user type property instead
-
-### unixMode
-
-Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 0644
-
-**Meta**
-
-*   **deprecated**: Default unix mode for files.
 
 ## BufferContentEntryMixin
 
