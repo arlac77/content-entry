@@ -87,21 +87,4 @@ export class BaseEntry {
       this.isBlob === other.isBlob
     );
   }
-
-  /**
-   * @deprecated
-   * user type property instead
-   */
-  async getTypes() {
-    return this.types;
-  }
-
-  /**
-   * @deprecated
-   * Default unix mode for files.
-   * @return {number} 0644
-   */
-  get unixMode() {
-    return 0o644;
-  }
 }

@@ -24,15 +24,6 @@ export function CollectionEntryMixin(superclass) {
     get mode() {
       return 0o755;
     }
-
-    /**
-     * @deprecated
-     * Default unix mode for directories.
-     * @return {number} 0755
-     */
-    get unixMode() {
-      return 0o755;
-    }
   };
 }
 
