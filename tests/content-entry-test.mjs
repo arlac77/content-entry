@@ -30,3 +30,8 @@ test("content entry equalsContent", async t => {
   t.true(await a.equalsContent(a));
   t.true(await b.equalsContent(a));
 });
+
+test("content entry equalsContent undefined", async t => {
+  const a = new ContentEntry("a");
+  t.false(await a.equalsContent());
+});
