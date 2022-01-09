@@ -13,6 +13,10 @@ export function CollectionEntryMixin(superclass) {
       return true;
     }
 
+    /**
+     * UTI
+     * @return {string[]} "public.directory"
+     */
     get types() {
       return ["public.directory"];
     }
