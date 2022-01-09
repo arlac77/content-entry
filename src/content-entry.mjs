@@ -13,7 +13,7 @@ export class ContentEntry extends BaseEntry {
   }
 
   /**
-   * UTI types for this entry
+   * UTI types for this entry.
    * @return {string[]}
    */
   get types() {
@@ -34,6 +34,9 @@ export class ContentEntry extends BaseEntry {
     return undefined;
   }
 
+  /**
+   * return {Uint8Array}
+   */
   get buffer() {
     return undefined;
   }
