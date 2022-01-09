@@ -27,5 +27,5 @@ class TestEntry extends StreamContentEntryMixin(ContentEntry) {
 
 test("string read (chunks)", async t => {
   const entry = new TestEntry("reading");
-  t.is(await entry.getString(), "abc");
+  t.is(await entry.string, "abc");
 });

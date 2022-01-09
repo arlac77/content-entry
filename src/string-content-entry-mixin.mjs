@@ -34,22 +34,8 @@ export function StringContentEntryMixin(superclass) {
     /**
      * @deprecated
      */
-    async getString() {
-      return this.string;
-    }
-
-    /**
-     * @deprecated
-     */
      async getReadStream() {
       return toReadableStream(this.string);
-    }
-
-    /**
-     * @deprecated
-     */
-    async getBuffer() {
-      return Buffer.from(this.string, this.encoding);
     }
   };
 }

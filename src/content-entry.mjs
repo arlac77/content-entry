@@ -66,18 +66,4 @@ export class ContentEntry extends BaseEntry {
   async getReadStream() {
     return this.readStream;
   }
-
-  /**
-   * @deprecated
-   */
-  async getString() {
-    return this.string;
-  }
-
-  /**
-   * @deprecated
-   */
-  async getBuffer() {
-    return this.buffer;
-  }
 }

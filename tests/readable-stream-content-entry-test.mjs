@@ -24,15 +24,15 @@ test("readable stream content entry create", async t => {
     isBlob: true,
     isCollection: false
   });
-  t.is(await entry.getString(), "abc\n");
+  t.is(await entry.string, "abc\n");
 });
 
-test("readable stream content entry getBuffer", async t => {
+test("readable stream content entry buffer", async t => {
   const entry = new ReadableStreamContentEntry(
     "somewhere",
     createReadStream(join(here, "fixtures", "file.txt"))
   );
-  t.is((await entry.getBuffer()).length, 4);
+  t.is((await entry.buffer).length, 4);
 });
 
 test("readable stream content entry equalsContent ReadableStreamContentEntry <> BufferContentEntry", async t => {

@@ -32,20 +32,6 @@ export class EmptyContentEntry extends ContentEntry {
   /**
    * @deprecated
    */
-  async getString() {
-    return "";
-  }
-
-  /**
-   * @deprecated
-   */
-  async getBuffer() {
-    return Uint8Array.of();
-  }
-
-  /**
-   * @deprecated
-   */
   async getReadStream() {
     return emptyReadable();
   }
