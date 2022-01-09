@@ -15,11 +15,11 @@ export class EmptyContentEntry extends ContentEntry {
   }
 
   /**
-   * @return {Buffer} zero length buffer
+   * @return {Uint8Array} zero length buffer
    */
 
   get buffer() {
-    return Int16Array.of();
+    return Uint8Array.of();
   }
 
   /**
@@ -40,7 +40,7 @@ export class EmptyContentEntry extends ContentEntry {
    * @deprecated
    */
   async getBuffer() {
-    return Int16Array.of();
+    return Uint8Array.of();
   }
 
   /**
