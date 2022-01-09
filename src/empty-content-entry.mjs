@@ -19,7 +19,7 @@ export class EmptyContentEntry extends ContentEntry {
    */
 
   get buffer() {
-    return Buffer.alloc(0);
+    return Int16Array.of();
   }
 
   /**
@@ -40,7 +40,7 @@ export class EmptyContentEntry extends ContentEntry {
    * @deprecated
    */
   async getBuffer() {
-    return Buffer.alloc(0);
+    return Int16Array.of();
   }
 
   /**
