@@ -44,20 +44,17 @@ content entries for content containers (aka files)
     *   [types](#types-1)
     *   [readStream](#readstream)
     *   [string](#string)
+    *   [buffer](#buffer)
     *   [equalsContent](#equalscontent)
         *   [Parameters](#parameters-5)
     *   [getReadStream](#getreadstream)
-    *   [getString](#getstring)
-    *   [getBuffer](#getbuffer)
 *   [DeletedContentEntry](#deletedcontententry)
     *   [isDeleted](#isdeleted-1)
     *   [isExistent](#isexistent-1)
 *   [EmptyContentEntry](#emptycontententry)
     *   [string](#string-1)
-    *   [buffer](#buffer)
+    *   [buffer](#buffer-1)
     *   [readStream](#readstream-1)
-    *   [getString](#getstring-1)
-    *   [getBuffer](#getbuffer-1)
     *   [getReadStream](#getreadstream-1)
 *   [ReadableStreamContentEntry](#readablestreamcontententry)
     *   [Parameters](#parameters-6)
@@ -172,7 +169,7 @@ Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 ### types
 
-UTI types for this entry
+UTI types for this entry.
 
 Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** 
 
@@ -183,6 +180,10 @@ Returns **any** undefined
 ### string
 
 Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+### buffer
+
+return {Uint8Array}
 
 ### equalsContent
 
@@ -195,18 +196,6 @@ Compare content against other entry.
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)>** true if other has the same content (bitwise)
 
 ### getReadStream
-
-**Meta**
-
-*   **deprecated**: This is deprecated.
-
-### getString
-
-**Meta**
-
-*   **deprecated**: This is deprecated.
-
-### getBuffer
 
 **Meta**
 
@@ -242,23 +231,11 @@ Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 ### buffer
 
-Returns **[Buffer](https://nodejs.org/api/buffer.html)** zero length buffer
+Returns **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)** zero length buffer
 
 ### readStream
 
 Returns **ReadableStream** zero length stream.
-
-### getString
-
-**Meta**
-
-*   **deprecated**: This is deprecated.
-
-### getBuffer
-
-**Meta**
-
-*   **deprecated**: This is deprecated.
 
 ### getReadStream
 
