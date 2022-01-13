@@ -17,10 +17,11 @@ export function StringContentEntryMixin(superclass) {
     }
 
     /**
-     * @return {Buffer}
+     * @return {Uint8Array}
      */
     get buffer() {
-      return Buffer.from(this.string, this.encoding);
+      const encoder = new TextEncoder( /*this.encoding*/);
+      return encoder.encode(this.string);
     }
 
     /**

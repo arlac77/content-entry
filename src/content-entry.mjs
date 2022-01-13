@@ -1,5 +1,6 @@
 // @ts-check
 import { BaseEntry } from "./base-entry.mjs";
+import { equalsUint8Arrays } from "./util.mjs";
 
 /**
  * General content access entries.
@@ -57,7 +58,7 @@ export class ContentEntry extends BaseEntry {
       return b === undefined;
     }
 
-    return b === undefined ? false : a.equals(b);
+    return equalsUint8Arrays(a, b);
   }
 
   /**

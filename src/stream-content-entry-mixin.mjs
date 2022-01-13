@@ -1,4 +1,7 @@
+
 // @ts-check
+import {concatUint8Arrays} from "./util.mjs";
+
 const defaultStringOptions = { encoding: "utf8" };
 
 /**
@@ -39,7 +42,7 @@ export function StreamContentEntryMixin(superclass) {
         chunks.push(chunk);
       }
 
-      return Buffer.concat(chunks);
+      return concatUint8Arrays(...chunks);
     }
 
     async setBuffer(value, options) {
