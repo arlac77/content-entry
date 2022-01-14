@@ -46,6 +46,7 @@ export function concatUint8Arrays(...bufs) {
  *
  * @param {Uint8Array} a
  * @param {Uint8Array} b
+ * @return {boolean} true if content of a equals b
  */
  export function equalsUint8Arrays(a, b) {
   if (a === b) {

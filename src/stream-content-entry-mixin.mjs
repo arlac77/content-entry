@@ -10,7 +10,7 @@ const defaultStringOptions = { encoding: "utf8" };
 export function StreamContentEntryMixin(superclass) {
   return class StreamContentEntryMixin extends superclass {
     /**
-     * @return {Promise<Buffer>}
+     * @return {Promise<Uint8Array>}
      */
     get buffer() {
       return this.getBuffer();
