@@ -43,6 +43,14 @@ export class ContentEntry extends BaseEntry {
   }
 
   /**
+   * The default encoding used to convert content to strings.
+   * @return {BufferEncoding}
+   */
+  get encoding() {
+    return "utf8";
+  }
+
+  /**
    * Compare content against other entry.
    * @param {ContentEntry} other
    * @return {Promise<boolean>} true if other has the same content (bitwise)

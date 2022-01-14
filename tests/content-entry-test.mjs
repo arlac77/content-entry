@@ -8,10 +8,11 @@ test("content entry create", async t => {
   t.is(await entry.buffer, undefined);
   t.is(await entry.readStream, undefined);
   t.is(entry.name, "somewhere");
+  t.is(entry.encoding, "utf8");
   t.true(entry.isEmpty);
   t.true(entry.isBlob);
-  t.is(entry.mode,420);
-  t.true((entry.types).indexOf("public.content") === 0);
+  t.is(entry.mode, 420);
+  t.true(entry.types.indexOf("public.content") === 0);
 });
 
 test("content entry equals", async t => {
