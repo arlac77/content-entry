@@ -70,6 +70,8 @@ content entries for content containers (aka files)
     *   [isEmpty](#isempty-2)
 *   [toReadableStream](#toreadablestream)
     *   [Parameters](#parameters-10)
+*   [equalsUint8Arrays](#equalsuint8arrays)
+    *   [Parameters](#parameters-11)
 
 ## CollectionEntryMixin
 
@@ -306,6 +308,15 @@ Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 *   `input` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 Returns **Readable** 
+
+## equalsUint8Arrays
+
+Returns true if the two passed Uint8Arrays have the same content
+
+### Parameters
+
+*   `a` **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)** 
+*   `b` **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)** 
 
 # install
 
