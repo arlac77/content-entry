@@ -45,6 +45,7 @@ content entries for content containers (aka files)
     *   [readStream](#readstream)
     *   [string](#string)
     *   [buffer](#buffer)
+    *   [encoding](#encoding)
     *   [equalsContent](#equalscontent)
         *   [Parameters](#parameters-5)
     *   [getReadStream](#getreadstream)
@@ -187,6 +188,12 @@ Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 return {Uint8Array}
 
+### encoding
+
+The default encoding used to convert content to strings.
+
+Returns **BufferEncoding** 
+
 ### equalsContent
 
 Compare content against other entry.
@@ -317,6 +324,8 @@ Returns true if the two passed Uint8Arrays have the same content
 
 *   `a` **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)** 
 *   `b` **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)** 
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if content of a equals b
 
 # install
 
