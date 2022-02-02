@@ -28,11 +28,4 @@ export class EmptyContentEntry extends ContentEntry {
   get readStream() {
     return emptyReadable();
   }
-
-  /**
-   * @deprecated
-   */
-  async getReadStream() {
-    return emptyReadable();
-  }
 }

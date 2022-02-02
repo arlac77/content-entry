@@ -19,8 +19,4 @@ export class ReadableStreamContentEntry extends StreamContentEntryMixin(
     super(name);
     Object.defineProperties(this, { readStream: { value: readStream } });
   }
-
-  getReadStream() {
-    return this.readStream;
-  }
 }
