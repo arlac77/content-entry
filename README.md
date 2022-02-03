@@ -56,7 +56,6 @@ content entries for content containers (aka files)
     *   [string](#string-1)
     *   [buffer](#buffer-1)
     *   [readStream](#readstream-1)
-    *   [getReadStream](#getreadstream-1)
 *   [ReadableStreamContentEntry](#readablestreamcontententry)
     *   [Parameters](#parameters-6)
     *   [Properties](#properties-2)
@@ -245,12 +244,6 @@ Returns **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Referen
 ### readStream
 
 Returns **ReadableStream** zero length stream.
-
-### getReadStream
-
-**Meta**
-
-*   **deprecated**: This is deprecated.
 
 ## ReadableStreamContentEntry
 
