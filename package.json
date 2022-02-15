@@ -42,7 +42,7 @@
     "typescript": "^4.6.0-dev.20220211"
   },
   "engines": {
-    "node": ">=14.18.3"
+    "node": ">=14.19.0"
   },
   "repository": {
     "type": "git",
