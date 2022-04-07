@@ -25,7 +25,7 @@ test("buffer content entry create", async t => {
 
   const stream = await entry.readStream;
   const chunks = [];
-  for await( const chunk of stream) {
+  for await (const chunk of stream) {
     chunks.push(chunk);
   }
 
