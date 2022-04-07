@@ -1,6 +1,5 @@
-
 // @ts-check
-import {concatUint8Arrays} from "./util.mjs";
+import { concatUint8Arrays } from "./util.mjs";
 
 const defaultStringOptions = { encoding: "utf8" };
 

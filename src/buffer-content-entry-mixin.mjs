@@ -1,8 +1,8 @@
 import { toReadableStream } from "./util.mjs";
 
 /**
- * Content entries where a Buffer is the primary data representation.
- * @property {Buffer} buffer
+ * Content entries where a Uint8Array is the primary data representation.
+ * @property {Uint8Array} buffer
  *
  */
 export function BufferContentEntryMixin(superclass) {
