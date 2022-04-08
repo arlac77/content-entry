@@ -134,7 +134,7 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 ## BufferContentEntryMixin
 
-Content entries where a Buffer is the primary data representation.
+Content entries where a Uint8Array is the primary data representation.
 
 ### Parameters
 
@@ -142,18 +142,18 @@ Content entries where a Buffer is the primary data representation.
 
 ### Properties
 
-*   `buffer` **[Buffer](https://nodejs.org/api/buffer.html)** 
+*   `buffer` **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)** 
 
 ## BufferContentEntry
 
 **Extends BufferContentEntryMixin(ContentEntry)**
 
-ConentEntry with a Buffer as content store.
+ConentEntry with a Uint8Array as content store.
 
 ### Parameters
 
 *   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
-*   `buffer` **[Buffer](https://nodejs.org/api/buffer.html)** 
+*   `buffer` **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)** 
 
 ### isEmpty
 
