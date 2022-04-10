@@ -31,3 +31,26 @@ test("buffer content entry create", async t => {
 
   t.is(chunks[0].length, 3);
 });
+
+export class FailingBufferContentEntry extends BufferContentEntryMixin(
+  ContentEntry
+) {
+  get buffer() {
+    return this.getBuffer();
+  }
+
+  async getBuffer() {
+    throw new Error("Unable to get buffer");
+  }
+}
+
+test("buffer isEmpty failes", async t => {
+  const entry = new FailingBufferContentEntry("somewhere");
+
+  try {
+    await entry.isEmpty;
+    t.fail();
+  } catch (e) {
+    t.is(e.message, "Unable to get buffer");
+  }
+});
