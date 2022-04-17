@@ -15,6 +15,7 @@ export class ContentEntry extends BaseEntry {
 
   /**
    * UTI types for this entry.
+   * defaults to "public.content".
    * @return {string[]}
    */
   get types() {
