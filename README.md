@@ -1,6 +1,6 @@
 [![npm](https://img.shields.io/npm/v/content-entry.svg)](https://www.npmjs.com/package/content-entry)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![minified size](https://badgen.net/bundlephobia/min/content-entry)](https://bundlephobia.com/result?p=content-entry)
+[![Open Bundle](https://bundlejs.com/badge-light.svg)](https://bundlejs.com/?q=content-entry)
 [![downloads](http://img.shields.io/npm/dm/content-entry.svg?style=flat-square)](https://npmjs.org/package/content-entry)
 [![GitHub Issues](https://img.shields.io/github/issues/arlac77/content-entry.svg?style=flat-square)](https://github.com/arlac77/content-entry/issues)
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Farlac77%2Fcontent-entry%2Fbadge\&style=flat)](https://actions-badge.atrox.dev/arlac77/content-entry/goto)
