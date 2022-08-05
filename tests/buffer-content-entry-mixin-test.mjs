@@ -15,6 +15,7 @@ test("buffer content entry create", async t => {
   t.false(entry.isEmpty);
   t.false(entry.isCollection);
   t.true(entry.isBlob);
+  t.is(entry.size, 3);
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
     isBlob: true,

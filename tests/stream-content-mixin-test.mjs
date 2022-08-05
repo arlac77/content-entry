@@ -9,10 +9,7 @@ class AlwaysFailingTestWritable extends Writable {
 }
 
 class TestWritable extends Writable {
-  constructor(...args) {
-    super(...args);
-    this.chunks = [];
-  }
+  chunks = [];
 
   _write(chunk, encoding, callback) {
     this.chunks.push(chunk);

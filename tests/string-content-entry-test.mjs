@@ -7,6 +7,7 @@ test("string content entry create", async t => {
   t.false(entry.isEmpty);
   t.false(entry.isCollection);
   t.true(entry.isBlob);
+  t.is(entry.size, 3);
   t.is(entry.mode, 420);
   t.is(entry.encoding, "utf8");
 

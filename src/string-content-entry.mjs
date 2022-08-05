@@ -25,4 +25,13 @@ export class StringContentEntry extends StringContentEntryMixin(ContentEntry) {
   get isEmpty() {
     return this.string.length === 0;
   }
+
+  /**
+   * @return {Number} size in bytes
+   */
+  get size()
+  {
+    // TODO: chars not bytes
+    return this.string.length;
+  }
 }

@@ -15,10 +15,17 @@ export class BufferContentEntry extends BufferContentEntryMixin(ContentEntry) {
   }
 
   /**
-   * 
+   *
    * @returns {boolean} true if buffer length is zero
    */
   get isEmpty() {
     return this.buffer.length === 0;
+  }
+
+  /**
+   * @return {Number} size in bytes
+   */
+  get size() {
+    return this.buffer.length;
   }
 }

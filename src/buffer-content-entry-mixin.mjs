@@ -41,6 +41,14 @@ export function BufferContentEntryMixin(superclass) {
         : buffer.length === 0;
     }
 
+    get size()
+    {
+      const buffer = this.buffer;
+      return buffer.then
+        ? buffer.then(buffer => buffer.length)
+        : buffer.length;
+    }
+
     /**
      * @deprecated
      */
