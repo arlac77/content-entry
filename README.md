@@ -39,6 +39,7 @@ content entries for content containers (aka files)
 *   [BufferContentEntry](#buffercontententry)
     *   [Parameters](#parameters-4)
     *   [isEmpty](#isempty-1)
+    *   [size](#size)
 *   [ContentEntry](#contententry)
     *   [isBlob](#isblob-1)
     *   [types](#types-1)
@@ -68,6 +69,7 @@ content entries for content containers (aka files)
     *   [Parameters](#parameters-9)
     *   [Properties](#properties-4)
     *   [isEmpty](#isempty-2)
+    *   [size](#size-1)
 *   [toReadableStream](#toreadablestream)
     *   [Parameters](#parameters-10)
 *   [equalsUint8Arrays](#equalsuint8arrays)
@@ -158,6 +160,10 @@ ConentEntry with a Uint8Array as content store.
 ### isEmpty
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if buffer length is zero
+
+### size
+
+Returns **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** size in bytes
 
 ## ContentEntry
 
@@ -301,6 +307,10 @@ Content entries where a string is the primary data representation.
 ### isEmpty
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if string length is zero
+
+### size
+
+Returns **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** size in bytes
 
 ## toReadableStream
 
