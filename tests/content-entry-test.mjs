@@ -12,6 +12,7 @@ test("content entry create", async t => {
   t.true(entry.isEmpty);
   t.true(entry.isBlob);
   t.is(entry.mode, 420);
+  t.deepEqual(entry.mtime, new Date(0));
   t.true(entry.types.indexOf("public.content") === 0);
 });
 

@@ -47,6 +47,10 @@ export class BaseEntry {
     return 0o644;
   }
 
+  get mtime() {
+    return new Date(0);	
+  }
+ 
   /**
    * @return {boolean} true if there is no content (length := 0).
    */
