@@ -1,4 +1,8 @@
 // @ts-check
+
+
+const DEFAULT_MTIME = new Date(0);
+
 /**
  * Representation of one file or directory entry.
  * All names are absolute (no leading '/') the group seperator is '/'.
@@ -48,7 +52,7 @@ export class BaseEntry {
   }
 
   get mtime() {
-    return new Date(0);	
+    return DEFAULT_MTIME;	
   }
  
   /**
