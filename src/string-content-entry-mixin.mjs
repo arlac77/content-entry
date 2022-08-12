@@ -12,8 +12,15 @@ export function StringContentEntryMixin(superclass) {
      * @return {Uint8Array}
      */
     get buffer() {
-      const encoder = new TextEncoder( /*this.encoding*/);
+      const encoder = new TextEncoder(/*this.encoding*/);
       return encoder.encode(this.string);
+    }
+
+    /**
+     * @return {Number} size in bytes
+     */
+    get size() {
+      return this.buffer.length;
     }
 
     /**
@@ -27,7 +34,7 @@ export function StringContentEntryMixin(superclass) {
     /**
      * @deprecated
      */
-     async getReadStream() {
+    async getReadStream() {
       return toReadableStream(this.string);
     }
   };
