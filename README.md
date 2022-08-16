@@ -69,7 +69,6 @@ content entries for content containers (aka files)
     *   [Parameters](#parameters-9)
     *   [Properties](#properties-4)
     *   [isEmpty](#isempty-2)
-    *   [size](#size-1)
 *   [toReadableStream](#toreadablestream)
     *   [Parameters](#parameters-10)
 *   [equalsUint8Arrays](#equalsuint8arrays)
@@ -307,10 +306,6 @@ Content entries where a string is the primary data representation.
 ### isEmpty
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if string length is zero
-
-### size
-
-Returns **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** size in bytes
 
 ## toReadableStream
 
