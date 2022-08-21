@@ -80,7 +80,7 @@ Brings directory attributes to entries.
 
 ### Parameters
 
-*   `superclass`  
+*   `superclass` &#x20;
 
 ## BaseEntry
 
@@ -129,7 +129,7 @@ Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 #### Parameters
 
-*   `other`  
+*   `other` &#x20;
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)>** true if name, isBlob and isCollection are the same
 
@@ -139,11 +139,11 @@ Content entries where a Uint8Array is the primary data representation.
 
 ### Parameters
 
-*   `superclass`  
+*   `superclass` &#x20;
 
 ### Properties
 
-*   `buffer` **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)** 
+*   `buffer` **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)**&#x20;
 
 ## BufferContentEntry
 
@@ -153,8 +153,8 @@ ConentEntry with a Uint8Array as content store.
 
 ### Parameters
 
-*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
-*   `buffer` **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)** 
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+*   `buffer` **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)**&#x20;
 
 ### isEmpty
 
@@ -179,7 +179,7 @@ Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 UTI types for this entry.
 defaults to "public.content".
 
-Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** 
+Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**&#x20;
 
 ### readStream
 
@@ -187,7 +187,7 @@ Returns **any** undefined
 
 ### string
 
-Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
 
 ### buffer
 
@@ -197,7 +197,7 @@ return {Uint8Array}
 
 The default encoding used to convert content to strings.
 
-Returns **BufferEncoding** 
+Returns **BufferEncoding**&#x20;
 
 ### equalsContent
 
@@ -205,7 +205,7 @@ Compare content against other entry.
 
 #### Parameters
 
-*   `other` **[ContentEntry](#contententry)** 
+*   `other` **[ContentEntry](#contententry)**&#x20;
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)>** true if other has the same content (bitwise)
 
@@ -241,7 +241,7 @@ Represents a entry without content (content length = 0).
 
 ### string
 
-Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
 
 ### buffer
 
@@ -259,13 +259,13 @@ Content entries where a readable stream is the primary data representation.
 
 ### Parameters
 
-*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
-*   `readStream` **ReadableStream** 
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+*   `readStream` **ReadableStream**&#x20;
 
 ### Properties
 
-*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
-*   `readStream` **ReadableStream** 
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+*   `readStream` **ReadableStream**&#x20;
 
 ## StreamContentEntryMixin
 
@@ -273,7 +273,7 @@ Content entries where a stream is the primary data representation.
 
 ### Parameters
 
-*   `superclass`  
+*   `superclass` &#x20;
 
 ## StringContentEntryMixin
 
@@ -281,11 +281,11 @@ Content entries where a string is the primary data representation.
 
 ### Parameters
 
-*   `superclass`  
+*   `superclass` &#x20;
 
 ### Properties
 
-*   `string` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `string` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
 
 ## StringContentEntry
 
@@ -295,13 +295,13 @@ Content entries where a string is the primary data representation.
 
 ### Parameters
 
-*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
-*   `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+*   `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
 
 ### Properties
 
-*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
-*   `string` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+*   `string` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
 
 ### isEmpty
 
@@ -311,9 +311,9 @@ Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 ### Parameters
 
-*   `input` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `input` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
 
-Returns **Readable** 
+Returns **Readable**&#x20;
 
 ## equalsUint8Arrays
 
@@ -321,8 +321,8 @@ Returns true if the two passed Uint8Arrays have the same content
 
 ### Parameters
 
-*   `a` **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)** 
-*   `b` **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)** 
+*   `a` **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)**&#x20;
+*   `b` **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)**&#x20;
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if content of a equals b
 
