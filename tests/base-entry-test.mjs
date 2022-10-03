@@ -30,7 +30,7 @@ test("base entry equals", async t => {
 test("base change name", async t => {
   const entry = new BaseEntry("a");
   t.is(entry.name, "a");
-  entry.name = 'b';
+  entry.name = "b";
   t.is(entry.name, "b");
 });
 
