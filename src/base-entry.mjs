@@ -1,6 +1,5 @@
 // @ts-check
 
-
 const DEFAULT_MTIME = new Date(0);
 
 /**
