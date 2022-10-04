@@ -1,5 +1,5 @@
 import test from "ava";
-import { Writable } from "stream";
+import { Writable } from "node:stream";
 import { ContentEntry, StreamContentEntryMixin } from "content-entry";
 
 class AlwaysFailingTestWritable extends Writable {

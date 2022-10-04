@@ -1,5 +1,5 @@
 import test from "ava";
-import { Readable } from "stream";
+import { Readable } from "node:stream";
 import { ContentEntry, StreamContentEntryMixin } from "content-entry";
 
 class TestReadable extends Readable {
