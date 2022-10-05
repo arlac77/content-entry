@@ -1,4 +1,4 @@
-import { toReadableStream } from "./util-stream.mjs";
+import { toReadableStream } from "#util-stream.mjs";
 
 /**
  * Content entries where a Uint8Array is the primary data representation.
