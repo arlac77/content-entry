@@ -1,6 +1,6 @@
 // @ts-check
 import { ContentEntry } from "./content-entry.mjs";
-import { emptyReadable } from "./util-stream.mjs";
+import { emptyReadable } from "#util-stream.mjs";
 
 /**
  * Represents a entry without content (content length = 0).

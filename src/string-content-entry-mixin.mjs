@@ -1,6 +1,6 @@
 // @ts-check
 import { Readable } from "node:stream";
-import { toReadableStream } from "./util-stream.mjs";
+import { toReadableStream } from "#util-stream.mjs";
 
 /**
  * Content entries where a string is the primary data representation.
