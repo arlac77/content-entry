@@ -1,5 +1,5 @@
 // @ts-check
-import { Readable } from "node:stream";
+import { Readable } from "#stream.mjs";
 import { toReadableStream } from "#util-stream.mjs";
 
 /**

@@ -6,12 +6,15 @@
   },
   "sideEffects": false,
   "exports": {
-    "browser": "./src/index-browser.mjs",
-    "node": "./src/index-node.mjs"
+    ".": "./src/index.mjs"
   },
   "imports": {
+    "#stream.mjs": {
+      "browser": "./src/browser-stream.mjs",
+      "node": "./src/stream.mjs"
+    },
     "#util-stream.mjs": {
-      "browser": "./src/brwoser-util-stream.mjs",
+      "browser": "./src/browser-util-stream.mjs",
       "node": "./src/util-stream.mjs"
     }
   },
