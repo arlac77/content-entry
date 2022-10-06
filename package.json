@@ -8,16 +8,6 @@
   "exports": {
     ".": "./src/index.mjs"
   },
-  "imports": {
-    "#stream.mjs": {
-      "browser": "./src/browser-stream.mjs",
-      "node": "./src/stream.mjs"
-    },
-    "#util-stream.mjs": {
-      "browser": "./src/browser-util-stream.mjs",
-      "node": "./src/util-stream.mjs"
-    }
-  },
   "description": "content entries for content containers (aka files)",
   "keywords": [
     "content",
@@ -67,5 +57,15 @@
       "arlac77/template-esm-only",
       "arlac77/template-typescript"
     ]
+  },
+  "imports": {
+    "#stream.mjs": {
+      "browser": "./src/browser-stream.mjs",
+      "node": "./src/stream.mjs"
+    },
+    "#util-stream.mjs": {
+      "browser": "./src/browser-util-stream.mjs",
+      "node": "./src/util-stream.mjs"
+    }
   }
 }
