@@ -1,7 +1,7 @@
 import test from "ava";
-import { join, dirname } from "path";
-import { fileURLToPath } from "url";
-import { createReadStream } from "fs";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import { createReadStream } from "node:fs";
 import { BufferContentEntry, ReadableStreamContentEntry } from "content-entry";
 
 const here = dirname(fileURLToPath(import.meta.url));
