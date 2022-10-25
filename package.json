@@ -46,7 +46,7 @@
   "devDependencies": {
     "@types/node": "^18.11.5",
     "ava": "^5.0.1",
-    "browser-ava": "^1.2.1",
+    "browser-ava": "^1.2.2",
     "c8": "^7.12.0",
     "documentation": "^14.0.0",
     "semantic-release": "^19.0.5",
