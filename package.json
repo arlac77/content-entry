@@ -44,7 +44,7 @@
     "lint:tsc": "tsc --allowJs --checkJs --noEmit -t esnext -m esnext ./src/*.mjs"
   },
   "devDependencies": {
-    "@types/node": "^18.11.5",
+    "@types/node": "^18.11.7",
     "ava": "^5.0.1",
     "browser-ava": "^1.2.3",
     "c8": "^7.12.0",
