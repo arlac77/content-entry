@@ -1,5 +1,1 @@
-class Readable {
-
-};
-
-export { Readable };
+export default ReadableStream;

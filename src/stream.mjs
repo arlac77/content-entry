@@ -1,3 +1,2 @@
 import { Readable } from "node:stream";
-
-export { Readable };
+export default  Readable;

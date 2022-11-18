@@ -1,9 +1,16 @@
-export function emptyReadable() {}
-
-export const toReadableStream = input =>
-  new Readable({
-    read() {
-      this.push(input);
-      this.push(null);
+export function emptyReadable() {
+  return new ReadableStream({
+    async pull(controller) {
+      controller.close();
     }
   });
+}
+
+export function toReadableStream(input) {
+  return new ReadableStream({
+    async pull(controller) {
+      controller.enqueue(input);
+      controller.close();
+    }
+  });
+}
