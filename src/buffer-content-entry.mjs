@@ -23,7 +23,7 @@ export class BufferContentEntry extends BufferContentEntryMixin(ContentEntry) {
   }
 
   /**
-   * @return {Number} size in bytes
+   * @return {number} size in bytes
    */
   get size() {
     return this.buffer.length;
