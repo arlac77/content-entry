@@ -8,7 +8,7 @@ import { toReadableStream } from "#util-stream.mjs";
 export function BufferContentEntryMixin(superclass) {
   return class BufferContentEntryMixin extends superclass {
     /**
-     * Deliver content as string
+     * Deliver content as string.
      * @return {string} content
      */
     get string() {
@@ -41,6 +41,9 @@ export function BufferContentEntryMixin(superclass) {
         : buffer.length === 0;
     }
 
+    /**
+     * @return {number} number of bytes in the buffer
+     */
     get size()
     {
       const buffer = this.buffer;
