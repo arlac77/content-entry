@@ -11,11 +11,11 @@
   "imports": {
     "#stream.mjs": {
       "browser": "./src/browser-stream.mjs",
-      "node": "./src/stream.mjs"
+      "node": "./src/node-stream.mjs"
     },
     "#util-stream.mjs": {
       "browser": "./src/browser-util-stream.mjs",
-      "node": "./src/util-stream.mjs"
+      "node": "./src/node-util-stream.mjs"
     }
   },
   "description": "content entries for content containers (aka files)",
