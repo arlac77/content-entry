@@ -57,20 +57,20 @@ content entries for content containers (aka files)
     *   [string](#string-1)
     *   [buffer](#buffer-1)
     *   [readStream](#readstream-1)
-*   [ReadableStreamContentEntry](#readablestreamcontententry)
+*   [toReadableStream](#toreadablestream)
     *   [Parameters](#parameters-6)
+*   [ReadableStreamContentEntry](#readablestreamcontententry)
+    *   [Parameters](#parameters-7)
     *   [Properties](#properties-2)
 *   [StreamContentEntryMixin](#streamcontententrymixin)
-    *   [Parameters](#parameters-7)
-*   [StringContentEntryMixin](#stringcontententrymixin)
     *   [Parameters](#parameters-8)
+*   [StringContentEntryMixin](#stringcontententrymixin)
+    *   [Parameters](#parameters-9)
     *   [Properties](#properties-3)
 *   [StringContentEntry](#stringcontententry)
-    *   [Parameters](#parameters-9)
+    *   [Parameters](#parameters-10)
     *   [Properties](#properties-4)
     *   [isEmpty](#isempty-2)
-*   [toReadableStream](#toreadablestream)
-    *   [Parameters](#parameters-10)
 *   [equalsUint8Arrays](#equalsuint8arrays)
     *   [Parameters](#parameters-11)
 
@@ -251,6 +251,14 @@ Returns **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Referen
 
 Returns **ReadableStream** zero length stream.
 
+## toReadableStream
+
+### Parameters
+
+*   `input` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+
+Returns **Readable**&#x20;
+
 ## ReadableStreamContentEntry
 
 **Extends StreamContentEntryMixin(ContentEntry)**
@@ -306,14 +314,6 @@ Content entries where a string is the primary data representation.
 ### isEmpty
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if string length is zero
-
-## toReadableStream
-
-### Parameters
-
-*   `input` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
-
-Returns **Readable**&#x20;
 
 ## equalsUint8Arrays
 
