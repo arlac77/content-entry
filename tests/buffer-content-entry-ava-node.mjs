@@ -2,7 +2,7 @@ import test from "ava";
 import { BufferContentEntry } from "content-entry";
 
 test("buffer content entry create", async t => {
-  const entry = new BufferContentEntry("somewhere", Buffer.from("abc"));
+  const entry = new BufferContentEntry("somewhere", new TextEncoder().encode("abc"));
   t.is(entry.name, "somewhere");
   t.false(entry.isEmpty);
   t.false(entry.isCollection);

@@ -5,7 +5,7 @@ export class TestBufferContentEntry extends BufferContentEntryMixin(
   ContentEntry
 ) {
   get buffer() {
-    return new Buffer.from("abc");
+    return new TextEncoder().encode("abc");
   }
 }
 

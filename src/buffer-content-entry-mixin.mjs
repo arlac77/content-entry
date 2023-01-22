@@ -15,8 +15,8 @@ export function BufferContentEntryMixin(superclass) {
       const buffer = this.buffer;
 
       return buffer.then
-        ? buffer.then(buffer => buffer.toString(this.encoding))
-        : buffer.toString(this.encoding);
+        ? buffer.then(buffer => String.fromCharCode.apply(null, buffer))
+        : String.fromCharCode.apply(null, buffer);
     }
 
     /**
