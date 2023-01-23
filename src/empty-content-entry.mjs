@@ -8,21 +8,6 @@ import { emptyReadable } from "#util-stream.mjs";
 export class EmptyContentEntry extends ContentEntry {
 
   /**
-   * @return {string}
-   */
-  get string() {
-    return "";
-  }
-
-  /**
-   * @return {Uint8Array} zero length buffer
-   */
-
-  get buffer() {
-    return Uint8Array.of();
-  }
-
-  /**
    * @returns {ReadableStream} zero length stream.
    */
   get readStream() {

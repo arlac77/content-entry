@@ -12,7 +12,6 @@ test("readable stream content entry create", async t => {
     createReadStream(join(here, "fixtures", "file.txt"), { encoding: "utf8" })
   );
   t.is(entry.name, "somewhere");
-  t.true(entry.isEmpty);
   t.false(entry.isCollection);
   t.true(entry.isBlob);
   t.false(entry.isDeleted);
@@ -25,6 +24,7 @@ test("readable stream content entry create", async t => {
     isCollection: false
   });
   t.is(await entry.string, "abc\n");
+  t.false(entry.isEmpty); // TODO after reading ?
 });
 
 test("readable stream content entry buffer", async t => {
