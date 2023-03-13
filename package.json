@@ -7,16 +7,6 @@
   "exports": {
     ".": "./src/index.mjs"
   },
-  "imports": {
-    "#stream.mjs": {
-      "browser": "./src/browser-stream.mjs",
-      "node": "./src/node-stream.mjs"
-    },
-    "#util-stream.mjs": {
-      "browser": "./src/browser-util-stream.mjs",
-      "node": "./src/node-util-stream.mjs"
-    }
-  },
   "description": "content entries for content containers (aka files)",
   "keywords": [
     "content",
@@ -71,6 +61,6 @@
     ]
   },
   "dependencies": {
-    "browser-stream-util": "^1.0.0"
+    "browser-stream-util": "^1.1.0"
   }
 }
