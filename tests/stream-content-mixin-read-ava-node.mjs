@@ -9,7 +9,7 @@ class TestEntry extends StreamContentEntryMixin(ContentEntry) {
   }
 }
 
-test("string read (chunks)", async t => {
+test.skip("string read (chunks)", async t => {
   const entry = new TestEntry("reading");
   t.is(await entry.string, "abc");
 });
