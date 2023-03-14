@@ -1,4 +1,5 @@
 import test from "ava";
+import { streamToUint8Array } from "browser-stream-util";
 import { DeletedContentEntry } from "content-entry";
 
 test("deleted content entry create", async t => {
@@ -16,5 +17,5 @@ test("deleted content entry create", async t => {
   });
   t.is(await entry.string, "");
   t.is((await entry.buffer).length, 0);
-  t.is((await entry.readStream).read(), null);
+  t.is((await streamToUint8Array(await entry.readStream)).length, 0);
 });
