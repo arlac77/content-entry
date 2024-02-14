@@ -1,4 +1,3 @@
-// @ts-check
 import { ContentEntry } from "./content-entry.mjs";
 import { emptyStream } from "browser-stream-util";
 

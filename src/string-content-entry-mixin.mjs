@@ -1,4 +1,3 @@
-// @ts-check
 import { stringToStream } from "browser-stream-util";
 
 /**

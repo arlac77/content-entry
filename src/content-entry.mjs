@@ -1,4 +1,3 @@
-// @ts-check
 import { BaseEntry } from "./base-entry.mjs";
 import { equalsUint8Arrays } from "./util.mjs";
 

@@ -1,4 +1,3 @@
-// @ts-check
 import { StreamContentEntryMixin } from "./stream-content-entry-mixin.mjs";
 import { ContentEntry } from "./content-entry.mjs";
 

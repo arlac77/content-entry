@@ -1,4 +1,3 @@
-// @ts-check
 import { EmptyContentEntry } from "./empty-content-entry.mjs";
 
 /**
