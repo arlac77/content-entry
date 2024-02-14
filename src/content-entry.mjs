@@ -59,7 +59,7 @@ export class ContentEntry extends BaseEntry {
 
   /**
    * The default encoding used to convert content to strings.
-   * @return {BufferEncoding}
+   * @return {string}
    */
   get encoding() {
     return "utf8";
