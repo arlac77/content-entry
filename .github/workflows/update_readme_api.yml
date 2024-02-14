@@ -1,15 +1,20 @@
 name: API to readme
 'on':
   schedule:
-    - cron: 31 14 * * *
+    - cron: 31 14 * * 6
+  push:
+    paths:
+      - src/*
 jobs:
   update_readme_api:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3.6.0
+      - uses: actions/checkout@v4.1.1
         with:
-          node-version: 18.14.2
+          fetch-depth: '2'
+      - uses: actions/setup-node@v4.0.2
+        with:
+          node-version: 20.11.0
       - run: npm ci
       - run: npm run docs
       - uses: gr2m/create-or-update-pull-request-action@v1
