@@ -1,4 +1,3 @@
-// @ts-check
 import { StringContentEntryMixin } from "./string-content-entry-mixin.mjs";
 import { ContentEntry } from "./content-entry.mjs";
 

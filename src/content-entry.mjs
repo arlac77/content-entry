@@ -1,4 +1,3 @@
-// @ts-check
 import { BaseEntry } from "./base-entry.mjs";
 import { equalsUint8Arrays } from "./util.mjs";
 
@@ -33,19 +32,33 @@ export class ContentEntry extends BaseEntry {
    * @return {string}
    */
   get string() {
-    return undefined;
+    return "";
   }
 
   /**
    * return {Uint8Array}
    */
   get buffer() {
-    return undefined;
+    return Uint8Array.of();
+  }
+
+  /**
+   * @return {boolean} true if there is no content (length := 0).
+   */
+  get isEmpty() {
+    return this.buffer.length === 0;
+  }
+  
+  /**
+   * @return {number} size in bytes
+   */
+  get size() {
+    return this.buffer.length;
   }
 
   /**
    * The default encoding used to convert content to strings.
-   * @return {BufferEncoding}
+   * @return {string}
    */
   get encoding() {
     return "utf8";
