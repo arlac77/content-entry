@@ -1,4 +1,3 @@
-// @ts-check
 import { BufferContentEntryMixin } from "./buffer-content-entry-mixin.mjs";
 import { ContentEntry } from "./content-entry.mjs";
 
@@ -12,20 +11,5 @@ export class BufferContentEntry extends BufferContentEntryMixin(ContentEntry) {
     // @ts-ignore
     super(name);
     Object.defineProperties(this, { buffer: { value: buffer } });
-  }
-
-  /**
-   *
-   * @returns {boolean} true if buffer length is zero
-   */
-  get isEmpty() {
-    return this.buffer.length === 0;
-  }
-
-  /**
-   * @return {number} size in bytes
-   */
-  get size() {
-    return this.buffer.length;
   }
 }

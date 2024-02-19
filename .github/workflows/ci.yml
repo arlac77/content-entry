@@ -8,6 +8,8 @@ name: CI
     branches:
       - master
       - next
+permissions:
+  contents: read
 jobs:
   test-node:
     runs-on: ubuntu-latest
@@ -18,7 +20,7 @@ jobs:
           - macos-latest
           - windows-latest
         node-version:
-          - 20.11.1
+          - 20.11.0
     steps:
       - uses: actions/checkout@v4.1.1
       - uses: actions/setup-node@v4.0.2
@@ -36,34 +38,21 @@ jobs:
           path-to-lcov: build/coverage/lcov.info
           parallel: true
         continue-on-error: true
-  test-browser:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        browser:
-          - chrome
-          - firefox
-    steps:
-      - uses: actions/checkout@v4.1.1
-      - uses: actions/setup-node@v4.0.2
-        with:
-          node-version: 20.11.1
-          cache: npm
-      - run: npm ci
-      - run: npx playwright install
-      - run: npm run test:browser-ava --if-present
-        env:
-          BROWSER: ${{ matrix.browser }}
   release:
     needs:
       - test-node
       - test-browser
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4.1.1
       - uses: actions/setup-node@v4.0.2
         with:
-          node-version: 20.11.1
+          node-version: 20.11.0
           cache: npm
           cache-dependency-path: package-lock.json
       - run: npm ci
@@ -72,11 +61,6 @@ jobs:
           CI: 'true'
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-      id-token: write
   finish:
     needs:
       - test-node
@@ -88,5 +72,21 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: build/coverage/lcov.info
           parallel-finished: true
-permissions:
-  contents: read
+  test-browser:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser:
+          - chrome
+          - firefox
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - uses: actions/setup-node@v4.0.2
+        with:
+          node-version: 20.11.0
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install
+      - run: npm run test:browser-ava --if-present
+        env:
+          BROWSER: ${{ matrix.browser }}

@@ -1,6 +1,4 @@
-// @ts-check
-import Readable from "#stream.mjs";
-import { toReadableStream } from "#util-stream.mjs";
+import { stringToStream } from "browser-stream-util";
 
 /**
  * Content entries where a string is the primary data representation.
@@ -25,17 +23,17 @@ export function StringContentEntryMixin(superclass) {
 
     /**
      * Deliver content as read stream
-     * @return {Readable} content
+     * @return {ReadableStream} content
      */
     get readStream() {
-      return toReadableStream(this.string);
+      return stringToStream(this.string);
     }
 
     /**
      * @deprecated
      */
     async getReadStream() {
-      return toReadableStream(this.string);
+      return stringToStream(this.string);
     }
   };
 }

@@ -1,4 +1,4 @@
-import { toReadableStream } from "#util-stream.mjs";
+import { uint8ToStream } from "browser-stream-util";
 
 /**
  * Content entries where a Uint8Array is the primary data representation.
@@ -27,8 +27,8 @@ export function BufferContentEntryMixin(superclass) {
       const buffer = this.buffer;
 
       return buffer.then
-        ? buffer.then(buffer => toReadableStream(buffer))
-        : toReadableStream(buffer);
+        ? buffer.then(buffer => uint8ToStream(buffer))
+        : uint8ToStream(buffer);
     }
 
     /**
@@ -56,7 +56,7 @@ export function BufferContentEntryMixin(superclass) {
      * @deprecated
      */
     async getReadStream() {
-      return toReadableStream(await this.buffer);
+      return uint8ToStream(await this.buffer);
     }
   };
 }
