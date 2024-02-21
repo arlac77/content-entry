@@ -32,9 +32,9 @@
     "test:ava": "ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs",
     "test:browser-ava": "browser-ava --headless --no-keep-open tests/*-ava.mjs tests/*-ava-browser.mjs",
     "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs && c8 report -r lcov -o build/coverage --temp-directory build/tmp",
-    "docs": "documentation readme --section=API ./src/**/*.mjs && documentation readme --section=API {{javascript.source}}",
+    "docs": "documentation readme --section=API ./src/**/*.mjs",
     "lint": "npm run lint:docs && npm run lint:tsc",
-    "lint:docs": "documentation lint ./src/**/*.mjs && documentation lint {{javascript.source}}",
+    "lint:docs": "documentation lint ./src/**/*.mjs",
     "lint:tsc": "tsc --allowJs --checkJs --noEmit -t esnext -m esnext --module nodenext --moduleResolution nodenext ./src**/*.mjs"
   },
   "dependencies": {
@@ -67,8 +67,5 @@
       "arlac77/template-javascript-component",
       "arlac77/template-typescript"
     ]
-  },
-  "dependencies": {
-    "browser-stream-util": "^1.2.0"
   }
 }
