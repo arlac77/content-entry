@@ -4,7 +4,6 @@ import { ContentEntry } from "content-entry";
 test("content entry create", async t => {
   const entry = new ContentEntry("somewhere");
   t.is(entry.name, "somewhere");
-  t.is(await entry.string.length, 0);
   t.is(await entry.buffer.length, 0);
   t.is(await entry.readStream, undefined);
   t.is(entry.name, "somewhere");

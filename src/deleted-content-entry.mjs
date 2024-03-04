@@ -22,4 +22,9 @@ export class DeletedContentEntry extends EmptyContentEntry {
   {
     return false;
   }
+
+  get string()
+  {
+    return "";
+  }
 }

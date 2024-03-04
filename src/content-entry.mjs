@@ -29,13 +29,6 @@ export class ContentEntry extends BaseEntry {
   }
 
   /**
-   * @return {string}
-   */
-  get string() {
-    return "";
-  }
-
-  /**
    * return {Uint8Array}
    */
   get buffer() {

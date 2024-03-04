@@ -11,10 +11,19 @@ import { ContentEntry } from "./content-entry.mjs";
  * @property {string} string
  */
 export class StringContentEntry extends StringContentEntryMixin(ContentEntry) {
+  /**
+   * Content entries where a string is the primary data representation.
+   *
+   * @param {string} name
+   * @param {string} value
+   *
+   * @property {string} name
+   * @property {string} string
+   */
   constructor(name, value) {
     // @ts-ignore
     super(name);
-    Object.defineProperties(this, { string: { value } });
+    this.string = value;
   }
 
   /**

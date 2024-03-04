@@ -12,4 +12,9 @@ export class EmptyContentEntry extends ContentEntry {
   get readStream() {
     return emptyStream();
   }
+
+  get string()
+  {
+    return "";
+  }
 }
