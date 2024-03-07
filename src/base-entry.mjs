@@ -1,4 +1,3 @@
-
 const DEFAULT_MTIME = new Date(0);
 
 /**
@@ -9,6 +8,16 @@ const DEFAULT_MTIME = new Date(0);
  * @property {string} name name inside of the container
  */
 export class BaseEntry {
+
+  /** @type {string} */ name;
+
+  /**
+   * Representation of one file or directory entry.
+   * All names are absolute (no leading '/') the group seperator is '/'.
+   * @param {string} name name inside of the container
+   *
+   * @property {string} name name inside of the container
+   */
   constructor(name) {
     if (name[0] === "/" || name.indexOf("\\") >= 0) {
       throw new TypeError(
@@ -50,9 +59,9 @@ export class BaseEntry {
   }
 
   get mtime() {
-    return DEFAULT_MTIME;	
+    return DEFAULT_MTIME;
   }
- 
+
   /**
    * @return {boolean} true if there is no content (length := 0).
    */
@@ -74,6 +83,10 @@ export class BaseEntry {
     return true;
   }
 
+  /**
+   * 
+   * @return {{name:string, isBlob: boolean, isCollection: boolean}} 
+   */
   toJSON() {
     return {
       name: this.name,
