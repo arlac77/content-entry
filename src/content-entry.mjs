@@ -1,3 +1,5 @@
+import { emptyStream } from "browser-stream-util";
+
 import { BaseEntry } from "./base-entry.mjs";
 import { equalsUint8Arrays } from "./util.mjs";
 
@@ -22,10 +24,11 @@ export class ContentEntry extends BaseEntry {
   }
 
   /**
-   * @return {any} undefined
+   * By default an zero length stream.
+   * @return {ReadableStream}
    */
   get readStream() {
-    return undefined;
+    return emptyStream();
   }
 
   /**

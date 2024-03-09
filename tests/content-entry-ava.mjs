@@ -5,7 +5,6 @@ test("content entry create", async t => {
   const entry = new ContentEntry("somewhere");
   t.is(entry.name, "somewhere");
   t.is(await entry.buffer.length, 0);
-  t.is(await entry.readStream, undefined);
   t.is(entry.name, "somewhere");
   t.is(entry.encoding, "utf8");
   t.true(entry.isEmpty);
@@ -13,6 +12,14 @@ test("content entry create", async t => {
   t.is(entry.mode, 420);
   t.deepEqual(entry.mtime, new Date(0));
   t.true(entry.types.indexOf("public.content") === 0);
+
+
+  const chunks = [];
+  for await( const chunk of entry.readStream) {
+    chunks.push(chunk);
+  }
+
+  t.is(chunks.length, 0);
 });
 
 test("content entry equals", async t => {
