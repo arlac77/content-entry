@@ -16,15 +16,10 @@ test("content entry create", async t => {
   const readStream = entry.readStream;
 
   t.true(readStream !== undefined);
-  t.log(readStream);
-  
-  const chunks = [];
+  const reader = readStream.getReader();
+  const result = await reader.read();
 
-  for await( const chunk of readStream) {
-    chunks.push(chunk);
-  }
-
-  t.is(chunks.length, 0);
+  t.true(result.done);
 });
 
 test("content entry equals", async t => {
