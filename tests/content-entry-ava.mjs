@@ -13,9 +13,14 @@ test("content entry create", async t => {
   t.deepEqual(entry.mtime, new Date(0));
   t.true(entry.types.indexOf("public.content") === 0);
 
+  const readStream = entry.readStream;
 
+  t.true(readStream !== undefined);
+  t.log(readStream);
+  
   const chunks = [];
-  for await( const chunk of entry.readStream) {
+
+  for await( const chunk of readStream) {
     chunks.push(chunk);
   }
 
