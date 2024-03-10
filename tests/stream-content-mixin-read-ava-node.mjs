@@ -2,7 +2,6 @@ import test from "ava";
 import { stringToStream } from "browser-stream-util";
 import { ContentEntry, StreamContentEntryMixin } from "content-entry";
 
-
 class TestEntry extends StreamContentEntryMixin(ContentEntry) {
   async getReadStream(options) {
     return stringToStream("abc");

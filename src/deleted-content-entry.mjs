@@ -1,9 +1,9 @@
-import { EmptyContentEntry } from "./empty-content-entry.mjs";
+import { ContentEntry } from "./content-entry.mjs";
 
 /**
  * Represents a deleted entry.
  */
-export class DeletedContentEntry extends EmptyContentEntry {
+export class DeletedContentEntry extends ContentEntry {
 
   /**
    * We are always deleted.
@@ -21,10 +21,5 @@ export class DeletedContentEntry extends EmptyContentEntry {
   get isExistent()
   {
     return false;
-  }
-
-  get string()
-  {
-    return "";
   }
 }

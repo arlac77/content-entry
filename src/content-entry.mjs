@@ -37,6 +37,11 @@ export class ContentEntry extends BaseEntry {
     return Uint8Array.of();
   }
 
+  get string()
+  {
+    return "";
+  }
+  
   /**
    * @return {boolean} true if there is no content (length := 0).
    */

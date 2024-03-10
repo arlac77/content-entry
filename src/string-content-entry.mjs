@@ -11,6 +11,11 @@ import { ContentEntry } from "./content-entry.mjs";
  * @property {string} string
  */
 export class StringContentEntry extends StringContentEntryMixin(ContentEntry) {
+
+
+  // @ts-ignore
+  /** @type {string} */ string;
+
   /**
    * Content entries where a string is the primary data representation.
    *
