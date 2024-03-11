@@ -37,18 +37,21 @@ export class ContentEntry extends BaseEntry {
     return Uint8Array.of();
   }
 
-  get string()
-  {
+  /**
+   * By default an zero length string.
+   * @return {string}
+   */
+  get string() {
     return "";
   }
-  
+
   /**
    * @return {boolean} true if there is no content (length := 0).
    */
   get isEmpty() {
     return this.buffer.length === 0;
   }
-  
+
   /**
    * @return {number} size in bytes
    */
