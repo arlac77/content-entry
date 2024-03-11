@@ -8,6 +8,9 @@ import { ContentEntry } from "./content-entry.mjs";
 export class ReadableStreamContentEntry extends StreamContentEntryMixin(
   ContentEntry
 ) {
+
+  readStream;
+
   /**
    * Content entries where a readable stream is the primary data representation.
    *
@@ -21,6 +24,6 @@ export class ReadableStreamContentEntry extends StreamContentEntryMixin(
   constructor(name, readStream) {
     // @ts-ignore
     super(name);
-    Object.defineProperties(this, { readStream: { value: readStream } });
+    this.readStream = readStream;
   }
 }
