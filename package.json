@@ -42,7 +42,7 @@
     "browser-stream-util": "^1.2.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.26",
+    "@types/node": "^20.11.28",
     "ava": "^6.1.2",
     "browser-ava": "^2.2.3",
     "c8": "^9.1.0",
