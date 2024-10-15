@@ -9,7 +9,7 @@ export function StringContentEntryMixin(superclass) {
 
   return class StringContentEntryMixin extends superclass {
     /**
-     * @return {Uint8Array}
+     * @return {Uint8Array<ArrayBuffer>}
      */
     get buffer() {
       const encoder = new TextEncoder(/*this.encoding*/);
