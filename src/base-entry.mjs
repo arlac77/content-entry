@@ -97,7 +97,7 @@ export class BaseEntry {
 
   /**
    * Is other the sam entry?
-   * @param {BaseEntry} other
+   * @param {Object} other
    * @return {Promise<boolean>} true if name, isBlob and isCollection are the same
    */
   async equals(other) {
