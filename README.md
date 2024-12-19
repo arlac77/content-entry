@@ -1,5 +1,5 @@
 [![npm](https://img.shields.io/npm/v/content-entry.svg)](https://www.npmjs.com/package/content-entry)
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://spdx.org/licenses/0BSD.html)
 [![Typed with TypeScript](https://flat.badgen.net/badge/icon/Typed?icon=typescript\&label\&labelColor=blue\&color=555555)](https://typescriptlang.org)
 [![bundlejs](https://deno.bundlejs.com/?q=content-entry\&badge=detailed)](https://bundlejs.com/?q=content-entry)
 [![downloads](http://img.shields.io/npm/dm/content-entry.svg?style=flat-square)](https://npmjs.org/package/content-entry)
