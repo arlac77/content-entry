@@ -7,8 +7,8 @@
   "types": "./types/index.d.mts",
   "exports": {
     ".": {
-      "default": "./src/index.mjs",
-      "types": "./types/index.d.mts"
+      "types": "./types/index.d.mts",
+      "default": "./src/index.mjs"
     }
   },
   "description": "content entries for content containers (aka files)",
