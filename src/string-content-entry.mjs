@@ -12,7 +12,6 @@ import { ContentEntry } from "./content-entry.mjs";
  */
 export class StringContentEntry extends StringContentEntryMixin(ContentEntry) {
 
-
   // @ts-ignore
   /** @type {string} */ string;
 
