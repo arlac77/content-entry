@@ -1,7 +1,7 @@
 import test from "ava";
 import { BaseEntry } from "content-entry";
 
-test("base entry create", async t => {
+test("base entry create", t => {
   const entry = new BaseEntry("somewhere");
   t.is(entry.name, "somewhere", "name");
   t.true(entry.isEmpty, "isEmpty");
@@ -27,7 +27,7 @@ test("base entry equals", async t => {
   t.true(await a.equals(a2));
 });
 
-test("base change name", async t => {
+test("base change name", t => {
   const entry = new BaseEntry("a");
   t.is(entry.name, "a");
   entry.name = "b";

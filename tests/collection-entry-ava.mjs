@@ -1,7 +1,7 @@
 import test from "ava";
 import { CollectionEntry } from "content-entry";
 
-test("collection entry create", async t => {
+test("collection entry create", t => {
   const entry = new CollectionEntry("somewhere");
   t.is(entry.name, "somewhere");
   t.is(entry.mode, 0o755);
