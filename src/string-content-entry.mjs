@@ -29,6 +29,16 @@ export class StringContentEntry extends ContentEntry {
     this.string = value;
   }
 
+  get string()
+  {
+    return this._string;
+  }
+
+  set string(value)
+  {
+    this._string = value;
+  }
+  
   /**
    *
    * @returns {boolean} true if string length is zero
