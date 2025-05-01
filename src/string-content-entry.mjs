@@ -11,9 +11,6 @@ import { ContentEntry } from "./content-entry.mjs";
  * @property {string} string
  */
 export class StringContentEntry extends ContentEntry {
-  // @ts-ignore
-  /** @type {string} */ string;
-
   /**
    * Content entries where a string is the primary data representation.
    *
@@ -38,7 +35,7 @@ export class StringContentEntry extends ContentEntry {
   {
     this._string = value;
   }
-  
+
   /**
    *
    * @returns {boolean} true if string length is zero
