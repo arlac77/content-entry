@@ -1,4 +1,4 @@
-import { StringContentEntryMixin } from "./string-content-entry-mixin.mjs";
+import { stringToStream } from "browser-stream-util";
 import { ContentEntry } from "./content-entry.mjs";
 
 /**
@@ -10,8 +10,7 @@ import { ContentEntry } from "./content-entry.mjs";
  * @property {string} name
  * @property {string} string
  */
-export class StringContentEntry extends StringContentEntryMixin(ContentEntry) {
-
+export class StringContentEntry extends ContentEntry {
   // @ts-ignore
   /** @type {string} */ string;
 
@@ -36,5 +35,30 @@ export class StringContentEntry extends StringContentEntryMixin(ContentEntry) {
    */
   get isEmpty() {
     return this.string.length === 0;
+  }
+
+  /**
+   * @return {Number} size in bytes
+   */
+  get size() {
+    return this.string.length;
+  }
+
+  /**
+   * @return {Uint8Array<ArrayBuffer>}
+   */
+  get buffer() {
+    const encoder = new TextEncoder(/*this.encoding*/);
+    // @ts-ignore
+    return encoder.encode(this.string);
+  }
+
+  /**
+   * Deliver content as read stream
+   * @return {ReadableStream} content
+   */
+  get readStream() {
+    // @ts-ignore
+    return stringToStream(this.string);
   }
 }

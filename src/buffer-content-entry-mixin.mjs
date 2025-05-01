@@ -1,8 +1,8 @@
 import { uint8ToStream } from "browser-stream-util";
 import { ContentEntry } from "./content-entry.mjs";
 
-/**
- * Content entries where a string is the primary data representation.
+/*
+ * Content entries where a Uint8Array is the primary data representation.
  * @param {new (name: string) => ContentEntry } superclass
  */
 export function BufferContentEntryMixin(superclass) {
