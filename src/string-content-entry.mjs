@@ -45,7 +45,7 @@ export class StringContentEntry extends ContentEntry {
   }
 
   /**
-   * @return {Number} size in bytes
+   * @return {number} size in bytes
    */
   get size() {
     return this.string.length;
