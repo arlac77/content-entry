@@ -9,6 +9,13 @@ test("collection entry create", t => {
   t.true((entry.types).indexOf("public.directory") === 0);
 });
 
+test("collection entry update", t => {
+  const entry = new CollectionEntry("somewhere");
+
+  entry.mode= 0o777;
+  t.is(entry.mode, 0o777);
+});
+
 test("collection entry equals", async t => {
   const a = new CollectionEntry("a");
   const a2 = new CollectionEntry("a");
