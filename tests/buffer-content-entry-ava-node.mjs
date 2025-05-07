@@ -45,3 +45,11 @@ test("buffer content entry create none empty", async t => {
 
   t.is(chunks[0].length, 3);
 });
+
+test("buffer content entry update", async t => {
+  const entry = new BufferContentEntry("somewhere", new TextEncoder().encode("abc"));
+
+  entry.mode = 0o644;
+
+  t.is(entry.mode, 0o644);
+});

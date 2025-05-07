@@ -6,6 +6,19 @@ import { equalsUint8Arrays } from "./util.mjs";
  * General content access entries.
  */
 export class ContentEntry extends BaseEntry {
+
+  _mode = 0o644;
+  
+  set mode(value)
+  {
+    this._mode = value;
+  }
+
+  get mode()
+  {
+    return this._mode;
+  }
+
   /**
    * @return {boolean} true
    */
