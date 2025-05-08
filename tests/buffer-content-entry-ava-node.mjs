@@ -4,6 +4,7 @@ import { BufferContentEntry } from "content-entry";
 test("buffer content entry create", async t => {
   const entry = new BufferContentEntry(
     "somewhere",
+    undefined,
     new TextEncoder().encode("abc")
   );
   t.is(entry.name, "somewhere");
@@ -23,7 +24,7 @@ test("buffer content entry create", async t => {
 });
 
 test("buffer content entry create none empty", async t => {
-  const entry = new BufferContentEntry("somewhere", new TextEncoder().encode("abc"));
+  const entry = new BufferContentEntry("somewhere", undefined, new TextEncoder().encode("abc"));
   t.is(entry.name, "somewhere");
   t.false(entry.isEmpty);
   t.false(entry.isCollection);
@@ -47,7 +48,7 @@ test("buffer content entry create none empty", async t => {
 });
 
 test("buffer content entry update", async t => {
-  const entry = new BufferContentEntry("somewhere", new TextEncoder().encode("abc"));
+  const entry = new BufferContentEntry("somewhere", undefined, new TextEncoder().encode("abc"));
 
   entry.mode = 0o644;
 

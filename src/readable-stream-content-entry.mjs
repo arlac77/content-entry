@@ -13,14 +13,15 @@ export class ReadableStreamContentEntry extends StreamContentEntryMixin(
    * Content entries where a readable stream is the primary data representation.
    *
    * @param {string} name
+   * @param {object} options
    * @param {ReadableStream} readStream
    *
    * @property {string} name
    * @property {ReadableStream} readStream
    */
-  constructor(name, readStream) {
+  constructor(name, options, readStream) {
     // @ts-ignore
-    super(name);
+    super(name, options);
     this.readStream = readStream;
   }
 }

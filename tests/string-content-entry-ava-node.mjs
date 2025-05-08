@@ -2,7 +2,7 @@ import test from "ava";
 import { StringContentEntry } from "content-entry";
 
 test("string content entry create", async t => {
-  const entry = new StringContentEntry("somewhere", "abc");
+  const entry = new StringContentEntry("somewhere", undefined,  "abc");
   t.is(entry.name, "somewhere");
   t.false(entry.isEmpty);
   t.false(entry.isCollection);
@@ -29,7 +29,7 @@ test("string content entry create", async t => {
 });
 
 test("string content entry update", async t => {
-  const entry = new StringContentEntry("somewhere", "abc");
+  const entry = new StringContentEntry("somewhere", undefined, "abc");
 
   entry.mode = 0o644;
 

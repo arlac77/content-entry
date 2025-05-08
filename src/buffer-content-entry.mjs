@@ -11,11 +11,11 @@ export class BufferContentEntry extends ContentEntry {
    * Content entries where a string is the primary data representation.
    *
    * @param {string} name
+   * @param {object} options
    * @param {Uint8Array} value
    */
-  constructor(name, value) {
-    // @ts-ignore
-    super(name);
+  constructor(name, options, value) {
+    super(name, options);
     this.buffer = value;
   }
 

@@ -15,14 +15,15 @@ export class StringContentEntry extends ContentEntry {
    * Content entries where a string is the primary data representation.
    *
    * @param {string} name
+   * @param {object} options
    * @param {string} value
    *
    * @property {string} name
    * @property {string} string
    */
-  constructor(name, value) {
+  constructor(name, options, value) {
     // @ts-ignore
-    super(name);
+    super(name, options);
     this.string = value;
   }
 
