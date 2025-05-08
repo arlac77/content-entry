@@ -32,6 +32,8 @@ test("string content entry update", async t => {
   const entry = new StringContentEntry("somewhere", undefined, "abc");
 
   entry.mode = 0o644;
-
   t.is(entry.mode, 0o644);
+
+  entry.sha = 123;
+  t.is(entry.sha, 123);
 });

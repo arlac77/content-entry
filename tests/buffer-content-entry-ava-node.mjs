@@ -51,6 +51,8 @@ test("buffer content entry update", async t => {
   const entry = new BufferContentEntry("somewhere", undefined, new TextEncoder().encode("abc"));
 
   entry.mode = 0o644;
-
   t.is(entry.mode, 0o644);
+
+  entry.sha = 123;
+  t.is(entry.sha, 123);
 });
