@@ -1,9 +1,8 @@
 import test from "ava";
 import { ContentEntry } from "content-entry";
 
-test("content entry create", async t => {
+test("content entry create default", async t => {
   const entry = new ContentEntry("somewhere");
-  t.is(entry.name, "somewhere");
   t.is(entry.name, "somewhere");
   t.is(entry.encoding, "utf8");
   t.true(entry.isEmpty);
@@ -22,6 +21,20 @@ test("content entry create", async t => {
   const result = await reader.read();
 
   t.true(result.done);
+});
+
+test("content entry create with options", async t => {
+  const entry = new ContentEntry("somewhere", { mode: 0o666 });
+  t.is(entry.name, "somewhere");
+  t.is(entry.encoding, "utf8");
+  t.true(entry.isEmpty);
+  t.true(entry.isBlob);
+  t.is(entry.mode, 0o666);
+  t.deepEqual(entry.mtime, new Date(0));
+  t.true(entry.types.indexOf("public.content") === 0);
+
+  t.is(await entry.buffer.length, 0);
+  t.is(await entry.string, "");
 });
 
 test("content entry equals", async t => {
