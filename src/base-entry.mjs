@@ -55,7 +55,18 @@ export class BaseEntry {
    * @return {number} 0644
    */
   get mode() {
-    return 0o644;
+    return this._mode ?? 0o644;
+  }
+
+  set mode(value) {
+    switch (typeof value) {
+      case "string":
+        this._mode = parseInt(value, 8);
+        break;
+
+      default:
+        this._mode = value;
+    }
   }
 
   get mtime() {

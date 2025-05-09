@@ -16,16 +16,6 @@ export class ContentEntry extends BaseEntry {
     Object.assign(this, options);
   }
 
-  _mode = 0o644;
-
-  set mode(value) {
-    this._mode = value;
-  }
-
-  get mode() {
-    return this._mode;
-  }
-
   /**
    * @return {boolean} true
    */

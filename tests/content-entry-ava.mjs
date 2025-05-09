@@ -34,7 +34,12 @@ test("content entry create with options", async t => {
   t.true(entry.types.indexOf("public.content") === 0);
 
   t.is(await entry.buffer.length, 0);
-  t.is(await entry.string, "");
+  t.is( entry.string, "");
+});
+
+test("content entry create with string mode", t => {
+  const entry = new ContentEntry("somewhere", { mode: "666" });
+  t.is(entry.mode, 0o666);
 });
 
 test("content entry equals", async t => {
