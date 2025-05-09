@@ -4,7 +4,7 @@ import { ContentEntry } from "./content-entry.mjs";
 /**
  * ConentEntry with a Uint8Array as content store.
  * @property {string} name
- * @property {Uint8Array} buffer
+ * @property {Uint8Array|function} buffer
  */
 export class BufferContentEntry extends ContentEntry {
   /**
