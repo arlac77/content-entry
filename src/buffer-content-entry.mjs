@@ -19,8 +19,16 @@ export class BufferContentEntry extends ContentEntry {
     this.buffer = value;
   }
 
-  get buffer() {
+  getBuffer() {
+    if (typeof this._buffer === "function") {
+      this._buffer = this._buffer(this);
+      this._buffer?.then(result => (this._buffer = result));
+    }
     return this._buffer;
+  }
+
+  get buffer() {
+    return this.getBuffer();
   }
 
   set buffer(value) {
@@ -32,7 +40,7 @@ export class BufferContentEntry extends ContentEntry {
    * @return {string} content
    */
   get string() {
-    const buffer = this.buffer;
+    const buffer = this.getBuffer();
 
     // @ts-ignore
     return buffer.then
@@ -46,7 +54,7 @@ export class BufferContentEntry extends ContentEntry {
    * @return {ReadableStream} content
    */
   get readStream() {
-    const buffer = this.buffer;
+    const buffer = this.getBuffer();
 
     // @ts-ignore
     return buffer.then
@@ -59,7 +67,7 @@ export class BufferContentEntry extends ContentEntry {
    * @return {boolean}
    */
   get isEmpty() {
-    const buffer = this.buffer;
+    const buffer = this.getBuffer();
     // @ts-ignore
     return buffer.then
       ? // @ts-ignore
@@ -71,7 +79,7 @@ export class BufferContentEntry extends ContentEntry {
    * @return {number} number of bytes in the buffer
    */
   get size() {
-    const buffer = this.buffer;
+    const buffer = this.getBuffer();
     // @ts-ignore
     return buffer.then ? buffer.then(buffer => buffer.length) : buffer.length;
   }

@@ -4,6 +4,5 @@ export { CollectionEntry } from "./collection-entry.mjs";
 export { StreamContentEntryMixin } from "./stream-content-entry-mixin.mjs";
 export { ReadableStreamContentEntry } from "./readable-stream-content-entry.mjs";
 export { BufferContentEntry } from "./buffer-content-entry.mjs";
-export { LazyBufferContentEntry } from "./lazy-buffer-content-entry.mjs";
 export { StringContentEntry } from "./string-content-entry.mjs";
 export { DeletedContentEntry } from "./deleted-content-entry.mjs";
