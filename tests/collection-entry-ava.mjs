@@ -6,21 +6,21 @@ test("collection entry create default", t => {
   t.is(entry.name, "somewhere");
   t.is(entry.mode, 0o755);
   t.true(entry.isCollection);
-  t.true((entry.types).indexOf("public.directory") === 0);
+  t.true(entry.types.indexOf("public.directory") === 0);
 });
 
 test("collection entry create with options", t => {
-  const entry = new CollectionEntry("somewhere",{ mode: 0o777});
+  const entry = new CollectionEntry("somewhere", { mode: 0o777 });
   t.is(entry.name, "somewhere");
   t.is(entry.mode, 0o777);
   t.true(entry.isCollection);
-  t.true((entry.types).indexOf("public.directory") === 0);
+  t.true(entry.types.indexOf("public.directory") === 0);
 });
 
 test("collection entry update", t => {
   const entry = new CollectionEntry("somewhere");
 
-  entry.mode= 0o777;
+  entry.mode = 0o777;
   t.is(entry.mode, 0o777);
 });
 

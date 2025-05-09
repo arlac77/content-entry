@@ -27,29 +27,41 @@ export class StringContentEntry extends ContentEntry {
     this.string = value;
   }
 
-  get string()
-  {
+  getString() {
+    if (typeof this._string === "function") {
+      this._string = this._string(this);
+      this._string?.then(result => (this._string = result));
+    }
     return this._string;
   }
 
-  set string(value)
-  {
+  get string() {
+    return this.getString();
+  }
+
+  set string(value) {
     this._string = value;
   }
 
   /**
-   *
    * @returns {boolean} true if string length is zero
    */
   get isEmpty() {
-    return this.string.length === 0;
+    const string = this.getString();
+    // @ts-ignore
+    return string.then
+      ? // @ts-ignore
+        string.then(bufstringfer => string.length === 0)
+      : string.length === 0;
   }
 
   /**
-   * @return {number} size in bytes
+   * @return {number} size in chars
    */
   get size() {
-    return this.string.length;
+    const string = this.getString();
+    // @ts-ignore
+    return string.then ? string.then(string => string.length) : string.length;
   }
 
   /**
@@ -58,7 +70,7 @@ export class StringContentEntry extends ContentEntry {
   get buffer() {
     const encoder = new TextEncoder(/*this.encoding*/);
     // @ts-ignore
-    return encoder.encode(this.string);
+    return encoder.encode(this.getString());
   }
 
   /**
@@ -67,6 +79,6 @@ export class StringContentEntry extends ContentEntry {
    */
   get readStream() {
     // @ts-ignore
-    return stringToStream(this.string);
+    return stringToStream(this.getString());
   }
 }

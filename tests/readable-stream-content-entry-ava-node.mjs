@@ -21,6 +21,7 @@ test("readable stream content entry create", async t => {
 
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
+    mode: 0o644,
     isBlob: true,
     isCollection: false
   });
@@ -38,7 +39,11 @@ test("readable stream content entry buffer", async t => {
 });
 
 test("readable stream content entry equalsContent ReadableStreamContentEntry <> BufferContentEntry", async t => {
-  const be = new BufferContentEntry("somewhere", undefined, Buffer.from("abc\n"));
+  const be = new BufferContentEntry(
+    "somewhere",
+    undefined,
+    Buffer.from("abc\n")
+  );
 
   const entry = new ReadableStreamContentEntry(
     "somewhere",
@@ -51,7 +56,11 @@ test("readable stream content entry equalsContent ReadableStreamContentEntry <> 
 });
 
 test("readable stream content entry equalsContent BufferContentEntry <> ReadableStreamContentEntry", async t => {
-  const be = new BufferContentEntry("somewhere", undefined, Buffer.from("abc\n"));
+  const be = new BufferContentEntry(
+    "somewhere",
+    undefined,
+    Buffer.from("abc\n")
+  );
 
   const entry = new ReadableStreamContentEntry(
     "somewhere",

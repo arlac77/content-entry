@@ -5,6 +5,11 @@ import { ContentEntry } from "./content-entry.mjs";
  */
 export class DeletedContentEntry extends ContentEntry {
 
+  get mode()
+  {
+    return undefined;
+  }
+  
   /**
    * We are always deleted.
    *

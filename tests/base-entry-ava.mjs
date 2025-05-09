@@ -13,6 +13,7 @@ test("base entry create", t => {
   t.deepEqual(entry.types, [], "types");
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
+    mode: 0o644,
     isBlob: false,
     isCollection: false
   });

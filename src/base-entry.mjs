@@ -8,17 +8,17 @@ const DEFAULT_MTIME = new Date(0);
  * @property {string} name name inside of the container
  */
 export class BaseEntry {
-
   /** @type {string} */ name;
 
   /**
    * Representation of one file or directory entry.
    * All names are absolute (no leading '/') the group seperator is '/'.
    * @param {string} name name inside of the container
+   * @param {object} [options] name inside of the container
    *
    * @property {string} name name inside of the container
    */
-  constructor(name) {
+  constructor(name, options) {
     if (name[0] === "/" || name.indexOf("\\") >= 0) {
       throw new TypeError(
         `Names should not contain leading '/' or any '\\': ${name}`
@@ -26,6 +26,8 @@ export class BaseEntry {
     }
 
     this.name = name;
+
+    Object.assign(this, options);
   }
 
   /**
@@ -69,8 +71,12 @@ export class BaseEntry {
     }
   }
 
+  set mtime(value) {
+    this._mtime = value;
+  }
+
   get mtime() {
-    return DEFAULT_MTIME;
+    return this._mtime ?? DEFAULT_MTIME;
   }
 
   /**
@@ -95,12 +101,14 @@ export class BaseEntry {
   }
 
   /**
-   * 
-   * @return {{name:string, isBlob: boolean, isCollection: boolean}} 
+   *
+   * @return {{name:string, mode:number, isBlob: boolean, isCollection: boolean}}
    */
   toJSON() {
     return {
+      ...(this.mode === undefined ? { mode: this.mode } : {}),
       name: this.name,
+      mode: this.mode,
       isBlob: this.isBlob,
       isCollection: this.isCollection
     };
@@ -115,6 +123,7 @@ export class BaseEntry {
     return (
       other !== undefined &&
       this.name === other.name &&
+      this.mode === other.mode &&
       this.isCollection === other.isCollection &&
       this.isBlob === other.isBlob
     );

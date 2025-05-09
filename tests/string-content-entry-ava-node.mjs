@@ -2,7 +2,7 @@ import test from "ava";
 import { StringContentEntry } from "content-entry";
 
 test("string content entry create", async t => {
-  const entry = new StringContentEntry("somewhere", undefined,  "abc");
+  const entry = new StringContentEntry("somewhere", undefined, "abc");
   t.is(entry.name, "somewhere");
   t.false(entry.isEmpty);
   t.false(entry.isCollection);
@@ -13,6 +13,7 @@ test("string content entry create", async t => {
 
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
+    mode: 420,
     isBlob: true,
     isCollection: false
   });
@@ -21,7 +22,39 @@ test("string content entry create", async t => {
 
   const stream = await entry.getReadStream();
   const chunks = [];
-  for await( const chunk of stream) {
+  for await (const chunk of stream) {
+    chunks.push(chunk);
+  }
+
+  t.is(chunks[0].length, 3);
+});
+
+test("lazy string content entry create", async t => {
+  const entry = new StringContentEntry(
+    "somewhere",
+    undefined,
+    async entry => "abc"
+  );
+  t.is(entry.name, "somewhere");
+  t.false(await entry.isEmpty);
+  t.false(entry.isCollection);
+  t.true(entry.isBlob);
+  t.is(await entry.size, 3);
+  t.is(entry.mode, 420);
+  t.is(entry.encoding, "utf8");
+
+  t.deepEqual(JSON.parse(JSON.stringify(entry)), {
+    name: "somewhere",
+    mode: 420,
+    isBlob: true,
+    isCollection: false
+  });
+  t.is(await entry.string, "abc");
+  t.is((await entry.buffer).length, 3);
+
+  const stream = await entry.getReadStream();
+  const chunks = [];
+  for await (const chunk of stream) {
     chunks.push(chunk);
   }
 

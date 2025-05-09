@@ -16,6 +16,7 @@ test("buffer content entry create", t => {
 
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
+    mode: 420,
     isBlob: true,
     isCollection: false
   });
@@ -36,6 +37,7 @@ test("buffer content entry create none empty", async t => {
   t.is(entry.size, 3);
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
+    mode: 420,
     isBlob: true,
     isCollection: false
   });
@@ -80,6 +82,7 @@ test("lazy buffer content entry create", async t => {
 
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
+    mode: 420,
     isBlob: true,
     isCollection: false
   });

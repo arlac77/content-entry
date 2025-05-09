@@ -10,7 +10,7 @@ export class CollectionEntry extends BaseEntry {
    * @param {object} [options]
    */
   constructor(name, options) {
-    super(name);
+    super(name, options);
     Object.assign(this, options);
   }
 

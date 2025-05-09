@@ -7,16 +7,6 @@ import { equalsUint8Arrays } from "./util.mjs";
  */
 export class ContentEntry extends BaseEntry {
   /**
-   *
-   * @param {string} name
-   * @param {object} [options] 
-   */
-  constructor(name, options) {
-    super(name);
-    Object.assign(this, options);
-  }
-
-  /**
    * @return {boolean} true
    */
   get isBlob() {
