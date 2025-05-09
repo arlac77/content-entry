@@ -111,7 +111,7 @@ export class BaseEntry {
       isCollection: this.isCollection
     };
 
-    if (this.mode !== undefined) {
+    if (this.mode !== undefined && !this.mode?.next) {
       json.mode = this.mode;
     }
 
