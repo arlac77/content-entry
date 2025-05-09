@@ -102,16 +102,20 @@ export class BaseEntry {
 
   /**
    *
-   * @return {{name:string, mode:number, isBlob: boolean, isCollection: boolean}}
+   * @return {{name:string, mode:number?, isBlob: boolean, isCollection: boolean}}
    */
   toJSON() {
-    return {
-      ...(this.mode === undefined ? { mode: this.mode } : {}),
+    const json = {
       name: this.name,
-      mode: this.mode,
       isBlob: this.isBlob,
       isCollection: this.isCollection
     };
+
+    if (this.mode !== undefined) {
+      json.mode = this.mode;
+    }
+
+    return json;
   }
 
   /**
