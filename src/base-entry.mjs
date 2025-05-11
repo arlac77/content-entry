@@ -54,7 +54,7 @@ export class BaseEntry {
 
   /**
    * Default unix mode for files.
-   * @return {number} 0644
+   * @return {number|Promise<number>} 0644
    */
   get mode() {
     return this._mode ?? 0o644;
