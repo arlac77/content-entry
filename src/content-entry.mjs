@@ -31,7 +31,7 @@ export class ContentEntry extends BaseEntry {
   }
 
   /**
-   * return {Uint8Array|Promise<Uint8Array>}
+   * @return {Uint8Array|Promise<Uint8Array>}
    */
   get buffer() {
     return Uint8Array.of();
