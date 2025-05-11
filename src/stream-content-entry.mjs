@@ -28,6 +28,10 @@ export class StreamContentEntry extends ContentEntry {
     return this._stream;
   }
 
+  /**
+   * By default an zero length stream.
+   * @return {ReadableStream|Promise<ReadableStream>}
+   */
   get stream() {
     return this.getStream();
   }
@@ -40,25 +44,24 @@ export class StreamContentEntry extends ContentEntry {
    * @return {Promise<number>} number of bytes in the buffer
    */
   get size() {
-    return this.getBuffer().then(buffer => buffer.length)
+    return this.getBuffer().then(buffer => buffer.length);
   }
 
   /**
-   * @return {Promise<Uint8Array>}
+   * @return {Uint8Array|Promise<Uint8Array>}
    */
   get buffer() {
     return this.getBuffer();
   }
 
   /**
-   * @return {Promise<string>}
+   * @return {string|Promise<string>}
    */
   get string() {
     return this.getString();
   }
 
   async getString() {
-
     const stream = await this.getStream();
     return streamToString(stream);
   }
