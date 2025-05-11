@@ -24,14 +24,14 @@ export class ContentEntry extends BaseEntry {
 
   /**
    * By default an zero length stream.
-   * @return {ReadableStream}
+   * @return {ReadableStream|Promise<ReadableStream>}
    */
-  get readStream() {
+  get stream() {
     return emptyStream();
   }
 
   /**
-   * return {Uint8Array}
+   * return {Uint8Array|Promise<Uint8Array>}
    */
   get buffer() {
     return Uint8Array.of();
@@ -39,7 +39,7 @@ export class ContentEntry extends BaseEntry {
 
   /**
    * By default an zero length string.
-   * @return {string}
+   * @return {string|Promise<String>}
    */
   get string() {
     return "";
@@ -89,7 +89,7 @@ export class ContentEntry extends BaseEntry {
   /**
    * @deprecated
    */
-  async getReadStream() {
-    return this.readStream;
+  get readStream() {
+    return emptyStream();
   }
 }

@@ -14,7 +14,7 @@ test("content entry create default", async t => {
   t.is(await entry.buffer.length, 0);
   t.is(await entry.string, "");
 
-  const readStream = entry.readStream;
+  const readStream = entry.stream;
 
   t.true(readStream !== undefined);
   const reader = readStream.getReader();

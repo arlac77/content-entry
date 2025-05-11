@@ -20,7 +20,7 @@ test("string content entry create", async t => {
   t.is(await entry.string, "abc");
   t.is((await entry.buffer).length, 3);
 
-  const stream = await entry.getReadStream();
+  const stream = await entry.stream;
   const chunks = [];
   for await (const chunk of stream) {
     chunks.push(chunk);
@@ -52,7 +52,7 @@ test("lazy string content entry create", async t => {
   t.is(await entry.string, "abc");
   t.is((await entry.buffer).length, 3);
 
-  const stream = await entry.getReadStream();
+  const stream = await entry.stream;
   const chunks = [];
   for await (const chunk of stream) {
     chunks.push(chunk);

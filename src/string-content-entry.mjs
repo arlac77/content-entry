@@ -77,7 +77,7 @@ export class StringContentEntry extends ContentEntry {
    * Deliver content as read stream
    * @return {ReadableStream} content
    */
-  get readStream() {
+  get stream() {
     // @ts-ignore
     return stringToStream(this.getString());
   }

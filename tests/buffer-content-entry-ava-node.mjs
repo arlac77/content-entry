@@ -44,7 +44,7 @@ test("buffer content entry create none empty", async t => {
   t.is(entry.string, "abc");
   t.is(entry.buffer.length, 3);
 
-  const stream = entry.readStream;
+  const stream = entry.stream;
   const chunks = [];
   for await (const chunk of stream) {
     chunks.push(chunk);

@@ -53,7 +53,7 @@ export class BufferContentEntry extends ContentEntry {
    * Deliver content as read stream.
    * @return {ReadableStream} content
    */
-  get readStream() {
+  get stream() {
     const buffer = this.getBuffer();
 
     // @ts-ignore
