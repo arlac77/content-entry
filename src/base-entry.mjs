@@ -80,7 +80,7 @@ export class BaseEntry {
   }
 
   /**
-   * @return {boolean} true if there is no content (length := 0).
+   * @return {boolean|Promise<boolean>} true if there is no content (length := 0).
    */
   get isEmpty() {
     return true;
@@ -94,7 +94,7 @@ export class BaseEntry {
   }
 
   /**
-   * @return {boolean} true if we exist
+   * @return {boolean|Promise<boolean>} true if we exist
    */
   get isExistent() {
     return true;
