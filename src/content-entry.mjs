@@ -46,14 +46,14 @@ export class ContentEntry extends BaseEntry {
   }
 
   /**
-   * @return {boolean} true if there is no content (length := 0).
+   * @return {boolean|Promise<boolean>} true if there is no content (length := 0).
    */
   get isEmpty() {
     return this.buffer.length === 0;
   }
 
   /**
-   * @return {number} size in bytes
+   * @return {number|Promise<number>} size in bytes
    */
   get size() {
     return this.buffer.length;

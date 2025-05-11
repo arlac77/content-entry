@@ -1,15 +1,4 @@
 
-export function concatUint8Arrays(...bufs) {
-  const result = new Uint8Array(
-    bufs.reduce((totalSize, buf) => totalSize + buf.byteLength, 0)
-  );
-  bufs.reduce((offset, buf) => {
-    result.set(buf, offset);
-    return offset + buf.byteLength;
-  }, 0);
-  return result;
-}
-
 /**
  * Returns true if the two passed Uint8Arrays have the same content
  *

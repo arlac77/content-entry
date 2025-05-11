@@ -2,15 +2,16 @@ import test from "ava";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createReadStream } from "node:fs";
-import { BufferContentEntry, ReadableStreamContentEntry } from "content-entry";
+import { Readable } from "node:stream";
+import { BufferContentEntry, StreamContentEntry } from "content-entry";
 
 const here = dirname(fileURLToPath(import.meta.url));
 
-test("readable stream content entry create", async t => {
-  const entry = new ReadableStreamContentEntry(
+test.only("readable stream content entry create", async t => {
+  const entry = new StreamContentEntry(
     "somewhere",
     undefined,
-    createReadStream(join(here, "fixtures", "file.txt"), { encoding: "utf8" })
+    Readable.toWeb(createReadStream(join(here, "fixtures", "file.txt")))
   );
   t.is(entry.name, "somewhere");
   t.false(entry.isCollection);
@@ -25,15 +26,16 @@ test("readable stream content entry create", async t => {
     isBlob: true,
     isCollection: false
   });
+
   t.is(await entry.string, "abc\n");
   t.false(entry.isEmpty); // TODO after reading ?
 });
 
 test("readable stream content entry buffer", async t => {
-  const entry = new ReadableStreamContentEntry(
+  const entry = new StreamContentEntry(
     "somewhere",
     undefined,
-    createReadStream(join(here, "fixtures", "file.txt"))
+    Readable.toWeb(createReadStream(join(here, "fixtures", "file.txt")))
   );
   t.is((await entry.buffer).length, 4);
 });
@@ -45,10 +47,10 @@ test("readable stream content entry equalsContent ReadableStreamContentEntry <> 
     Buffer.from("abc\n")
   );
 
-  const entry = new ReadableStreamContentEntry(
+  const entry = new StreamContentEntry(
     "somewhere",
     undefined,
-    createReadStream(join(here, "fixtures", "file.txt"))
+    Readable.toWeb(createReadStream(join(here, "fixtures", "file.txt")))
   );
 
   t.true(await entry.equalsContent(be));
@@ -62,10 +64,10 @@ test("readable stream content entry equalsContent BufferContentEntry <> Readable
     Buffer.from("abc\n")
   );
 
-  const entry = new ReadableStreamContentEntry(
+  const entry = new StreamContentEntry(
     "somewhere",
     undefined,
-    createReadStream(join(here, "fixtures", "file.txt"))
+    Readable.toWeb(createReadStream(join(here, "fixtures", "file.txt")))
   );
 
   t.true(await be.equalsContent(entry));
