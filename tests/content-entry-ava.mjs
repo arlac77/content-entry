@@ -24,12 +24,13 @@ test("content entry create default", async t => {
 });
 
 test("content entry create with options", async t => {
-  const entry = new ContentEntry("somewhere", { mode: 0o666 });
+  const entry = new ContentEntry("somewhere", { mode: 0o666, destination: "/tmp" });
   t.is(entry.name, "somewhere");
   t.is(entry.encoding, "utf8");
   t.true(entry.isEmpty);
   t.true(entry.isBlob);
   t.is(entry.mode, 0o666);
+  t.is(entry.destination, "/tmp");
   t.deepEqual(entry.mtime, new Date(0));
   t.true(entry.types.indexOf("public.content") === 0);
 

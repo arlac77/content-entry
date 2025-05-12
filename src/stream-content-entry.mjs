@@ -10,20 +10,20 @@ export class StreamContentEntry extends ContentEntry {
    *
    * @param {string} name
    * @param {object} options
-   * @param {ReadableStream} value
+   * @param {ReadableStream} source
    */
-  constructor(name, options, value) {
+  constructor(name, options, source) {
     super(name, options);
-    this.stream = value;
+    this.stream = source;
   }
 
   getStream(options) {
-    if (typeof this._stream === "function") {
-      this._stream = this._stream(this);
-      this._stream?.then(result => (this._stream = result));
+    if (typeof this._source === "function") {
+      this._source = this._source(this);
+      this._source?.then(result => (this._source = result));
     }
 
-    return this._stream;
+    return this._source;
   }
 
   /**
@@ -35,7 +35,7 @@ export class StreamContentEntry extends ContentEntry {
   }
 
   set stream(value) {
-    this._stream = value;
+    this._source = value;
   }
 
   /**
