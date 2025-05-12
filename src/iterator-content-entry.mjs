@@ -20,6 +20,6 @@ export class IteratorContentEntry extends ContentEntry {
    * @return {string|Promise<string>}
    */
   get string() {
-    return Array.fromAsync(this.source).join('');
+    return Array.fromAsync(this.source).then(array => array.join(""));
   }
 }
