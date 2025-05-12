@@ -1,8 +1,6 @@
 import { ContentEntry } from "./content-entry.mjs";
 import { streamToUint8Array, streamToString } from "browser-stream-util";
 
-const defaultStringOptions = { encoding: "utf8" };
-
 /**
  * Content entries where a stream is the primary data representation.
  */
