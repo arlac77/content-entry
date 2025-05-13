@@ -7,7 +7,7 @@ import { BufferContentEntry, StreamContentEntry } from "content-entry";
 
 const here = dirname(fileURLToPath(import.meta.url));
 
-test.only("readable stream content entry create", async t => {
+test("readable stream content entry create", async t => {
   const entry = new StreamContentEntry(
     "somewhere",
     undefined,
@@ -29,6 +29,28 @@ test.only("readable stream content entry create", async t => {
 
   t.is(await entry.string, "abc\n");
   t.false(entry.isEmpty); // TODO after reading ?
+});
+
+test("readable stream content entry create with options", t => {
+  const entry = new StreamContentEntry(
+    "somewhere",
+    { mode: 0o444, uid: 1234 },
+    Readable.toWeb(createReadStream(join(here, "fixtures", "file.txt")))
+  );
+  t.is(entry.name, "somewhere");
+  t.false(entry.isCollection);
+  t.true(entry.isBlob);
+  t.false(entry.isDeleted);
+  t.true(entry.isExistent);
+  t.is(entry.mode, 0o444);
+  t.is(entry.uid, 1234);
+
+  t.deepEqual(JSON.parse(JSON.stringify(entry)), {
+    name: "somewhere",
+    mode: 0o444,
+    isBlob: true,
+    isCollection: false
+  });
 });
 
 test("readable stream content entry buffer", async t => {
