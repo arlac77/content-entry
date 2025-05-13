@@ -39,7 +39,7 @@ export class ContentEntry extends BaseEntry {
 
   /**
    * By default an zero length string.
-   * @return {string|Promise<String>}
+   * @return {string|Promise<string>}
    */
   get string() {
     return "";

@@ -10,11 +10,11 @@ export class StreamContentEntry extends ContentEntry {
    *
    * @param {string} name
    * @param {object} options
-   * @param {ReadableStream} source
+   * @param {ReadableStream<any>|((ContentEntry) => Promise<ReadableStream<any>>)} source
    */
   constructor(name, options, source) {
     super(name, options);
-    this.stream = source;
+    this._source = source;
   }
 
   getStream(options) {

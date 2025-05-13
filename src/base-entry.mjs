@@ -102,7 +102,7 @@ export class BaseEntry {
 
   /**
    *
-   * @return {{name:string, mode:number?, isBlob: boolean, isCollection: boolean}}
+   * @return {{name:string, mode:[number], isBlob: boolean, isCollection: boolean}}
    */
   toJSON() {
     const json = {
@@ -111,7 +111,7 @@ export class BaseEntry {
       isCollection: this.isCollection
     };
 
-    if (this.mode !== undefined && !this.mode?.next) {
+    if (this.mode !== undefined && !this.mode?.then) {
       json.mode = this.mode;
     }
 

@@ -16,23 +16,23 @@ export class StringContentEntry extends ContentEntry {
    *
    * @param {string} name
    * @param {object} options
-   * @param {string} value
+   * @param {string|((ContentEntry) => Promise<string>)} source
    *
    * @property {string} name
    * @property {string} string
    */
-  constructor(name, options, value) {
+  constructor(name, options, source) {
     // @ts-ignore
     super(name, options);
-    this.string = value;
+    this.string = source;
   }
 
   getString() {
-    if (typeof this._string === "function") {
-      this._string = this._string(this);
-      this._string?.then(result => (this._string = result));
+    if (typeof this._source === "function") {
+      this._source = this._source(this);
+      this._source?.then(result => (this._source = result));
     }
-    return this._string;
+    return this._source;
   }
 
   get string() {
@@ -40,7 +40,7 @@ export class StringContentEntry extends ContentEntry {
   }
 
   set string(value) {
-    this._string = value;
+    this._source = value;
   }
 
   /**

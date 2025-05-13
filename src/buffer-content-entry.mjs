@@ -5,6 +5,7 @@ import { ContentEntry } from "./content-entry.mjs";
  * ConentEntry with a Uint8Array as content store.
  * @property {string} name
  * @property {Uint8Array|function} buffer
+
  */
 export class BufferContentEntry extends ContentEntry {
   /**
@@ -12,19 +13,19 @@ export class BufferContentEntry extends ContentEntry {
    *
    * @param {string} name
    * @param {object} options
-   * @param {Uint8Array} value
+   * @param {Uint8Array|((ContentEntry) => Promise<Uint8Array>)} source
    */
-  constructor(name, options, value) {
+  constructor(name, options, source) {
     super(name, options);
-    this.buffer = value;
+    this.buffer = source;
   }
 
   getBuffer() {
-    if (typeof this._buffer === "function") {
-      this._buffer = this._buffer(this);
-      this._buffer?.then(result => (this._buffer = result));
+    if (typeof this._source === "function") {
+      this._source = this._source(this);
+      this._source?.then(result => (this._source = result));
     }
-    return this._buffer;
+    return this._source;
   }
 
   get buffer() {
@@ -32,7 +33,7 @@ export class BufferContentEntry extends ContentEntry {
   }
 
   set buffer(value) {
-    this._buffer = value;
+    this._source = value;
   }
 
   /**
