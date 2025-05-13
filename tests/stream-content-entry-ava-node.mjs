@@ -57,9 +57,12 @@ test("readable stream content entry buffer", async t => {
   const entry = new StreamContentEntry(
     "somewhere",
     undefined,
-    Readable.toWeb(createReadStream(join(here, "fixtures", "file.txt")))
+    (entry) => Readable.toWeb(createReadStream(join(here, "fixtures", "file.txt")))
   );
+
   t.is((await entry.buffer).length, 4);
+  t.deepEqual(await entry.buffer, new Uint8Array([97, 98, 99, 10]));
+  t.is(await entry.string, "abc\n");
 });
 
 test("readable stream content entry equalsContent ReadableStreamContentEntry <> BufferContentEntry", async t => {

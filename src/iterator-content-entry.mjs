@@ -16,10 +16,24 @@ export class IteratorContentEntry extends ContentEntry {
     this.source = source;
   }
 
+  get size() {
+    return Array.fromAsync(this.source())
+      .then(array => array.join(""))
+      .then(string => string.length);
+  }
+
+  get isEmpty() {
+    return this.size.then(size => size === 0);
+  }
+
   /**
    * @return {string|Promise<string>}
    */
   get string() {
-    return Array.fromAsync(this.source).then(array => array.join(""));
+    return Array.fromAsync(this.source()).then(array => array.join(""));
+  }
+
+  get stream() {
+    return ReadableStream.from(this.source());
   }
 }

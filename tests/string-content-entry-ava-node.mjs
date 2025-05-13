@@ -2,14 +2,15 @@ import test from "ava";
 import { StringContentEntry } from "content-entry";
 
 test("string content entry create", async t => {
-  const entry = new StringContentEntry("somewhere", undefined, "abc");
+  const entry = new StringContentEntry("somewhere", { uid: 77 }, "abc\n");
   t.is(entry.name, "somewhere");
   t.false(entry.isEmpty);
   t.false(entry.isCollection);
   t.true(entry.isBlob);
-  t.is(entry.size, 3);
+  t.is(entry.size, 4);
   t.is(entry.mode, 420);
   t.is(entry.encoding, "utf8");
+  t.is(entry.uid, 77);
 
   t.deepEqual(JSON.parse(JSON.stringify(entry)), {
     name: "somewhere",
@@ -17,8 +18,8 @@ test("string content entry create", async t => {
     isBlob: true,
     isCollection: false
   });
-  t.is(await entry.string, "abc");
-  t.is((await entry.buffer).length, 3);
+  t.is(await entry.string, "abc\n");
+  t.is((await entry.buffer).length, 4);
 
   const stream = await entry.stream;
   const chunks = [];
@@ -26,20 +27,20 @@ test("string content entry create", async t => {
     chunks.push(chunk);
   }
 
-  t.is(chunks[0].length, 3);
+  t.is(chunks[0].length, 4);
 });
 
 test("lazy string content entry create", async t => {
   const entry = new StringContentEntry(
     "somewhere",
     undefined,
-    async entry => "abc"
+    async entry => "abc\n"
   );
   t.is(entry.name, "somewhere");
   t.false(await entry.isEmpty);
   t.false(entry.isCollection);
   t.true(entry.isBlob);
-  t.is(await entry.size, 3);
+  t.is(await entry.size, 4);
   t.is(entry.mode, 420);
   t.is(entry.encoding, "utf8");
 
@@ -49,8 +50,9 @@ test("lazy string content entry create", async t => {
     isBlob: true,
     isCollection: false
   });
-  t.is(await entry.string, "abc");
-  t.is((await entry.buffer).length, 3);
+  t.is(await entry.string, "abc\n");
+  t.is((await entry.buffer).length, 4);
+  t.deepEqual(await entry.buffer, new Uint8Array([97, 98, 99, 10]));
 
   const stream = await entry.stream;
   const chunks = [];
@@ -58,7 +60,7 @@ test("lazy string content entry create", async t => {
     chunks.push(chunk);
   }
 
-  t.is(chunks[0].length, 3);
+  t.is(chunks[0].length, 4);
 });
 
 test("string content entry update", async t => {

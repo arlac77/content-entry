@@ -67,7 +67,7 @@ test("buffer content entry update", t => {
   t.is(entry.sha, 123);
 });
 
-test("lazy buffer content entry create", async t => {
+test("lazy buffer content entry create async", async t => {
   const entry = new BufferContentEntry("somewhere", undefined, async entry =>
     new TextEncoder().encode("abc-" + entry.name)
   );

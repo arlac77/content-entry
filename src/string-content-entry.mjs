@@ -29,9 +29,15 @@ export class StringContentEntry extends ContentEntry {
 
   getString() {
     if (typeof this._source === "function") {
-      this._source = this._source(this);
-      this._source?.then(result => (this._source = result));
+      const result = this._source(this);
+
+      if (result?.then) {
+        return result?.then(result => (this._source = result));
+      }
+
+      return result;
     }
+
     return this._source;
   }
 
