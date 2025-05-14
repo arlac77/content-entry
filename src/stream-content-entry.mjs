@@ -5,38 +5,13 @@ import { streamToUint8Array, streamToString } from "browser-stream-util";
  * Content entries where a stream is the primary data representation.
  */
 export class StreamContentEntry extends ContentEntry {
-  /**
-   * Content entries where a string is the primary data representation.
-   *
-   * @param {string} name
-   * @param {object} options
-   * @param {ReadableStream<any>|((ContentEntry) => Promise<ReadableStream<any>>)} source
-   */
-  constructor(name, options, source) {
-    super(name, options);
-    this._source = source;
-  }
-
-  getStream(options) {
-    if (typeof this._source === "function") {
-      const result = this._source(this);
-
-      if (result?.then) {
-        return result?.then(result => (this._source = result));
-      }
-
-      return result;
-    }
-
-    return this._source;
-  }
 
   /**
    * By default an zero length stream.
    * @return {ReadableStream|Promise<ReadableStream>}
    */
   get stream() {
-    return this.getStream();
+    return this.getSource();
   }
 
   set stream(value) {
@@ -65,11 +40,11 @@ export class StreamContentEntry extends ContentEntry {
   }
 
   async getString() {
-    const stream = await this.getStream();
+    const stream = await this.getSource();
     return streamToString(stream);
   }
 
   async getBuffer() {
-    return streamToUint8Array(await this.getStream());
+    return streamToUint8Array(await this.getSource());
   }
 }

@@ -8,34 +8,8 @@ import { ContentEntry } from "./content-entry.mjs";
 
  */
 export class BufferContentEntry extends ContentEntry {
-  /**
-   * Content entries where a string is the primary data representation.
-   *
-   * @param {string} name
-   * @param {object} options
-   * @param {Uint8Array|((ContentEntry) => Promise<Uint8Array>)} source
-   */
-  constructor(name, options, source) {
-    super(name, options);
-    this.buffer = source;
-  }
-
-  getBuffer() {
-    if (typeof this._source === "function") {
-      const result = this._source(this);
-
-      if (result?.then) {
-        return result?.then(result => (this._source = result));
-      }
-
-      return result;
-    }
-
-    return this._source;
-  }
-
   get buffer() {
-    return this.getBuffer();
+    return this.getSource();
   }
 
   set buffer(value) {
@@ -47,7 +21,7 @@ export class BufferContentEntry extends ContentEntry {
    * @return {string} content
    */
   get string() {
-    const buffer = this.getBuffer();
+    const buffer = this.getSource();
 
     // @ts-ignore
     return buffer.then
@@ -61,7 +35,7 @@ export class BufferContentEntry extends ContentEntry {
    * @return {ReadableStream} content
    */
   get stream() {
-    const buffer = this.getBuffer();
+    const buffer = this.getSource();
 
     // @ts-ignore
     return buffer.then
@@ -74,7 +48,7 @@ export class BufferContentEntry extends ContentEntry {
    * @return {boolean}
    */
   get isEmpty() {
-    const buffer = this.getBuffer();
+    const buffer = this.getSource();
     // @ts-ignore
     return buffer.then
       ? // @ts-ignore
@@ -86,7 +60,7 @@ export class BufferContentEntry extends ContentEntry {
    * @return {number} number of bytes in the buffer
    */
   get size() {
-    const buffer = this.getBuffer();
+    const buffer = this.getSource();
     // @ts-ignore
     return buffer.then ? buffer.then(buffer => buffer.length) : buffer.length;
   }

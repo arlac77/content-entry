@@ -11,38 +11,10 @@ import { ContentEntry } from "./content-entry.mjs";
  * @property {string} string
  */
 export class StringContentEntry extends ContentEntry {
-  /**
-   * Content entries where a string is the primary data representation.
-   *
-   * @param {string} name
-   * @param {object} options
-   * @param {string|((ContentEntry) => Promise<string>)} source
-   *
-   * @property {string} name
-   * @property {string} string
-   */
-  constructor(name, options, source) {
-    // @ts-ignore
-    super(name, options);
-    this.string = source;
-  }
 
-  getString() {
-    if (typeof this._source === "function") {
-      const result = this._source(this);
-
-      if (result?.then) {
-        return result?.then(result => (this._source = result));
-      }
-
-      return result;
-    }
-
-    return this._source;
-  }
 
   get string() {
-    return this.getString();
+    return this.getSource();
   }
 
   set string(value) {
@@ -53,7 +25,7 @@ export class StringContentEntry extends ContentEntry {
    * @returns {boolean} true if string length is zero
    */
   get isEmpty() {
-    const string = this.getString();
+    const string = this.getSource();
     // @ts-ignore
     return string.then
       ? // @ts-ignore
@@ -65,7 +37,7 @@ export class StringContentEntry extends ContentEntry {
    * @return {number} size in chars
    */
   get size() {
-    const string = this.getString();
+    const string = this.getSource();
     // @ts-ignore
     return string.then ? string.then(string => string.length) : string.length;
   }
@@ -76,7 +48,7 @@ export class StringContentEntry extends ContentEntry {
   get buffer() {
     const encoder = new TextEncoder(/*this.encoding*/);
     // @ts-ignore
-    return encoder.encode(this.getString());
+    return encoder.encode(this.getSource());
   }
 
   /**
@@ -85,6 +57,6 @@ export class StringContentEntry extends ContentEntry {
    */
   get stream() {
     // @ts-ignore
-    return stringToStream(this.getString());
+    return stringToStream(this.getSource());
   }
 }

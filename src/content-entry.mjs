@@ -7,6 +7,34 @@ import { equalsUint8Arrays } from "./util.mjs";
  */
 export class ContentEntry extends BaseEntry {
   /**
+   * Content entries where a string is the primary data representation.
+   *
+   * @param {string} name
+   * @param {object} options
+   * @param {string|Uint8Array|ReadableStream<any>|AsyncIterator<string>|((ContentEntry) => Promise<string|Uint8Array|ReadableStream<any>|AsyncIterator<string>>)} source
+   *
+   */
+  constructor(name, options, source) {
+    // @ts-ignore
+    super(name, options);
+    this._source = source;
+  }
+
+  getSource() {
+    if (typeof this._source === "function") {
+      const result = this._source(this);
+
+      if (result?.then) {
+        return result?.then(result => (this._source = result));
+      }
+
+      return result;
+    }
+
+    return this._source;
+  }
+
+  /**
    * @return {boolean} true
    */
   get isBlob() {
