@@ -3,30 +3,27 @@ import { ContentEntry } from "./content-entry.mjs";
 
 /**
  * ConentEntry with a Uint8Array as content store.
- * @property {string} name
- * @property {Uint8Array|function} buffer
-
  */
 export class BufferContentEntry extends ContentEntry {
+  /**
+   * @return {Uint8Array|Promise<Uint8Array>}
+   */
   get buffer() {
+    // @ts-ignore
     return this.getSource();
-  }
-
-  set buffer(value) {
-    this._source = value;
   }
 
   /**
    * Deliver content as string.
-   * @return {string} content
+   * @return {string|Promise<string>} content
    */
   get string() {
     const buffer = this.getSource();
 
     // @ts-ignore
     return buffer.then
-      ? // @ts-ignore
-        buffer.then(buffer => String.fromCharCode.apply(null, buffer))
+      // @ts-ignore
+      ? buffer.then(buffer => String.fromCharCode.apply(null, buffer))
       : String.fromCharCode.apply(null, buffer);
   }
 
@@ -39,8 +36,9 @@ export class BufferContentEntry extends ContentEntry {
 
     // @ts-ignore
     return buffer.then
-      ? // @ts-ignore
-        buffer.then(buffer => uint8ToStream(buffer))
+      // @ts-ignore
+      ? buffer.then(buffer => uint8ToStream(buffer))
+      // @ts-ignore
       : uint8ToStream(buffer);
   }
 
@@ -51,8 +49,9 @@ export class BufferContentEntry extends ContentEntry {
     const buffer = this.getSource();
     // @ts-ignore
     return buffer.then
-      ? // @ts-ignore
-        buffer.then(buffer => buffer.length === 0)
+      // @ts-ignore
+      ? buffer.then(buffer => buffer.length === 0)
+      // @ts-ignore
       : buffer.length === 0;
   }
 

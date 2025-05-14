@@ -4,21 +4,15 @@ import { ContentEntry } from "./content-entry.mjs";
 /**
  * Content entries where a string is the primary data representation.
  *
- * @param {string} name
- * @param {string} value
- *
- * @property {string} name
- * @property {string} string
  */
 export class StringContentEntry extends ContentEntry {
 
-
+  /**
+   * @return {string|Promise<string>}
+   */
   get string() {
+  // @ts-ignore
     return this.getSource();
-  }
-
-  set string(value) {
-    this._source = value;
   }
 
   /**
@@ -30,6 +24,7 @@ export class StringContentEntry extends ContentEntry {
     return string.then
       ? // @ts-ignore
         string.then(bufstringfer => string.length === 0)
+      // @ts-ignore
       : string.length === 0;
   }
 
