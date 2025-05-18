@@ -4,6 +4,9 @@ import { ContentEntry } from "./content-entry.mjs";
  * Content entries where a Async iterator is the primary data representation.
  */
 export class IteratorContentEntry extends ContentEntry {
+  /**
+   * @return {number|Promise<number>} size in bytes
+   */
   get size() {
     return Array.fromAsync(this.getSource())
       .then(array => array.join(""))

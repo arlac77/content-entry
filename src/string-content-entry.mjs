@@ -29,7 +29,7 @@ export class StringContentEntry extends ContentEntry {
   }
 
   /**
-   * @return {number} size in chars
+   * @return {number|Promise<number>} size in bytes
    */
   get size() {
     const string = this.getSource();

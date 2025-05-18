@@ -56,7 +56,7 @@ export class BufferContentEntry extends ContentEntry {
   }
 
   /**
-   * @return {number} number of bytes in the buffer
+   * @return {number|Promise<number>} number of bytes in the buffer
    */
   get size() {
     const buffer = this.getSource();

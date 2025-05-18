@@ -15,7 +15,7 @@ export class StreamContentEntry extends ContentEntry {
   }
 
   /**
-   * @return {Promise<number>} number of bytes in the buffer
+   * @return {Promise<number>|number} number of bytes in the buffer
    */
   get size() {
     return this.getBuffer().then(buffer => buffer.length);
