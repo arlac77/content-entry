@@ -60,6 +60,10 @@ export class BaseEntry {
     return this._mode ?? 0o644;
   }
 
+  /**
+   * Unix mode for files.
+   * @param {number|string} value string is parsed as ocal number
+   */
   set mode(value) {
     switch (typeof value) {
       case "string":
@@ -102,7 +106,7 @@ export class BaseEntry {
 
   /**
    *
-   * @return {{name:string, mode:[number], isBlob: boolean, isCollection: boolean}}
+   * @return {{name:string, mode?: number, isBlob: boolean, isCollection: boolean}}
    */
   toJSON() {
     const json = {
@@ -111,7 +115,8 @@ export class BaseEntry {
       isCollection: this.isCollection
     };
 
-    if (this.mode !== undefined && !this.mode?.then) {
+    // @ts-ignore
+    if (this.mode && !this.mode?.then) {
       json.mode = this.mode;
     }
 
@@ -121,9 +126,9 @@ export class BaseEntry {
   /**
    * Is other the same entry?
    * @param {Object} other
-   * @return {Promise<boolean>} true if name, isBlob and isCollection are the same
+   * @return {boolean|Promise<boolean>} true if name, isBlob and isCollection are the same
    */
-  async equals(other) {
+  equals(other) {
     return (
       other !== undefined &&
       this.name === other.name &&

@@ -7,7 +7,7 @@ export class DeletedContentEntry extends ContentEntry {
 
   get mode()
   {
-    return undefined;
+    return 0;
   }
   
   /**
