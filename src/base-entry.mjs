@@ -133,7 +133,6 @@ export class BaseEntry {
       other !== undefined &&
       this.name === other.name &&
       this.mode === other.mode &&
-      this.isCollection === other.isCollection &&
       this.isBlob === other.isBlob
     );
   }
