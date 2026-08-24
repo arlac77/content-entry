@@ -19,6 +19,16 @@ test("base entry create", t => {
   });
 });
 
+test("base entry create with options", t => {
+  let entry = new BaseEntry("somewhere", { mode: 0o666 });
+  t.is(entry.name, "somewhere", "name");
+  t.is(entry.mode, 0o666, "mode");
+
+  entry = new BaseEntry("somewhere", { mode: "666" });
+  t.is(entry.name, "somewhere", "name");
+  t.is(entry.mode, 0o666, "mode");
+});
+
 test("base entry equals", async t => {
   const a = new BaseEntry("a");
   const a2 = new BaseEntry("a");
@@ -33,6 +43,17 @@ test("base change name", t => {
   t.is(entry.name, "a");
   entry.name = "b";
   t.is(entry.name, "b");
+});
+
+test("base change mode", t => {
+  const entry = new BaseEntry("a");
+  t.is(entry.mode, 0o644);
+
+  entry.mode = 0o600;
+  t.is(entry.mode, 0o600);
+
+  entry.mode = "666";
+  t.is(entry.mode, 0o666);
 });
 
 test("base entry create invalid name", t => {
