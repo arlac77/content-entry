@@ -27,6 +27,20 @@ test("base entry create with options", t => {
   entry = new BaseEntry("somewhere", { mode: "666" });
   t.is(entry.name, "somewhere", "name");
   t.is(entry.mode, 0o666, "mode");
+
+  entry = new BaseEntry("somewhere", { mode: "0666" });
+  t.is(entry.name, "somewhere", "name");
+  t.is(entry.mode, 0o666, "mode");
+});
+
+test("base entry set/get user & group", t => {
+  let entry = new BaseEntry("somewhere", { mode: 0o666 });
+  t.is(entry.name, "somewhere", "name");
+  t.is(entry.mode, 0o666, "mode");
+  entry.user = "a";
+  t.is(entry.user, "a");
+  entry.group = "b";
+  t.is(entry.group, "b");
 });
 
 test("base entry equals", async t => {
